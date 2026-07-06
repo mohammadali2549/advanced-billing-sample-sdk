@@ -7,10 +7,10 @@ namespace MaxioAdvancedBilling.Models;
 public record Prepayment
 {
     [JsonPropertyName("id")]
-    public required double Id { get; init; }
+    public required int Id { get; init; }
 
     [JsonPropertyName("subscription_id")]
-    public required double SubscriptionId { get; init; }
+    public required int SubscriptionId { get; init; }
 
     [JsonPropertyName("amount_in_cents")]
     public required long AmountInCents { get; init; }

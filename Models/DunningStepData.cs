@@ -5,7 +5,7 @@ namespace MaxioAdvancedBilling.Models;
 public record DunningStepData
 {
     [JsonPropertyName("day_threshold")]
-    public required double DayThreshold { get; init; }
+    public required int DayThreshold { get; init; }
 
     [JsonPropertyName("action")]
     public required string Action { get; init; }

@@ -12,7 +12,7 @@ public record Component
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// The name of the Component, suitable for display on statements. i.e. Text Messages.
@@ -51,7 +51,7 @@ public record Component
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_family_id")]
-    public double? ProductFamilyId { get; init; }
+    public int? ProductFamilyId { get; init; }
 
     /// <summary>
     /// The name of the Product Family to which the Component belongs
@@ -97,7 +97,7 @@ public record Component
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("default_price_point_id")]
-    public double? DefaultPricePointId { get; init; }
+    public int? DefaultPricePointId { get; init; }
 
     /// <summary>
     /// Applicable only to prepaid usage components. An array of overage price brackets.
@@ -118,7 +118,7 @@ public record Component
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_count")]
-    public double? PricePointCount { get; init; }
+    public int? PricePointCount { get; init; }
 
     /// <summary>
     /// URL that points to the location to read the existing price points via GET request
@@ -218,14 +218,14 @@ public record Component
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("event_based_billing_metric_id")]
-    public double? EventBasedBillingMetricId { get; init; }
+    public int? EventBasedBillingMetricId { get; init; }
 
     /// <summary>
     /// The numerical interval. i.e. an interval of ‘30’ coupled with an interval_unit of day would mean this component's default price point would renew every 30 days. This property is only available for sites with Multifrequency enabled.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this component's default price point, either month or day. This property is only available for sites with Multifrequency enabled.

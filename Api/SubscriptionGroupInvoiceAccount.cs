@@ -114,8 +114,8 @@ public sealed class SubscriptionGroupInvoiceAccount
     /// </remarks>
     public Task<ListSubscriptionGroupPrepaymentResponse> ListPrepaymentsForSubscriptionGroup(string uid,
         ListPrepaymentsFilter? filter,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscription_groups/{uid}/prepayments.json"),
             [new TemplateParam("uid", uid)],

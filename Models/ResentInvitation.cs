@@ -19,7 +19,7 @@ public record ResentInvitation
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("uninvited_count")]
-    public double? UninvitedCount { get; init; }
+    public int? UninvitedCount { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("last_invite_sent_at")]

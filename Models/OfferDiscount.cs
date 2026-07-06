@@ -10,7 +10,7 @@ public record OfferDiscount
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("coupon_id")]
-    public double? CouponId { get; init; }
+    public int? CouponId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("coupon_name")]

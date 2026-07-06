@@ -23,5 +23,5 @@ public record UpdateReasonCode
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("position")]
-    public double? Position { get; init; }
+    public int? Position { get; init; }
 }

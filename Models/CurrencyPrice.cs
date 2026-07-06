@@ -7,7 +7,7 @@ public record CurrencyPrice
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("currency")]
@@ -15,7 +15,7 @@ public record CurrencyPrice
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price")]
-    public decimal? Price { get; init; }
+    public double? Price { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("formatted_price")]
@@ -23,15 +23,15 @@ public record CurrencyPrice
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_id")]
-    public double? PriceId { get; init; }
+    public int? PriceId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_id")]
-    public double? PricePointId { get; init; }
+    public int? PricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     /// <summary>
     /// Role for the price.

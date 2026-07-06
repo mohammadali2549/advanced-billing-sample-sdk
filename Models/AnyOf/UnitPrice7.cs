@@ -12,25 +12,25 @@ namespace MaxioAdvancedBilling.Models.AnyOf;
 [JsonConverter(typeof(UnitPrice7Converter))]
 public record UnitPrice7
 {
-    private readonly Optional<decimal> _decimalValue;
+    private readonly Optional<double> _doubleValue;
 
     private readonly Optional<string> _stringValue;
 
-    private UnitPrice7(Optional<decimal> decimalValue, Optional<string> stringValue)
+    private UnitPrice7(Optional<double> doubleValue, Optional<string> stringValue)
     {
-        _decimalValue = decimalValue;
+        _doubleValue = doubleValue;
         _stringValue = stringValue;
     }
 
-    public static UnitPrice7 Decimal(decimal value) => new(Optional<decimal>.Some(value), default);
+    public static UnitPrice7 Double(double value) => new(Optional<double>.Some(value), default);
 
     public static UnitPrice7 String(string value) => new(default, Optional<string>.Some(value));
 
-    public bool TryGetDecimal(out decimal value) => _decimalValue.TryGetValue(out value);
+    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public static implicit operator UnitPrice7(decimal value) => Decimal(value);
+    public static implicit operator UnitPrice7(double value) => Double(value);
 
     public static implicit operator UnitPrice7(string value) => String(value);
 }
@@ -41,22 +41,22 @@ file sealed class UnitPrice7Converter : JsonConverter<UnitPrice7>
     {
         using var doc = JsonDocument.ParseValue(ref reader);
         var root = doc.RootElement;
-        if (JsonSerializer.TryDeserialize<decimal>(root, options, out var decimalValue))
+        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
         {
-            return UnitPrice7.Decimal(decimalValue);
+            return UnitPrice7.Double(doubleValue);
         }
         if (JsonSerializer.TryDeserialize<string>(root, options, out var stringValue))
         {
             return UnitPrice7.String(stringValue);
         }
-        throw new JsonException($"JSON does not match decimal or string schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match double or string schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, UnitPrice7 value, JsonSerializerOptions options)
     {
-        if (value.TryGetDecimal(out var decimalValue))
+        if (value.TryGetDouble(out var doubleValue))
         {
-            JsonSerializer.Serialize(writer, decimalValue, options);
+            JsonSerializer.Serialize(writer, doubleValue, options);
         }
         else if (value.TryGetString(out var stringValue))
         {

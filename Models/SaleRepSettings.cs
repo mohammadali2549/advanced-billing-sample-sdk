@@ -10,7 +10,7 @@ public record SaleRepSettings
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_id")]
-    public double? SubscriptionId { get; init; }
+    public int? SubscriptionId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("site_link")]
@@ -26,7 +26,7 @@ public record SaleRepSettings
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("sales_rep_id")]
-    public double? SalesRepId { get; init; }
+    public int? SalesRepId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("sales_rep_name")]

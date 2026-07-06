@@ -39,7 +39,7 @@ public record ChargifyEbb
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_id")]
-    public double? SubscriptionId { get; init; }
+    public int? SubscriptionId { get; init; }
 
     /// <summary>
     /// Reference of Maxio Advanced Billing Subscription which is connected to this event.

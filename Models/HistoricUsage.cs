@@ -13,7 +13,7 @@ public record HistoricUsage
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_usage_quantity")]
-    public decimal? TotalUsageQuantity { get; init; }
+    public double? TotalUsageQuantity { get; init; }
 
     /// <summary>
     /// Start date of billing period

@@ -76,7 +76,7 @@ public sealed class ProformaInvoices
     /// Proforma invoices are only available on Relationship Invoicing sites. To create a proforma invoice, the subscription must not be in a group, must not be prepaid, and must be in a live state.
     /// </para>
     /// </remarks>
-    public Task<ProformaInvoice> CreateProformaInvoice(double subscriptionId, CancellationToken ct = default) =>
+    public Task<ProformaInvoice> CreateProformaInvoice(int subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/proforma_invoices.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
             [],
@@ -170,13 +170,13 @@ public sealed class ProformaInvoices
     /// <remarks>
     /// Lists proforma invoices for a subscription. By default, results only include totals, not detailed breakdowns for <c>line_items</c>, <c>discounts</c>, <c>taxes</c>, <c>credits</c>, <c>payments</c>, or <c>custom_fields</c>. To include breakdowns, pass the specific field as a key in the query with a value set to <c>true</c>.
     /// </remarks>
-    public Task<ListProformaInvoicesResponse> ListProformaInvoices(double subscriptionId,
+    public Task<ListProformaInvoicesResponse> ListProformaInvoices(int subscriptionId,
         string? startDate,
         string? endDate,
         ProformaInvoiceStatus? status,
         Direction? direction,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         bool? lineItems = false,
         bool? discounts = false,
         bool? taxes = false,
@@ -268,7 +268,7 @@ public sealed class ProformaInvoices
     /// Alternatively, if you have some proforma invoices already, you may make a preview call to determine whether any billing information for the subscription's upcoming renewal has changed.
     /// </para>
     /// </remarks>
-    public Task<ProformaInvoice> PreviewProformaInvoice(double subscriptionId, CancellationToken ct = default) =>
+    public Task<ProformaInvoice> PreviewProformaInvoice(int subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/proforma_invoices/preview.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
             [],

@@ -48,7 +48,7 @@ public sealed class CustomFields
     /// </para>
     /// </remarks>
     public Task<IReadOnlyList<Metadata>> CreateMetadata(ResourceType resourceType,
-        double resourceId,
+        int resourceId,
         CreateMetadataRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/{resource_type}/{resource_id}/metadata.json"),
@@ -120,7 +120,7 @@ public sealed class CustomFields
     /// Deletes one or more metafields (and associated metadata) from the specified subscription or customer.
     /// </remarks>
     public Task DeleteMetadata(ResourceType resourceType,
-        double resourceId,
+        int resourceId,
         string? name,
         IReadOnlyList<string>? names,
         CancellationToken ct = default) =>
@@ -172,9 +172,9 @@ public sealed class CustomFields
     /// Lists metadata and metafields for a specific customer or subscription.
     /// </remarks>
     public Task<PaginatedMetadata> ListMetadata(ResourceType resourceType,
-        double resourceId,
-        double? page = 1d,
-        double? perPage = 20d,
+        int resourceId,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/{resource_type}/{resource_id}/metadata.json"),
             [new TemplateParam("resource_type", resourceType), new TemplateParam("resource_id", resourceId)],
@@ -214,10 +214,10 @@ public sealed class CustomFields
         DateTimeOffset? startDatetime,
         DateTimeOffset? endDatetime,
         bool? withDeleted,
-        IReadOnlyList<double>? resourceIds,
+        IReadOnlyList<int>? resourceIds,
         SortingDirection? direction,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/{resource_type}/metadata.json"),
             [new TemplateParam("resource_type", resourceType)],
@@ -256,8 +256,8 @@ public sealed class CustomFields
     public Task<ListMetafieldsResponse> ListMetafields(ResourceType resourceType,
         string? name,
         SortingDirection? direction,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/{resource_type}/metafields.json"),
             [new TemplateParam("resource_type", resourceType)],
@@ -292,7 +292,7 @@ public sealed class CustomFields
     /// </para>
     /// </remarks>
     public Task<IReadOnlyList<Metadata>> UpdateMetadata(ResourceType resourceType,
-        double resourceId,
+        int resourceId,
         UpdateMetadataRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/{resource_type}/{resource_id}/metadata.json"),

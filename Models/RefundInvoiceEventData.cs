@@ -54,7 +54,7 @@ public record RefundInvoiceEventData
     /// The ID of the payment transaction to be refunded.
     /// </summary>
     [JsonPropertyName("payment_id")]
-    public required double PaymentId { get; init; }
+    public required int PaymentId { get; init; }
 
     /// <summary>
     /// The amount of the refund.
@@ -66,7 +66,7 @@ public record RefundInvoiceEventData
     /// The ID of the refund transaction.
     /// </summary>
     [JsonPropertyName("refund_id")]
-    public required double RefundId { get; init; }
+    public required int RefundId { get; init; }
 
     /// <summary>
     /// The time the refund was applied, in ISO 8601 format, i.e. "2019-06-07T17:20:06Z"

@@ -9,7 +9,7 @@ public record DunnerData
     public required string State { get; init; }
 
     [JsonPropertyName("subscription_id")]
-    public required double SubscriptionId { get; init; }
+    public required int SubscriptionId { get; init; }
 
     [JsonPropertyName("revenue_at_risk_in_cents")]
     public required long RevenueAtRiskInCents { get; init; }
@@ -18,7 +18,7 @@ public record DunnerData
     public required DateTimeOffset CreatedAt { get; init; }
 
     [JsonPropertyName("attempts")]
-    public required double Attempts { get; init; }
+    public required int Attempts { get; init; }
 
     [JsonPropertyName("last_attempted_at")]
     public required DateTimeOffset LastAttemptedAt { get; init; }

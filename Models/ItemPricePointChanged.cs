@@ -5,7 +5,7 @@ namespace MaxioAdvancedBilling.Models;
 public record ItemPricePointChanged
 {
     [JsonPropertyName("item_id")]
-    public required double ItemId { get; init; }
+    public required int ItemId { get; init; }
 
     [JsonPropertyName("item_type")]
     public required string ItemType { get; init; }

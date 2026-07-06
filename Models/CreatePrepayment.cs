@@ -6,7 +6,7 @@ namespace MaxioAdvancedBilling.Models;
 public record CreatePrepayment
 {
     [JsonPropertyName("amount")]
-    public required decimal Amount { get; init; }
+    public required double Amount { get; init; }
 
     [JsonPropertyName("details")]
     public required string Details { get; init; }
@@ -22,5 +22,5 @@ public record CreatePrepayment
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_profile_id")]
-    public double? PaymentProfileId { get; init; }
+    public int? PaymentProfileId { get; init; }
 }

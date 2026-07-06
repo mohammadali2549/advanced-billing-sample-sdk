@@ -4,7 +4,7 @@ using MaxioAdvancedBilling.Core.Enum;
 namespace MaxioAdvancedBilling.Core.Authentication.OAuth2.AuthorizationCode;
 
 [JsonConverter(typeof(StringEnumConverter<PkceMethod>))]
-public record PkceMethod : StringEnum<PkceMethod>
+public sealed record PkceMethod : StringEnum<PkceMethod>
 {
     public static readonly PkceMethod S256 = new("S256");
     public static readonly PkceMethod Plain = new("plain");

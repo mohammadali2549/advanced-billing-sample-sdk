@@ -11,25 +11,25 @@ public record PricePoint2
 {
     private readonly Optional<string> _stringValue;
 
-    private readonly Optional<double> _doubleValue;
+    private readonly Optional<int> _intValue;
 
-    private PricePoint2(Optional<string> stringValue, Optional<double> doubleValue)
+    private PricePoint2(Optional<string> stringValue, Optional<int> intValue)
     {
         _stringValue = stringValue;
-        _doubleValue = doubleValue;
+        _intValue = intValue;
     }
 
     public static PricePoint2 String(string value) => new(Optional<string>.Some(value), default);
 
-    public static PricePoint2 Double(double value) => new(default, Optional<double>.Some(value));
+    public static PricePoint2 Int(int value) => new(default, Optional<int>.Some(value));
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
+    public bool TryGetInt(out int value) => _intValue.TryGetValue(out value);
 
     public static implicit operator PricePoint2(string value) => String(value);
 
-    public static implicit operator PricePoint2(double value) => Double(value);
+    public static implicit operator PricePoint2(int value) => Int(value);
 }
 
 file sealed class PricePoint2Converter : JsonConverter<PricePoint2>
@@ -42,11 +42,11 @@ file sealed class PricePoint2Converter : JsonConverter<PricePoint2>
         {
             return PricePoint2.String(stringValue);
         }
-        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
+        if (JsonSerializer.TryDeserialize<int>(root, options, out var intValue))
         {
-            return PricePoint2.Double(doubleValue);
+            return PricePoint2.Int(intValue);
         }
-        throw new JsonException($"JSON does not match string or double schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match string or int schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, PricePoint2 value, JsonSerializerOptions options)
@@ -55,9 +55,9 @@ file sealed class PricePoint2Converter : JsonConverter<PricePoint2>
         {
             JsonSerializer.Serialize(writer, stringValue, options);
         }
-        else if (value.TryGetDouble(out var doubleValue))
+        else if (value.TryGetInt(out var intValue))
         {
-            JsonSerializer.Serialize(writer, doubleValue, options);
+            JsonSerializer.Serialize(writer, intValue, options);
         }
         else
         {

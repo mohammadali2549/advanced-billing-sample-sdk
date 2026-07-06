@@ -21,7 +21,7 @@ public record CreateSubscriptionComponent
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("unit_balance")]
-    public double? UnitBalance { get; init; }
+    public int? UnitBalance { get; init; }
 
     /// <summary>
     /// Used for quantity based components.
@@ -35,7 +35,7 @@ public record CreateSubscriptionComponent
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("quantity")]
-    public double? Quantity { get; init; }
+    public int? Quantity { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_id")]

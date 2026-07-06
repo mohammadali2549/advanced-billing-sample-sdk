@@ -123,7 +123,7 @@ public sealed class ComponentPricePoints
     /// <remarks>
     /// Creates a price point for an existing component.
     /// </remarks>
-    public Task<ComponentPricePointResponse> CreateComponentPricePoint(double componentId,
+    public Task<ComponentPricePointResponse> CreateComponentPricePoint(int componentId,
         CreateComponentPricePointRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components/{component_id}/price_points.json"),
@@ -154,7 +154,7 @@ public sealed class ComponentPricePoints
     /// Note: Currency Prices are not able to be created for custom price points.
     /// </para>
     /// </remarks>
-    public Task<ComponentCurrencyPricesResponse> CreateCurrencyPrices(double pricePointId,
+    public Task<ComponentCurrencyPricesResponse> CreateCurrencyPrices(int pricePointId,
         CreateCurrencyPricesRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/price_points/{price_point_id}/currency_prices.json"),
@@ -185,8 +185,8 @@ public sealed class ComponentPricePoints
     public Task<ListComponentsPricePointsResponse> ListAllComponentPricePoints(ListComponentsPricePointsInclude? include,
         SortingDirection? direction,
         ListPricePointsFilter? filter,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components_price_points.json"),
             [],
@@ -226,11 +226,11 @@ public sealed class ComponentPricePoints
     /// If the price point is set to <c>use_site_exchange_rate: true</c>, it will return pricing based on the current exchange rate. If the flag is set to false, it will return all of the defined prices for each currency.
     /// </para>
     /// </remarks>
-    public Task<ComponentPricePointsResponse> ListComponentPricePoints(double componentId,
+    public Task<ComponentPricePointsResponse> ListComponentPricePoints(int componentId,
         bool? currencyPrices,
         IReadOnlyList<PricePointType>? filterType,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components/{component_id}/price_points.json"),
             [new TemplateParam("component_id", componentId)],
@@ -263,8 +263,8 @@ public sealed class ComponentPricePoints
     /// Note: Custom price points are not able to be set as the default for a component.
     /// </para>
     /// </remarks>
-    public Task<ComponentResponse> PromoteComponentPricePointToDefault(double componentId,
-        double pricePointId,
+    public Task<ComponentResponse> PromoteComponentPricePointToDefault(int componentId,
+        int pricePointId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components/{component_id}/price_points/{price_point_id}/default.json"),
             [new TemplateParam("component_id", componentId), new TemplateParam("price_point_id", pricePointId)],
@@ -315,8 +315,8 @@ public sealed class ComponentPricePoints
     /// <remarks>
     /// Unarchives a component price point.
     /// </remarks>
-    public Task<ComponentPricePointResponse> UnarchiveComponentPricePoint(double componentId,
-        double pricePointId,
+    public Task<ComponentPricePointResponse> UnarchiveComponentPricePoint(int componentId,
+        int pricePointId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components/{component_id}/price_points/{price_point_id}/unarchive.json"),
             [new TemplateParam("component_id", componentId), new TemplateParam("price_point_id", pricePointId)],
@@ -379,7 +379,7 @@ public sealed class ComponentPricePoints
     /// Note: Currency Prices are not able to be updated for custom price points.
     /// </para>
     /// </remarks>
-    public Task<ComponentCurrencyPricesResponse> UpdateCurrencyPrices(double pricePointId,
+    public Task<ComponentCurrencyPricesResponse> UpdateCurrencyPrices(int pricePointId,
         UpdateCurrencyPricesRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/price_points/{price_point_id}/currency_prices.json"),

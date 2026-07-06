@@ -8,27 +8,27 @@ public record Offer
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("site_id")]
-    public double? SiteId { get; init; }
+    public int? SiteId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_family_id")]
-    public double? ProductFamilyId { get; init; }
+    public int? ProductFamilyId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_revisable_number")]
-    public double? ProductRevisableNumber { get; init; }
+    public int? ProductRevisableNumber { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("name")]

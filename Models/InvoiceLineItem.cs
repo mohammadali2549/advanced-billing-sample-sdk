@@ -132,7 +132,7 @@ public record InvoiceLineItem
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("transaction_id")]
-    public double? TransactionId { get; init; }
+    public int? TransactionId { get; init; }
 
     /// <summary>
     /// The ID of the product subscribed when the charge was made.
@@ -142,32 +142,32 @@ public record InvoiceLineItem
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     /// <summary>
     /// The version of the product subscribed when the charge was made.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_version")]
-    public double? ProductVersion { get; init; }
+    public int? ProductVersion { get; init; }
 
     /// <summary>
     /// The ID of the component being billed. Will be <c>nil</c> for non-component charges.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_id")]
-    public double? ComponentId { get; init; }
+    public int? ComponentId { get; init; }
 
     /// <summary>
     /// The price point ID of the component being billed. Will be <c>nil</c> for non-component charges.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_id")]
-    public double? PricePointId { get; init; }
+    public int? PricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("billing_schedule_item_id")]
-    public double? BillingScheduleItemId { get; init; }
+    public int? BillingScheduleItemId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("hide")]
@@ -182,7 +182,7 @@ public record InvoiceLineItem
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("custom_item")]

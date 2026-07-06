@@ -60,7 +60,7 @@ public record ScheduledRenewalProductPricePoint
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_interval")]
-    public double? ExpirationInterval { get; init; }
+    public int? ExpirationInterval { get; init; }
 
     /// <summary>
     /// A string representing the expiration interval unit for this product price point, either month, day or never

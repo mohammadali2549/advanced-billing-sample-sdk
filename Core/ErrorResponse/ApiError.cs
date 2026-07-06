@@ -38,6 +38,10 @@ public abstract class ApiError
         HttpResponseMessage response, CancellationToken cancellationToken) =>
         new(RawErrorBodyResponse.Instance, response, cancellationToken);
 
+    protected static Parse<ErrorByteContent> FromBytes(
+        HttpResponseMessage response, CancellationToken cancellationToken) =>
+        new(ErrorByteResponse.Instance, response, cancellationToken);
+
     protected readonly struct Parse<TBody>
     {
         private readonly IResponse<TBody> _parser;

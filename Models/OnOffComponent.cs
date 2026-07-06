@@ -82,14 +82,14 @@ public record OnOffComponent
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("public_signup_page_ids")]
-    public IReadOnlyList<double>? PublicSignupPageIds { get; init; }
+    public IReadOnlyList<int>? PublicSignupPageIds { get; init; }
 
     /// <summary>
     /// The numerical interval. i.e. an interval of ‘30’ coupled with an interval_unit of day would mean this component's default price point would renew every 30 days. This property is only available for sites with Multifrequency enabled.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this component's default price point, either month or day. This property is only available for sites with Multifrequency enabled.

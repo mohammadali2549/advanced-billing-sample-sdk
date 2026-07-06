@@ -31,7 +31,7 @@ public record ScheduledRenewalConfigurationRequestBody
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("contract_id")]
-    public double? ContractId { get; init; }
+    public int? ContractId { get; init; }
 
     /// <summary>
     /// (Optional) Set to true to create a new contract when contracts are enabled. Contracts must be enabled for your site.

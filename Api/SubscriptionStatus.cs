@@ -38,7 +38,7 @@ public sealed class SubscriptionStatus
     /// This endpoint is idempotent. If the subscription was not set to cancel in the future, removing the delayed cancellation has no effect and the call will be successful.
     /// </para>
     /// </remarks>
-    public Task<DelayedCancellationResponse> CancelDelayedCancellation(double subscriptionId,
+    public Task<DelayedCancellationResponse> CancelDelayedCancellation(int subscriptionId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/delayed_cancel.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
@@ -61,7 +61,7 @@ public sealed class SubscriptionStatus
     /// <remarks>
     /// Cancels the active dunning process for a subscription and sets it to active.
     /// </remarks>
-    public Task<SubscriptionResponse> CancelDunning(double subscriptionId, CancellationToken ct = default) =>
+    public Task<SubscriptionResponse> CancelDunning(int subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/cancel_dunning.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
             [],
@@ -85,7 +85,7 @@ public sealed class SubscriptionStatus
     /// Cancels the Subscription. The Delete method sets the Subscription state to <c>canceled</c>.
     /// To cancel the subscription immediately, omit any schedule parameters from the request. To use the schedule options, the Schedule Subscription Cancellation feature must be enabled on your site.
     /// </remarks>
-    public Task<SubscriptionResponse> CancelSubscription(double subscriptionId,
+    public Task<SubscriptionResponse> CancelSubscription(int subscriptionId,
         CancellationRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}.json"),
@@ -110,7 +110,7 @@ public sealed class SubscriptionStatus
     /// <remarks>
     /// Cancels a subscription at the end of the current billing period based on the subscription's current product. You cannot set <c>cancel_at_end_of_period</c> at subscription creation, or if the subscription is past due.
     /// </remarks>
-    public Task<DelayedCancellationResponse> InitiateDelayedCancellation(double subscriptionId,
+    public Task<DelayedCancellationResponse> InitiateDelayedCancellation(int subscriptionId,
         CancellationRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/delayed_cancel.json"),
@@ -141,7 +141,7 @@ public sealed class SubscriptionStatus
     /// You may not place a subscription on hold if the <c>next_billing_at</c> date is within 24 hours.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> PauseSubscription(double subscriptionId,
+    public Task<SubscriptionResponse> PauseSubscription(int subscriptionId,
         PauseRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/hold.json"),
@@ -196,7 +196,7 @@ public sealed class SubscriptionStatus
     /// You can request a <c>POST</c> to obtain this data from the endpoint without any side effects. This method allows you to preview data, but does not log any changes against a subscription.
     /// </para>
     /// </remarks>
-    public Task<RenewalPreviewResponse> PreviewRenewal(double subscriptionId,
+    public Task<RenewalPreviewResponse> PreviewRenewal(int subscriptionId,
         RenewalPreviewRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/renewals/preview.json"),
@@ -440,7 +440,7 @@ public sealed class SubscriptionStatus
     /// See the <see href="https://docs.maxio.com/hc/en-us/articles/44277749524365-3D-Secure-Post-Authentication-Flow">3D Secure Post-Authentication Flow</see> article in the product documentation to learn how to manage the redirect flow.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> ReactivateSubscription(double subscriptionId,
+    public Task<SubscriptionResponse> ReactivateSubscription(int subscriptionId,
         ReactivateSubscriptionRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/reactivate.json"),
@@ -465,7 +465,7 @@ public sealed class SubscriptionStatus
     /// <remarks>
     /// Resumes a paused (on-hold) subscription. If the normal next renewal date has not passed, the subscription will return to active and will renew on that date.  Otherwise, it will behave like a reactivation, setting the billing date to 'now' and charging the subscriber.
     /// </remarks>
-    public Task<SubscriptionResponse> ResumeSubscription(double subscriptionId,
+    public Task<SubscriptionResponse> ResumeSubscription(int subscriptionId,
         ResumptionCharge? calendarBillingResumptionCharge,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/resume.json"),
@@ -498,7 +498,7 @@ public sealed class SubscriptionStatus
     /// See the <see href="https://docs.maxio.com/hc/en-us/articles/44277749524365-3D-Secure-Post-Authentication-Flow">3D Secure Post-Authentication Flow</see> article in the product documentation to learn how to manage the redirect flow.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> RetrySubscription(double subscriptionId, CancellationToken ct = default) =>
+    public Task<SubscriptionResponse> RetrySubscription(int subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/retry.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
             [],
@@ -530,7 +530,7 @@ public sealed class SubscriptionStatus
     /// Alternatively, you can change the <c>automatically_resume_at</c> to <c>null</c> if you would like the subscription to not have a resume date.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> UpdateAutomaticSubscriptionResumption(double subscriptionId,
+    public Task<SubscriptionResponse> UpdateAutomaticSubscriptionResumption(int subscriptionId,
         PauseRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/hold.json"),

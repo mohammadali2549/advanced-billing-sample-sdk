@@ -70,10 +70,10 @@ public sealed class Insights
     /// * Prepaid Usage Components
     /// </para>
     /// </remarks>
-    public Task<ListMrrResponse> ListMrrMovements(double? subscriptionId,
+    public Task<ListMrrResponse> ListMrrMovements(int? subscriptionId,
         SortingDirection? direction,
-        double? page = 1d,
-        double? perPage = 10d,
+        int? page = 1,
+        int? perPage = 10,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/mrr_movements.json"),
             [],
@@ -106,8 +106,8 @@ public sealed class Insights
     public Task<SubscriptionMrrResponse> ListMrrPerSubscription(ListMrrFilter? filter,
         string? atTime,
         Direction? direction,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions_mrr.json"),
             [],
@@ -135,7 +135,7 @@ public sealed class Insights
     /// <remarks>
     /// Returns your site's current MRR, including plan and usage breakouts.
     /// </remarks>
-    public Task<MrrResponse> ReadMrr(DateTimeOffset? atTime, double? subscriptionId, CancellationToken ct = default) =>
+    public Task<MrrResponse> ReadMrr(DateTimeOffset? atTime, int? subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/mrr.json"),
             [],
             [new Param("at_time", atTime?.ToIso8601()), new Param("subscription_id", subscriptionId)],

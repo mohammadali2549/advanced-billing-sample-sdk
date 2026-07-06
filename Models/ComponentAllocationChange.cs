@@ -6,13 +6,13 @@ namespace MaxioAdvancedBilling.Models;
 public record ComponentAllocationChange
 {
     [JsonPropertyName("previous_allocation")]
-    public required double PreviousAllocation { get; init; }
+    public required int PreviousAllocation { get; init; }
 
     [JsonPropertyName("new_allocation")]
-    public required double NewAllocation { get; init; }
+    public required int NewAllocation { get; init; }
 
     [JsonPropertyName("component_id")]
-    public required double ComponentId { get; init; }
+    public required int ComponentId { get; init; }
 
     [JsonPropertyName("component_handle")]
     public required string ComponentHandle { get; init; }
@@ -21,7 +21,7 @@ public record ComponentAllocationChange
     public required string Memo { get; init; }
 
     [JsonPropertyName("allocation_id")]
-    public required double AllocationId { get; init; }
+    public required int AllocationId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("allocated_quantity")]

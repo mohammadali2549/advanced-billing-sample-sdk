@@ -61,8 +61,8 @@ public sealed class Sites
     /// <remarks>
     /// Returns public keys used for Maxio.js (formerly Chargify.js).
     /// </remarks>
-    public Task<ListPublicKeysResponse> ListChargifyJsPublicKeys(double? page = 1d,
-        double? perPage = 20d,
+    public Task<ListPublicKeysResponse> ListChargifyJsPublicKeys(int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/chargify_js_keys.json"),
             [],

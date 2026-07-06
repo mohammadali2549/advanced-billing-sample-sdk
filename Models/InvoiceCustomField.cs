@@ -7,7 +7,7 @@ public record InvoiceCustomField
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("owner_id")]
-    public double? OwnerId { get; init; }
+    public int? OwnerId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("owner_type")]
@@ -23,5 +23,5 @@ public record InvoiceCustomField
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("metadatum_id")]
-    public double? MetadatumId { get; init; }
+    public int? MetadatumId { get; init; }
 }

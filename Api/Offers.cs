@@ -35,7 +35,7 @@ public sealed class Offers
     /// <remarks>
     /// Archives an existing offer. Please provide an <c>offer_id</c> in order to archive the correct item.
     /// </remarks>
-    public Task ArchiveOffer(double offerId, CancellationToken ct = default) =>
+    public Task ArchiveOffer(int offerId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/offers/{offer_id}/archive.json"),
             [new TemplateParam("offer_id", offerId)],
             [],
@@ -100,8 +100,8 @@ public sealed class Offers
     /// Lists offers for a site.
     /// </remarks>
     public Task<ListOffersResponse> ListOffers(bool? includeArchived,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/offers.json"),
             [],
@@ -126,7 +126,7 @@ public sealed class Offers
     /// <remarks>
     /// Returns a specific offer's attributes. This is different from listing all offers for a site, as it requires an <c>offer_id</c>.
     /// </remarks>
-    public Task<OfferResponse> ReadOffer(double offerId, CancellationToken ct = default) =>
+    public Task<OfferResponse> ReadOffer(int offerId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/offers/{offer_id}.json"),
             [new TemplateParam("offer_id", offerId)],
             [],
@@ -148,7 +148,7 @@ public sealed class Offers
     /// <remarks>
     /// Unarchives a previously archived offer. Please provide an <c>offer_id</c> in order to unarchive the correct item.
     /// </remarks>
-    public Task UnarchiveOffer(double offerId, CancellationToken ct = default) =>
+    public Task UnarchiveOffer(int offerId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/offers/{offer_id}/unarchive.json"),
             [new TemplateParam("offer_id", offerId)],
             [],

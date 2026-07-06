@@ -54,7 +54,7 @@ public record ListPricePointsFilter
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("ids")]
-    public IReadOnlyList<double>? Ids { get; init; }
+    public IReadOnlyList<int>? Ids { get; init; }
 
     /// <summary>
     /// Allows fetching price points only if archived_at is present or not. Use in query: <c>filter[archived_at]=not_null</c>.

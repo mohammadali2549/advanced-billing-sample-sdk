@@ -77,7 +77,7 @@ public record UpdateCustomer
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("parent_id")]
-    public double? ParentId { get; init; }
+    public int? ParentId { get; init; }
 
     /// <summary>
     /// Is the customer verified to use ACH as a payment method. Available only on Authorize.Net gateway

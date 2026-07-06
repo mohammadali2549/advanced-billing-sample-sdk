@@ -8,13 +8,13 @@ public record MeteredUsage
     public required string PreviousUnitBalance { get; init; }
 
     [JsonPropertyName("new_unit_balance")]
-    public required double NewUnitBalance { get; init; }
+    public required int NewUnitBalance { get; init; }
 
     [JsonPropertyName("usage_quantity")]
-    public required double UsageQuantity { get; init; }
+    public required int UsageQuantity { get; init; }
 
     [JsonPropertyName("component_id")]
-    public required double ComponentId { get; init; }
+    public required int ComponentId { get; init; }
 
     [JsonPropertyName("component_handle")]
     public required string ComponentHandle { get; init; }

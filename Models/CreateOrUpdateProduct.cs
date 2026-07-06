@@ -48,7 +48,7 @@ public record CreateOrUpdateProduct
     /// The numerical interval. i.e. an interval of ‘30’ coupled with an interval_unit of day would mean this product would renew every 30 days
     /// </summary>
     [JsonPropertyName("interval")]
-    public required double Interval { get; init; }
+    public required int Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this product, either month or day
@@ -68,7 +68,7 @@ public record CreateOrUpdateProduct
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("trial_interval")]
-    public double? TrialInterval { get; init; }
+    public int? TrialInterval { get; init; }
 
     /// <summary>
     /// A string representing the trial interval unit for this product, either month or day
@@ -89,7 +89,7 @@ public record CreateOrUpdateProduct
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_interval")]
-    public double? ExpirationInterval { get; init; }
+    public int? ExpirationInterval { get; init; }
 
     /// <summary>
     /// A string representing the expiration interval unit for this product, either month, day or never

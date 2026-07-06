@@ -6,11 +6,11 @@ public record InvoiceRefund
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("transaction_id")]
-    public double? TransactionId { get; init; }
+    public int? TransactionId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_id")]
-    public double? PaymentId { get; init; }
+    public int? PaymentId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("memo")]

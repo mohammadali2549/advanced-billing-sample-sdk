@@ -9,7 +9,7 @@ public record PublicSignupPage
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// The url to which a customer will be returned after a successful signup (public_signup_pages only)

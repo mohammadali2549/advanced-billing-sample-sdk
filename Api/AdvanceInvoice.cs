@@ -38,7 +38,7 @@ public sealed class AdvanceInvoice
     /// That said, regeneration of the invoice may be forced with the params <c>force: true</c>, which will void an advance invoice if one exists and generate a new one. If no advance invoice exists, a new one will be generated.
     /// We recommend using either the create or preview endpoints for proforma invoices to preview this advance invoice before using this endpoint to generate it.
     /// </remarks>
-    public Task<Invoice> IssueAdvanceInvoice(double subscriptionId,
+    public Task<Invoice> IssueAdvanceInvoice(int subscriptionId,
         IssueAdvanceInvoiceRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/advance_invoice/issue.json"),
@@ -62,7 +62,7 @@ public sealed class AdvanceInvoice
     /// <remarks>
     /// Returns the advance invoice generated for a subscription's upcoming renewal. There can only be one advance invoice per subscription per billing cycle.
     /// </remarks>
-    public Task<Invoice> ReadAdvanceInvoice(double subscriptionId, CancellationToken ct = default) =>
+    public Task<Invoice> ReadAdvanceInvoice(int subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/advance_invoice.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
             [],
@@ -86,7 +86,7 @@ public sealed class AdvanceInvoice
     /// Void a subscription's existing advance invoice. Once voided, it can later be regenerated if desired.
     /// A <c>reason</c> is required in order to void, and the invoice must have an open status. Voiding will cause any prepayments and credits that were applied to the invoice to be returned to the subscription. For a full overview of the impact of voiding, <see href="$m/Invoice">see our help docs</see>.
     /// </remarks>
-    public Task<Invoice> VoidAdvanceInvoice(double subscriptionId,
+    public Task<Invoice> VoidAdvanceInvoice(int subscriptionId,
         VoidInvoiceRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/advance_invoice/void.json"),

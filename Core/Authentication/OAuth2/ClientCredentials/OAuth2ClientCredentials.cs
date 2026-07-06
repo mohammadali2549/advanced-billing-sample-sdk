@@ -4,5 +4,5 @@ public sealed class OAuth2ClientCredentials
 {
     public required string ClientId { get; init; }
     public required string ClientSecret { get; init; }
-    public string? Scope { get; set; }
+    public string? Scope { get; init; }
 }

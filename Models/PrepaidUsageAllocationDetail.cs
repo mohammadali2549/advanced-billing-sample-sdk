@@ -6,13 +6,13 @@ public record PrepaidUsageAllocationDetail
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("allocation_id")]
-    public double? AllocationId { get; init; }
+    public int? AllocationId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("charge_id")]
-    public double? ChargeId { get; init; }
+    public int? ChargeId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("usage_quantity")]
-    public double? UsageQuantity { get; init; }
+    public int? UsageQuantity { get; init; }
 }

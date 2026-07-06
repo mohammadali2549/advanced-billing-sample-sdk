@@ -7,7 +7,7 @@ public record Site
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("name")]
@@ -23,7 +23,7 @@ public record Site
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("seller_id")]
-    public double? SellerId { get; init; }
+    public int? SellerId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("non_primary_currencies")]

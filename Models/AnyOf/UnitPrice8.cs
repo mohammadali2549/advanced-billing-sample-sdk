@@ -14,25 +14,25 @@ public record UnitPrice8
 {
     private readonly Optional<string> _stringValue;
 
-    private readonly Optional<decimal> _decimalValue;
+    private readonly Optional<double> _doubleValue;
 
-    private UnitPrice8(Optional<string> stringValue, Optional<decimal> decimalValue)
+    private UnitPrice8(Optional<string> stringValue, Optional<double> doubleValue)
     {
         _stringValue = stringValue;
-        _decimalValue = decimalValue;
+        _doubleValue = doubleValue;
     }
 
     public static UnitPrice8 String(string value) => new(Optional<string>.Some(value), default);
 
-    public static UnitPrice8 Decimal(decimal value) => new(default, Optional<decimal>.Some(value));
+    public static UnitPrice8 Double(double value) => new(default, Optional<double>.Some(value));
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public bool TryGetDecimal(out decimal value) => _decimalValue.TryGetValue(out value);
+    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
 
     public static implicit operator UnitPrice8(string value) => String(value);
 
-    public static implicit operator UnitPrice8(decimal value) => Decimal(value);
+    public static implicit operator UnitPrice8(double value) => Double(value);
 }
 
 file sealed class UnitPrice8Converter : JsonConverter<UnitPrice8>
@@ -45,11 +45,11 @@ file sealed class UnitPrice8Converter : JsonConverter<UnitPrice8>
         {
             return UnitPrice8.String(stringValue);
         }
-        if (JsonSerializer.TryDeserialize<decimal>(root, options, out var decimalValue))
+        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
         {
-            return UnitPrice8.Decimal(decimalValue);
+            return UnitPrice8.Double(doubleValue);
         }
-        throw new JsonException($"JSON does not match string or decimal schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match string or double schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, UnitPrice8 value, JsonSerializerOptions options)
@@ -58,9 +58,9 @@ file sealed class UnitPrice8Converter : JsonConverter<UnitPrice8>
         {
             JsonSerializer.Serialize(writer, stringValue, options);
         }
-        else if (value.TryGetDecimal(out var decimalValue))
+        else if (value.TryGetDouble(out var doubleValue))
         {
-            JsonSerializer.Serialize(writer, decimalValue, options);
+            JsonSerializer.Serialize(writer, doubleValue, options);
         }
         else
         {

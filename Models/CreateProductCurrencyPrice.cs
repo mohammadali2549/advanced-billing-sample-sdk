@@ -15,7 +15,7 @@ public record CreateProductCurrencyPrice
     /// Price for the given role.
     /// </summary>
     [JsonPropertyName("price")]
-    public required double Price { get; init; }
+    public required int Price { get; init; }
 
     /// <summary>
     /// Role for the price.

@@ -23,21 +23,21 @@ public record Invoice
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("site_id")]
-    public double? SiteId { get; init; }
+    public int? SiteId { get; init; }
 
     /// <summary>
     /// ID of the customer to which the invoice belongs.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_id")]
-    public double? CustomerId { get; init; }
+    public int? CustomerId { get; init; }
 
     /// <summary>
     /// ID of the subscription that generated the invoice.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_id")]
-    public double? SubscriptionId { get; init; }
+    public int? SubscriptionId { get; init; }
 
     /// <summary>
     /// A unique, identifying string that appears on the invoice and in places the invoice is referenced.
@@ -54,7 +54,7 @@ public record Invoice
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("sequence_number")]
-    public double? SequenceNumber { get; init; }
+    public int? SequenceNumber { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("transaction_time")]
@@ -114,7 +114,7 @@ public record Invoice
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("parent_invoice_id")]
-    public double? ParentInvoiceId { get; init; }
+    public int? ParentInvoiceId { get; init; }
 
     /// <summary>
     /// The type of payment collection to be used in the subscription. For legacy Statements Architecture valid options are - <c>invoice</c>, <c>automatic</c>. For current Relationship Invoicing Architecture valid options are - <c>remittance</c>, <c>automatic</c>, <c>prepaid</c>.
@@ -164,21 +164,21 @@ public record Invoice
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_group_id")]
-    public double? SubscriptionGroupId { get; init; }
+    public int? SubscriptionGroupId { get; init; }
 
     /// <summary>
     /// For invoices with <c>consolidation_level</c> of <c>child</c>, this specifies the number of the parent (consolidated) invoice.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("parent_invoice_number")]
-    public double? ParentInvoiceNumber { get; init; }
+    public int? ParentInvoiceNumber { get; init; }
 
     /// <summary>
     /// For invoices with <c>consolidation_level</c> of <c>parent</c>, this specifies the ID of the subscription which was the primary subscription of the subscription group that generated the invoice.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("group_primary_subscription_id")]
-    public double? GroupPrimarySubscriptionId { get; init; }
+    public int? GroupPrimarySubscriptionId { get; init; }
 
     /// <summary>
     /// The name of the product subscribed when the invoice was generated.
@@ -218,7 +218,7 @@ public record Invoice
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("net_terms")]
-    public double? NetTerms { get; init; }
+    public int? NetTerms { get; init; }
 
     /// <summary>
     /// The memo printed on invoices of any collection type.  This message is in control of the merchant.

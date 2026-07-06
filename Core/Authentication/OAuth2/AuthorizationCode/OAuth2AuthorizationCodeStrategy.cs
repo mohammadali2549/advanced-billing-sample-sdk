@@ -19,11 +19,24 @@ internal sealed class OAuth2AuthorizationCodeStrategy
     private readonly UrlTemplate _tokenUrl;
     private readonly RawClient _rawClient;
     private readonly UriFactory _uriFactory;
+    private readonly CredentialParamsFactory<HeaderParam> _headerParams;
+    private readonly CredentialParamsFactory<Param> _bodyParams;
 
-    public OAuth2AuthorizationCodeStrategy(
-        UrlTemplate authorizationUrl, UrlTemplate tokenUrl, RawClient rawClient, UriFactory uriFactory)
-        => (_authorizationUrl, _tokenUrl, _rawClient, _uriFactory) =
-            (authorizationUrl, tokenUrl, rawClient, uriFactory);
+    public static OAuth2AuthorizationCodeStrategy ForBasicAuthRequest(
+        UrlTemplate authorizationUrl, UrlTemplate tokenUrl, RawClient rawClient, UriFactory uriFactory) =>
+        new(authorizationUrl, tokenUrl, rawClient, uriFactory, HeaderParams, (_, _) => []);
+
+    public static OAuth2AuthorizationCodeStrategy ForFormBodyRequest(
+        UrlTemplate authorizationUrl, UrlTemplate tokenUrl, RawClient rawClient, UriFactory uriFactory) =>
+        new(authorizationUrl, tokenUrl, rawClient, uriFactory, (_, _) => [], BodyParams);
+
+    private OAuth2AuthorizationCodeStrategy(
+        UrlTemplate authorizationUrl, UrlTemplate tokenUrl, RawClient rawClient,
+        UriFactory uriFactory,
+        CredentialParamsFactory<HeaderParam> authHeaders,
+        CredentialParamsFactory<Param> authBodyParams)
+        => (_authorizationUrl, _tokenUrl, _rawClient, _uriFactory, _headerParams, _bodyParams) =
+            (authorizationUrl, tokenUrl, rawClient, uriFactory, authHeaders, authBodyParams);
 
     public async Task<OAuthTokenRefreshable> GetToken(
         OAuth2AuthorizationCodeCredentials credentials, CancellationToken ct)
@@ -43,8 +56,16 @@ internal sealed class OAuth2AuthorizationCodeStrategy
         var code = await credentials.PromptForAuthorizationCode(authUrl, ct).ConfigureAwait(false);
 
         return await _rawClient.Execute(
-            _tokenUrl, [], [], [], HttpMethod.Post,
-            FormUrlEncodedRequest.Create(BuildTokenParams(credentials, code, pkce?.Verifier)),
+            _tokenUrl, [], [],
+            _headerParams(credentials.ClientId, credentials.ClientSecret),
+            HttpMethod.Post,
+            FormUrlEncodedRequest.Create([
+                new Param("grant_type", "authorization_code"),
+                new Param("code", code),
+                new Param("redirect_uri", credentials.RedirectUri),
+                .. CodeVerifierParams(pkce),
+                .. _bodyParams(credentials.ClientId, credentials.ClientSecret),
+            ]),
             JsonResponse.Create<OAuthTokenRefreshable>(),
             RawErrorResponse.Instance, [], ct).ConfigureAwait(false);
     }
@@ -53,15 +74,42 @@ internal sealed class OAuth2AuthorizationCodeStrategy
         OAuth2AuthorizationCodeCredentials credentials, string refreshToken, CancellationToken ct)
     {
         var result = await _rawClient.ExecuteResult(
-            _tokenUrl, [], [], [], HttpMethod.Post,
-            FormUrlEncodedRequest.Create(BuildRefreshParams(credentials, refreshToken)),
+            _tokenUrl, [], [],
+            _headerParams(credentials.ClientId, credentials.ClientSecret),
+            HttpMethod.Post,
+            FormUrlEncodedRequest.Create([
+                new Param("grant_type", "refresh_token"),
+                new Param("refresh_token", refreshToken),
+                .. _bodyParams(credentials.ClientId, credentials.ClientSecret),
+            ]),
             JsonResponse.Create<OAuthTokenRefreshable>(),
             RawErrorResponse.Instance, [], ct).ConfigureAwait(false);
 
         return result.TryGetResponse(out var token) ? token : null;
     }
 
-    // --- Functional core: pure static methods ---
+    private static IReadOnlyList<Param> CodeVerifierParams(PkceValues? pkce) =>
+        pkce is null ? [] : [new Param("code_verifier", pkce.Verifier)];
+
+    private static IReadOnlyList<HeaderParam> HeaderParams(string clientId, string? clientSecret)
+    {
+        if (clientSecret is null)
+            throw new InvalidOperationException(
+                $"Basic auth requires a client secret. For public clients, enable PKCE by setting " +
+                $"{nameof(OAuth2AuthorizationCodeCredentials)}.{nameof(OAuth2AuthorizationCodeCredentials.Pkce)} " +
+                $"to {nameof(PkceMethod)}.{nameof(PkceMethod.S256)}.");
+        var credential = $"{clientId}:{clientSecret}";
+        var encoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(credential));
+        return [new HeaderParam("Authorization", $"Basic {encoded}")];
+    }
+
+    private static IReadOnlyList<Param> BodyParams(string clientId, string? clientSecret)
+    {
+        List<Param> parameters = [new("client_id", clientId)];
+        if (clientSecret != null)
+            parameters.Add(new Param("client_secret", clientSecret));
+        return parameters;
+    }
 
     private static IReadOnlyCollection<Param> BuildAuthorizationQueryParams(
         OAuth2AuthorizationCodeCredentials credentials, PkceValues? pkce)
@@ -82,37 +130,6 @@ internal sealed class OAuth2AuthorizationCodeStrategy
             queryParams.Add(new Param("code_challenge_method", pkce.Method.Value));
         }
         return queryParams;
-    }
-
-    private static IReadOnlyCollection<Param> BuildTokenParams(
-        OAuth2AuthorizationCodeCredentials credentials, string code, string? codeVerifier)
-    {
-        var formParams = new List<Param>
-        {
-            new("grant_type", "authorization_code"),
-            new("client_id", credentials.ClientId),
-            new("code", code),
-            new("redirect_uri", credentials.RedirectUri)
-        };
-        if (!string.IsNullOrEmpty(credentials.ClientSecret))
-            formParams.Add(new Param("client_secret", credentials.ClientSecret!));
-        if (codeVerifier is not null)
-            formParams.Add(new Param("code_verifier", codeVerifier));
-        return formParams;
-    }
-
-    private static IReadOnlyCollection<Param> BuildRefreshParams(
-        OAuth2AuthorizationCodeCredentials credentials, string refreshToken)
-    {
-        var formParams = new List<Param>
-        {
-            new("grant_type", "refresh_token"),
-            new("client_id", credentials.ClientId),
-            new("refresh_token", refreshToken)
-        };
-        if (!string.IsNullOrEmpty(credentials.ClientSecret))
-            formParams.Add(new Param("client_secret", credentials.ClientSecret!));
-        return formParams;
     }
 
     // --- PKCE generation ---

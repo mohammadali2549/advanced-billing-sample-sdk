@@ -114,7 +114,7 @@ public record PrepaidUsageComponent
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_interval")]
-    public decimal? ExpirationInterval { get; init; }
+    public double? ExpirationInterval { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_interval_unit")]
@@ -130,5 +130,5 @@ public record PrepaidUsageComponent
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("public_signup_page_ids")]
-    public IReadOnlyList<double>? PublicSignupPageIds { get; init; }
+    public IReadOnlyList<int>? PublicSignupPageIds { get; init; }
 }

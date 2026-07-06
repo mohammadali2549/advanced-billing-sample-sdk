@@ -37,7 +37,7 @@ public record RenewalPreviewLineItem
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_name")]
@@ -45,7 +45,7 @@ public record RenewalPreviewLineItem
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_id")]
-    public double? ComponentId { get; init; }
+    public int? ComponentId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_handle")]

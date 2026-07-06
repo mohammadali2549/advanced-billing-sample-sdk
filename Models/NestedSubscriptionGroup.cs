@@ -16,14 +16,14 @@ public record NestedSubscriptionGroup
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("scheme")]
-    public double? Scheme { get; init; }
+    public int? Scheme { get; init; }
 
     /// <summary>
     /// The subscription ID of the primary within the group. Applicable to scheme 1.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("primary_subscription_id")]
-    public double? PrimarySubscriptionId { get; init; }
+    public int? PrimarySubscriptionId { get; init; }
 
     /// <summary>
     /// A boolean indicating whether the subscription is the primary in the group. Applicable to scheme 1.

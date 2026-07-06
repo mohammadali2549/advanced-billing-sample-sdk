@@ -8,11 +8,11 @@ public record AllocationPreviewItem
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_id")]
-    public double? ComponentId { get; init; }
+    public int? ComponentId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_id")]
-    public double? SubscriptionId { get; init; }
+    public int? SubscriptionId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("quantity")]
@@ -58,14 +58,14 @@ public record AllocationPreviewItem
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_id")]
-    public double? PricePointId { get; init; }
+    public int? PricePointId { get; init; }
 
     /// <summary>
     /// The numerical interval. i.e. an interval of ‘30’ coupled with an interval_unit of day would mean this component price point would renew every 30 days. This property is only available for sites with Multifrequency enabled.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this component price point, either month or day. This property is only available for sites with Multifrequency enabled.
@@ -76,7 +76,7 @@ public record AllocationPreviewItem
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("previous_price_point_id")]
-    public double? PreviousPricePointId { get; init; }
+    public int? PreviousPricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_handle")]

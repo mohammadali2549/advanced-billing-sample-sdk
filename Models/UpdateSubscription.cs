@@ -23,7 +23,7 @@ public record UpdateSubscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_change_delayed")]
@@ -85,7 +85,7 @@ public record UpdateSubscription
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("stored_credential_transaction_id")]
-    public double? StoredCredentialTransactionId { get; init; }
+    public int? StoredCredentialTransactionId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("reference")]
@@ -124,7 +124,7 @@ public record UpdateSubscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     /// <summary>
     /// Set to change the current product's price point.

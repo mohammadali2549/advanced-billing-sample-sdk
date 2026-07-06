@@ -12,13 +12,13 @@ public record FailedPaymentEventData
     /// The monetary value of the payment, expressed in cents.
     /// </summary>
     [JsonPropertyName("amount_in_cents")]
-    public required double AmountInCents { get; init; }
+    public required int AmountInCents { get; init; }
 
     /// <summary>
     /// The monetary value of the payment, expressed in dollars.
     /// </summary>
     [JsonPropertyName("applied_amount")]
-    public required double AppliedAmount { get; init; }
+    public required int AppliedAmount { get; init; }
 
     /// <summary>
     /// The memo passed when the payment was created.
@@ -34,5 +34,5 @@ public record FailedPaymentEventData
     /// The transaction ID of the failed payment.
     /// </summary>
     [JsonPropertyName("transaction_id")]
-    public required double TransactionId { get; init; }
+    public required int TransactionId { get; init; }
 }

@@ -6,11 +6,11 @@ public record ComponentCostDataRateTier
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("starting_quantity")]
-    public double? StartingQuantity { get; init; }
+    public int? StartingQuantity { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("ending_quantity")]
-    public double? EndingQuantity { get; init; }
+    public int? EndingQuantity { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("quantity")]

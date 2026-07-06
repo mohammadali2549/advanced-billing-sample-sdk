@@ -9,7 +9,7 @@ public record Coupon
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("name")]
@@ -25,7 +25,7 @@ public record Coupon
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("amount")]
-    public decimal? Amount { get; init; }
+    public double? Amount { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("amount_in_cents")]
@@ -33,7 +33,7 @@ public record Coupon
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_family_id")]
-    public double? ProductFamilyId { get; init; }
+    public int? ProductFamilyId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_family_name")]
@@ -64,11 +64,11 @@ public record Coupon
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("duration_period_count")]
-    public double? DurationPeriodCount { get; init; }
+    public int? DurationPeriodCount { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("duration_interval")]
-    public double? DurationInterval { get; init; }
+    public int? DurationInterval { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("duration_interval_unit")]

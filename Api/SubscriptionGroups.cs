@@ -54,7 +54,7 @@ public sealed class SubscriptionGroups
     /// <see href="https://developers.chargify.com/docs/api-docs/d571659cf0f24-create-subscription#subscription-in-a-subscription-group">Create Subscription in a Subscription Group</see>
     /// </para>
     /// </remarks>
-    public Task<SubscriptionGroupResponse> AddSubscriptionToGroup(double subscriptionId,
+    public Task<SubscriptionGroupResponse> AddSubscriptionToGroup(int subscriptionId,
         AddSubscriptionToAGroup? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/group.json"),
@@ -159,8 +159,8 @@ public sealed class SubscriptionGroups
     /// </para>
     /// </remarks>
     public Task<ListSubscriptionGroupsResponse> ListSubscriptionGroups(IReadOnlyList<SubscriptionGroupsListInclude>? include,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscription_groups.json"),
             [],
@@ -214,7 +214,7 @@ public sealed class SubscriptionGroups
     /// <remarks>
     /// For sites making use of the <see href="https://maxio.zendesk.com/hc/en-us/articles/24252287829645-Advanced-Billing-Invoices-Overview">Relationship Billing</see> and <see href="https://maxio.zendesk.com/hc/en-us/articles/24252185211533-Customer-Hierarchies-WhoPays#customer-hierarchies">Customer Hierarchy</see> features, it is possible to remove an existing subscription from a subscription group.
     /// </remarks>
-    public Task RemoveSubscriptionFromGroup(double subscriptionId, CancellationToken ct = default) =>
+    public Task RemoveSubscriptionFromGroup(int subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/group.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
             [],

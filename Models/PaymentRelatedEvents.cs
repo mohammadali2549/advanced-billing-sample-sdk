@@ -5,8 +5,8 @@ namespace MaxioAdvancedBilling.Models;
 public record PaymentRelatedEvents
 {
     [JsonPropertyName("product_id")]
-    public required double ProductId { get; init; }
+    public required int ProductId { get; init; }
 
     [JsonPropertyName("account_transaction_id")]
-    public required double AccountTransactionId { get; init; }
+    public required int AccountTransactionId { get; init; }
 }

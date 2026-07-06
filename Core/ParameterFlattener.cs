@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.Json;
 using MaxioAdvancedBilling.Core.Extensions;
@@ -14,7 +16,7 @@ internal static class ParameterFlattener
         return Flatten(key, value, format)
             .Select(kv => new KeyValuePair<string, string>(kv.Key, kv.Value));
     }
-    
+
     public static IEnumerable<string> Flatten(object? value)
     {
         if (value == null) return [];
@@ -45,7 +47,7 @@ internal static class ParameterFlattener
             string str => [(key, str)],
             IEnumerable<object?> list => FlattenList(key, list, format),
             bool boolValue => [(key, boolValue.ToString().ToLowerInvariant())],
-            _ => [(key, normalized?.ToString() ?? string.Empty)]
+            _ => [(key, Convert.ToString(normalized, CultureInfo.InvariantCulture) ?? string.Empty)]
         };
     }
 
@@ -77,7 +79,7 @@ internal static class ParameterFlattener
                 SerializationFormat.Psv => Yield(key, list, "|"),
                 _ => list.SelectMany(item => Flatten(key, item, format))
             };
-    
+
     private static IEnumerable<string> FlattenList(IEnumerable<object?> list, object? original)
     {
         var items = list.ToList();
@@ -91,7 +93,7 @@ internal static class ParameterFlattener
     // ------------------------------------------------------
     private static bool IsScalar(object? v) => v is null or string or bool or long or double;
 
-    
+
     private static IEnumerable<(string, string)> Indexed(string key, IEnumerable<object?> list)
         =>
             list.SelectMany((item, index) =>

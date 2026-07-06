@@ -6,11 +6,11 @@ public record SiteStatistics
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_subscriptions")]
-    public double? TotalSubscriptions { get; init; }
+    public int? TotalSubscriptions { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscriptions_today")]
-    public double? SubscriptionsToday { get; init; }
+    public int? SubscriptionsToday { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_revenue")]
@@ -30,21 +30,21 @@ public record SiteStatistics
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_canceled_subscriptions")]
-    public double? TotalCanceledSubscriptions { get; init; }
+    public int? TotalCanceledSubscriptions { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_active_subscriptions")]
-    public double? TotalActiveSubscriptions { get; init; }
+    public int? TotalActiveSubscriptions { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_past_due_subscriptions")]
-    public double? TotalPastDueSubscriptions { get; init; }
+    public int? TotalPastDueSubscriptions { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_unpaid_subscriptions")]
-    public double? TotalUnpaidSubscriptions { get; init; }
+    public int? TotalUnpaidSubscriptions { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_dunning_subscriptions")]
-    public double? TotalDunningSubscriptions { get; init; }
+    public int? TotalDunningSubscriptions { get; init; }
 }

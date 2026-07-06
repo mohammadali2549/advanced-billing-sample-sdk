@@ -14,7 +14,7 @@ public record SiteSummary
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("site_id")]
-    public double? SiteId { get; init; }
+    public int? SiteId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("site_currency")]

@@ -9,7 +9,7 @@ public record InvoiceCustomer
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("chargify_id")]
-    public double? ChargifyId { get; init; }
+    public int? ChargifyId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("first_name")]

@@ -126,7 +126,7 @@ public record CustomerAttributes
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("parent_id")]
-    public double? ParentId { get; init; }
+    public int? ParentId { get; init; }
 
     /// <summary>
     /// (Optional) The Salesforce ID of the customer.
@@ -140,5 +140,5 @@ public record CustomerAttributes
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("default_auto_renewal_profile_id")]
-    public double? DefaultAutoRenewalProfileId { get; init; }
+    public int? DefaultAutoRenewalProfileId { get; init; }
 }

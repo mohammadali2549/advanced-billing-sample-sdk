@@ -9,7 +9,7 @@ public record CouponUsage
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// Name of the product
@@ -23,14 +23,14 @@ public record CouponUsage
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("signups")]
-    public double? Signups { get; init; }
+    public int? Signups { get; init; }
 
     /// <summary>
     /// Dollar amount of customer savings as a result of the coupon.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("savings")]
-    public double? Savings { get; init; }
+    public int? Savings { get; init; }
 
     /// <summary>
     /// Dollar amount of customer savings as a result of the coupon.
@@ -44,7 +44,7 @@ public record CouponUsage
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("revenue")]
-    public double? Revenue { get; init; }
+    public int? Revenue { get; init; }
 
     /// <summary>
     /// Total revenue of the all subscriptions that have received a discount from this coupon.

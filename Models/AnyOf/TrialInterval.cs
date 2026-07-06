@@ -14,25 +14,25 @@ public record TrialInterval
 {
     private readonly Optional<string> _stringValue;
 
-    private readonly Optional<double> _doubleValue;
+    private readonly Optional<int> _intValue;
 
-    private TrialInterval(Optional<string> stringValue, Optional<double> doubleValue)
+    private TrialInterval(Optional<string> stringValue, Optional<int> intValue)
     {
         _stringValue = stringValue;
-        _doubleValue = doubleValue;
+        _intValue = intValue;
     }
 
     public static TrialInterval String(string value) => new(Optional<string>.Some(value), default);
 
-    public static TrialInterval Double(double value) => new(default, Optional<double>.Some(value));
+    public static TrialInterval Int(int value) => new(default, Optional<int>.Some(value));
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
+    public bool TryGetInt(out int value) => _intValue.TryGetValue(out value);
 
     public static implicit operator TrialInterval(string value) => String(value);
 
-    public static implicit operator TrialInterval(double value) => Double(value);
+    public static implicit operator TrialInterval(int value) => Int(value);
 }
 
 file sealed class TrialIntervalConverter : JsonConverter<TrialInterval>
@@ -45,11 +45,11 @@ file sealed class TrialIntervalConverter : JsonConverter<TrialInterval>
         {
             return TrialInterval.String(stringValue);
         }
-        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
+        if (JsonSerializer.TryDeserialize<int>(root, options, out var intValue))
         {
-            return TrialInterval.Double(doubleValue);
+            return TrialInterval.Int(intValue);
         }
-        throw new JsonException($"JSON does not match string or double schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match string or int schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, TrialInterval value, JsonSerializerOptions options)
@@ -58,9 +58,9 @@ file sealed class TrialIntervalConverter : JsonConverter<TrialInterval>
         {
             JsonSerializer.Serialize(writer, stringValue, options);
         }
-        else if (value.TryGetDouble(out var doubleValue))
+        else if (value.TryGetInt(out var intValue))
         {
-            JsonSerializer.Serialize(writer, doubleValue, options);
+            JsonSerializer.Serialize(writer, intValue, options);
         }
         else
         {

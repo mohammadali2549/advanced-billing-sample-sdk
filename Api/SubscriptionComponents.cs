@@ -54,8 +54,8 @@ public sealed class SubscriptionComponents
     /// *Note: it is possible to stream events for a subscription at any time, regardless of component activation status. The activation status only determines if the subscription should be billed for event-based component usage at renewal.*
     /// </para>
     /// </remarks>
-    public Task ActivateEventBasedComponent(double subscriptionId,
-        double componentId,
+    public Task ActivateEventBasedComponent(int subscriptionId,
+        int componentId,
         ActivateEventBasedComponent? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/event_based_billing/subscriptions/{subscription_id}/components/{component_id}/activate.json"),
@@ -112,8 +112,8 @@ public sealed class SubscriptionComponents
     /// For more information, see the <see href="https://maxio.zendesk.com/hc/en-us/articles/24251883961485-Component-Allocations-Overview">Component Allocations</see> product Documentation.
     /// </para>
     /// </remarks>
-    public Task<AllocationResponse> AllocateComponent(double subscriptionId,
-        double componentId,
+    public Task<AllocationResponse> AllocateComponent(int subscriptionId,
+        int componentId,
         CreateAllocationRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/components/{component_id}/allocations.json"),
@@ -163,7 +163,7 @@ public sealed class SubscriptionComponents
     /// For more information, see the <see href="https://maxio.zendesk.com/hc/en-us/articles/24251883961485-Component-Allocations-Overview">Component Allocations</see> product documentation.
     /// </para>
     /// </remarks>
-    public Task<IReadOnlyList<AllocationResponse>> AllocateComponents(double subscriptionId,
+    public Task<IReadOnlyList<AllocationResponse>> AllocateComponents(int subscriptionId,
         AllocateComponents? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/allocations.json"),
@@ -223,7 +223,7 @@ public sealed class SubscriptionComponents
     /// <b>Note</b>: this will update the price point for all of the subscription's components, even ones that have not been allocated yet.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> BulkResetSubscriptionComponentsPricePoints(double subscriptionId,
+    public Task<SubscriptionResponse> BulkResetSubscriptionComponentsPricePoints(int subscriptionId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/price_points/reset.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
@@ -253,7 +253,7 @@ public sealed class SubscriptionComponents
     /// 3. <c>"_default"</c> string, which will reset the price point to the component's current default price point.
     /// </para>
     /// </remarks>
-    public Task<BulkComponentsPricePointAssignment> BulkUpdateSubscriptionComponentsPricePoints(double subscriptionId,
+    public Task<BulkComponentsPricePointAssignment> BulkUpdateSubscriptionComponentsPricePoints(int subscriptionId,
         BulkComponentsPricePointAssignment? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/price_points.json"),
@@ -369,9 +369,7 @@ public sealed class SubscriptionComponents
     /// <remarks>
     /// Deactivates an event-based component for a single subscription. Deactivating the event-based component causes Advanced Billing to ignore related events at subscription renewal.
     /// </remarks>
-    public Task DeactivateEventBasedComponent(double subscriptionId,
-        double componentId,
-        CancellationToken ct = default) =>
+    public Task DeactivateEventBasedComponent(int subscriptionId, int componentId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/event_based_billing/subscriptions/{subscription_id}/components/{component_id}/deactivate.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("component_id", componentId)],
             [],
@@ -410,9 +408,9 @@ public sealed class SubscriptionComponents
     ///   <item><description><c>refund</c>: The allocation will be destroyed and the balances will be updated and a refund will be issued along with a Credit Note.</description></item>
     /// </list>
     /// </remarks>
-    public Task DeletePrepaidUsageAllocation(double subscriptionId,
-        double componentId,
-        double allocationId,
+    public Task DeletePrepaidUsageAllocation(int subscriptionId,
+        int componentId,
+        int allocationId,
         CreditSchemeRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/components/{component_id}/allocations/{allocation_id}.json"),
@@ -446,9 +444,9 @@ public sealed class SubscriptionComponents
     /// When a subscription's on/off component has been toggled to on (<c>1</c>) or off (<c>0</c>), usage will be logged in this response.
     /// </para>
     /// </remarks>
-    public Task<IReadOnlyList<AllocationResponse>> ListAllocations(double subscriptionId,
-        double componentId,
-        double? page = 1d,
+    public Task<IReadOnlyList<AllocationResponse>> ListAllocations(int subscriptionId,
+        int componentId,
+        int? page = 1,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/components/{component_id}/allocations.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("component_id", componentId)],
@@ -489,14 +487,14 @@ public sealed class SubscriptionComponents
     /// When requesting to list components for a given subscription, if the subscription contains <b>archived</b> components they will be listed in the server response.
     /// </para>
     /// </remarks>
-    public Task<IReadOnlyList<SubscriptionComponentResponse>> ListSubscriptionComponents(double subscriptionId,
+    public Task<IReadOnlyList<SubscriptionComponentResponse>> ListSubscriptionComponents(int subscriptionId,
         SubscriptionListDateField? dateField,
         SortingDirection? direction,
         ListSubscriptionComponentsFilter? filter,
         string? endDate,
         string? endDatetime,
         IncludeNotNull? pricePointIds,
-        IReadOnlyList<double>? productFamilyIds,
+        IReadOnlyList<int>? productFamilyIds,
         ListSubscriptionComponentsSort? sort,
         string? startDate,
         string? startDatetime,
@@ -556,12 +554,12 @@ public sealed class SubscriptionComponents
         string? startDatetime,
         string? endDate,
         string? endDatetime,
-        IReadOnlyList<double>? subscriptionIds,
+        IReadOnlyList<int>? subscriptionIds,
         IncludeNotNull? pricePointIds,
-        IReadOnlyList<double>? productFamilyIds,
+        IReadOnlyList<int>? productFamilyIds,
         ListSubscriptionComponentsInclude? include,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions_components.json"),
             [],
@@ -628,8 +626,8 @@ public sealed class SubscriptionComponents
         long? maxId,
         DateTimeOffset? sinceDate,
         DateTimeOffset? untilDate,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id_or_reference}/components/{component_id}/usages.json"),
             [new TemplateParam("subscription_id_or_reference", subscriptionIdOrReference),
@@ -668,7 +666,7 @@ public sealed class SubscriptionComponents
     /// See example below for Fine-Grained Component Control response.
     /// </para>
     /// </remarks>
-    public Task<AllocationPreviewResponse> PreviewAllocations(double subscriptionId,
+    public Task<AllocationPreviewResponse> PreviewAllocations(int subscriptionId,
         PreviewAllocationsRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/allocations/preview.json"),
@@ -693,8 +691,8 @@ public sealed class SubscriptionComponents
     /// <remarks>
     /// Returns information for a specific component on a subscription.
     /// </remarks>
-    public Task<SubscriptionComponentResponse> ReadSubscriptionComponent(double subscriptionId,
-        double componentId,
+    public Task<SubscriptionComponentResponse> ReadSubscriptionComponent(int subscriptionId,
+        int componentId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/components/{component_id}.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("component_id", componentId)],
@@ -785,9 +783,9 @@ public sealed class SubscriptionComponents
     ///   <item><description>An expiration date can be changed towards the past (essentially expiring it) up to the subscription's current period beginning date.</description></item>
     /// </list>
     /// </remarks>
-    public Task UpdatePrepaidUsageAllocationExpirationDate(double subscriptionId,
-        double componentId,
-        double allocationId,
+    public Task UpdatePrepaidUsageAllocationExpirationDate(int subscriptionId,
+        int componentId,
+        int allocationId,
         UpdateAllocationExpirationDate? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/components/{component_id}/allocations/{allocation_id}.json"),

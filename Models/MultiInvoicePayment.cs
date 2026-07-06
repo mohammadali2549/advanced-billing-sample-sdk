@@ -10,7 +10,7 @@ public record MultiInvoicePayment
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("transaction_id")]
-    public double? TransactionId { get; init; }
+    public int? TransactionId { get; init; }
 
     /// <summary>
     /// Dollar amount of the sum of the paid invoices.

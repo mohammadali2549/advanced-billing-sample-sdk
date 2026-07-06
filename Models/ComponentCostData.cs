@@ -8,15 +8,15 @@ public record ComponentCostData
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_code_id")]
-    public double? ComponentCodeId { get; init; }
+    public int? ComponentCodeId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_id")]
-    public double? PricePointId { get; init; }
+    public int? PricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("quantity")]

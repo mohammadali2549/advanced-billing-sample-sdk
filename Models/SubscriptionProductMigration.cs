@@ -9,14 +9,14 @@ public record SubscriptionProductMigration
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     /// <summary>
     /// The ID of the specified product's price point. This can be passed to migrate to a non-default price point.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     /// <summary>
     /// Whether to include the trial period configured for the product price point when starting a new billing period. Note that if preserve_period is set, then include_trial will be ignored.

@@ -6,5 +6,5 @@ public record CountResponse
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("count")]
-    public double? Count { get; init; }
+    public int? Count { get; init; }
 }

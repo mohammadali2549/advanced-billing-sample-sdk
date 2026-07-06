@@ -13,7 +13,7 @@ public record RemovePaymentEventData
     /// Transaction ID of the original payment that was removed
     /// </summary>
     [JsonPropertyName("transaction_id")]
-    public required double TransactionId { get; init; }
+    public required int TransactionId { get; init; }
 
     /// <summary>
     /// Memo of the original payment

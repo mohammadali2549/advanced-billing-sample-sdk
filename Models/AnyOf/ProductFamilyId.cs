@@ -11,25 +11,25 @@ public record ProductFamilyId
 {
     private readonly Optional<string> _stringValue;
 
-    private readonly Optional<double> _doubleValue;
+    private readonly Optional<int> _intValue;
 
-    private ProductFamilyId(Optional<string> stringValue, Optional<double> doubleValue)
+    private ProductFamilyId(Optional<string> stringValue, Optional<int> intValue)
     {
         _stringValue = stringValue;
-        _doubleValue = doubleValue;
+        _intValue = intValue;
     }
 
     public static ProductFamilyId String(string value) => new(Optional<string>.Some(value), default);
 
-    public static ProductFamilyId Double(double value) => new(default, Optional<double>.Some(value));
+    public static ProductFamilyId Int(int value) => new(default, Optional<int>.Some(value));
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
+    public bool TryGetInt(out int value) => _intValue.TryGetValue(out value);
 
     public static implicit operator ProductFamilyId(string value) => String(value);
 
-    public static implicit operator ProductFamilyId(double value) => Double(value);
+    public static implicit operator ProductFamilyId(int value) => Int(value);
 }
 
 file sealed class ProductFamilyIdConverter : JsonConverter<ProductFamilyId>
@@ -44,11 +44,11 @@ file sealed class ProductFamilyIdConverter : JsonConverter<ProductFamilyId>
         {
             return ProductFamilyId.String(stringValue);
         }
-        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
+        if (JsonSerializer.TryDeserialize<int>(root, options, out var intValue))
         {
-            return ProductFamilyId.Double(doubleValue);
+            return ProductFamilyId.Int(intValue);
         }
-        throw new JsonException($"JSON does not match string or double schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match string or int schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, ProductFamilyId value, JsonSerializerOptions options)
@@ -57,9 +57,9 @@ file sealed class ProductFamilyIdConverter : JsonConverter<ProductFamilyId>
         {
             JsonSerializer.Serialize(writer, stringValue, options);
         }
-        else if (value.TryGetDouble(out var doubleValue))
+        else if (value.TryGetInt(out var intValue))
         {
-            JsonSerializer.Serialize(writer, doubleValue, options);
+            JsonSerializer.Serialize(writer, intValue, options);
         }
         else
         {

@@ -135,7 +135,7 @@ public sealed class EventsBasedBillingSegments
     /// You may specify component and/or price point by using either the numeric ID or the <c>handle:gold</c> syntax.
     /// </para>
     /// </remarks>
-    public Task DeleteSegment(string componentId, string pricePointId, decimal id, CancellationToken ct = default) =>
+    public Task DeleteSegment(string componentId, string pricePointId, double id, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components/{component_id}/price_points/{price_point_id}/segments/{id}.json"),
             [new TemplateParam("component_id", componentId),
                 new TemplateParam("price_point_id", pricePointId),
@@ -172,8 +172,8 @@ public sealed class EventsBasedBillingSegments
     public Task<ListSegmentsResponse> ListSegmentsForPricePoint(string componentId,
         string pricePointId,
         ListSegmentsFilter? filter,
-        double? page = 1d,
-        double? perPage = 30d,
+        int? page = 1,
+        int? perPage = 30,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components/{component_id}/price_points/{price_point_id}/segments.json"),
             [new TemplateParam("component_id", componentId), new TemplateParam("price_point_id", pricePointId)],
@@ -204,7 +204,7 @@ public sealed class EventsBasedBillingSegments
     /// </remarks>
     public Task<SegmentResponse> UpdateSegment(string componentId,
         string pricePointId,
-        decimal id,
+        double id,
         UpdateSegmentRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components/{component_id}/price_points/{price_point_id}/segments/{id}.json"),

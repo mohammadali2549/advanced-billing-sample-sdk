@@ -6,7 +6,7 @@ public record ComponentPricePointErrorItem
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_id")]
-    public double? ComponentId { get; init; }
+    public int? ComponentId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("message")]
@@ -14,5 +14,5 @@ public record ComponentPricePointErrorItem
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point")]
-    public double? PricePoint { get; init; }
+    public int? PricePoint { get; init; }
 }

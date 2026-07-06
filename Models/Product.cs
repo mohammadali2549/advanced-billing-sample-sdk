@@ -9,7 +9,7 @@ public record Product
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// The product name
@@ -51,7 +51,7 @@ public record Product
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_interval")]
-    public double? ExpirationInterval { get; init; }
+    public int? ExpirationInterval { get; init; }
 
     /// <summary>
     /// A string representing the expiration interval unit for this product, either month, day or never
@@ -86,7 +86,7 @@ public record Product
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this product, either month or day
@@ -114,7 +114,7 @@ public record Product
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("trial_interval")]
-    public double? TrialInterval { get; init; }
+    public int? TrialInterval { get; init; }
 
     /// <summary>
     /// A string representing the trial interval unit for this product, either month or day
@@ -161,7 +161,7 @@ public record Product
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("version_number")]
-    public double? VersionNumber { get; init; }
+    public int? VersionNumber { get; init; }
 
     /// <summary>
     /// The parameters will append to the url after a successful account update. See <see href="https://help.chargify.com/products/product-editing.html#return-parameters-after-account-update">help documentation</see>
@@ -212,7 +212,7 @@ public record Product
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("default_product_price_point_id")]
-    public double? DefaultProductPricePointId { get; init; }
+    public int? DefaultProductPricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("use_site_exchange_rate")]
@@ -227,7 +227,7 @@ public record Product
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_handle")]

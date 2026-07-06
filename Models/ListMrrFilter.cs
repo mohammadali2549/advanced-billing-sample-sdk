@@ -10,5 +10,5 @@ public record ListMrrFilter
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_ids")]
-    public IReadOnlyList<double>? SubscriptionIds { get; init; }
+    public IReadOnlyList<int>? SubscriptionIds { get; init; }
 }

@@ -177,7 +177,7 @@ catch (SdkException<ExportSubscriptionsError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;Invoice&gt;&gt; ListExportedInvoices(string batchId, double? perPage = 100d, double? page = 1d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;Invoice&gt;&gt; ListExportedInvoices(string batchId, int? perPage = 100, int? page = 1, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -225,8 +225,8 @@ catch (SdkException<ListExportedInvoicesError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>batchId</code> | <code>string</code> | Id of a Batch Job. |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. <br>Default value is 100. <br>The maximum allowed values is 10000; any per_page value over 10000 will be changed to 10000.<br>**Default**: 100d |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. <br>Default value is 100. <br>The maximum allowed values is 10000; any per_page value over 10000 will be changed to 10000.<br>**Default**: 100 |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
 
 </dd>
 </dl>
@@ -249,7 +249,7 @@ catch (SdkException<ListExportedInvoicesError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;ProformaInvoice&gt;&gt; ListExportedProformaInvoices(string batchId, double? perPage = 100d, double? page = 1d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;ProformaInvoice&gt;&gt; ListExportedProformaInvoices(string batchId, int? perPage = 100, int? page = 1, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -297,8 +297,8 @@ catch (SdkException<ListExportedProformaInvoicesError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>batchId</code> | <code>string</code> | Id of a Batch Job. |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. <br>Default value is 100. <br>The maximum allowed values is 10000; any per_page value over 10000 will be changed to 10000.<br>**Default**: 100d |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. <br>Default value is 100. <br>The maximum allowed values is 10000; any per_page value over 10000 will be changed to 10000.<br>**Default**: 100 |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
 
 </dd>
 </dl>
@@ -321,7 +321,7 @@ catch (SdkException<ListExportedProformaInvoicesError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;Subscription&gt;&gt; ListExportedSubscriptions(string batchId, double? perPage = 100d, double? page = 1d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;Subscription&gt;&gt; ListExportedSubscriptions(string batchId, int? perPage = 100, int? page = 1, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -369,8 +369,8 @@ catch (SdkException<ListExportedSubscriptionsError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>batchId</code> | <code>string</code> | Id of a Batch Job. |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. <br>Default value is 100. <br>The maximum allowed values is 10000; any per_page value over 10000 will be changed to 10000.<br>**Default**: 100d |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. <br>Default value is 100. <br>The maximum allowed values is 10000; any per_page value over 10000 will be changed to 10000.<br>**Default**: 100 |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
 
 </dd>
 </dl>
@@ -601,7 +601,7 @@ catch (SdkException<ReadSubscriptionsExportError> ex)
 > Source: [AdvanceInvoice](Api/AdvanceInvoice.cs)
 
 <details>
-<summary><code>Task&lt;Invoice&gt; IssueAdvanceInvoice(double subscriptionId, IssueAdvanceInvoiceRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;Invoice&gt; IssueAdvanceInvoice(int subscriptionId, IssueAdvanceInvoiceRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -650,7 +650,7 @@ catch (SdkException<IssueAdvanceInvoiceError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[IssueAdvanceInvoiceRequest?](Models/IssueAdvanceInvoiceRequest.cs)</code> | - |
 
 </dd>
@@ -674,7 +674,7 @@ catch (SdkException<IssueAdvanceInvoiceError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;Invoice&gt; ReadAdvanceInvoice(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;Invoice&gt; ReadAdvanceInvoice(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -719,7 +719,7 @@ catch (SdkException<ReadAdvanceInvoiceError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -742,7 +742,7 @@ catch (SdkException<ReadAdvanceInvoiceError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;Invoice&gt; VoidAdvanceInvoice(double subscriptionId, VoidInvoiceRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;Invoice&gt; VoidAdvanceInvoice(int subscriptionId, VoidInvoiceRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -788,7 +788,7 @@ catch (SdkException<VoidAdvanceInvoiceError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[VoidInvoiceRequest?](Models/VoidInvoiceRequest.cs)</code> | - |
 
 </dd>
@@ -816,7 +816,7 @@ catch (SdkException<VoidAdvanceInvoiceError> ex)
 > Source: [BillingPortal](Api/BillingPortal.cs)
 
 <details>
-<summary><code>Task&lt;CustomerResponse&gt; EnableBillingPortalForCustomer(double customerId, AutoInvite? autoInvite, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CustomerResponse&gt; EnableBillingPortalForCustomer(int customerId, AutoInvite? autoInvite, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -877,7 +877,7 @@ catch (SdkException<EnableBillingPortalForCustomerError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>customerId</code> | <code>double</code> | The Chargify id of the customer |
+| <code>customerId</code> | <code>int</code> | The Chargify id of the customer |
 | <code>autoInvite</code> | <code>[AutoInvite?](Models/Enums/AutoInvite.cs)</code> | When set to 1, an Invitation email will be sent to the Customer.<br>When set to 0, or not sent, an email will not be sent.<br>Use in query: `auto_invite=1`. |
 
 </dd>
@@ -901,7 +901,7 @@ catch (SdkException<EnableBillingPortalForCustomerError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PortalManagementLink&gt; ReadBillingPortalLink(double customerId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PortalManagementLink&gt; ReadBillingPortalLink(int customerId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -954,7 +954,7 @@ catch (SdkException<ReadBillingPortalLinkError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>customerId</code> | <code>double</code> | The Chargify id of the customer |
+| <code>customerId</code> | <code>int</code> | The Chargify id of the customer |
 
 </dd>
 </dl>
@@ -977,7 +977,7 @@ catch (SdkException<ReadBillingPortalLinkError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ResentInvitation&gt; ResendBillingPortalInvitation(double customerId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ResentInvitation&gt; ResendBillingPortalInvitation(int customerId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1032,7 +1032,7 @@ catch (SdkException<ResendBillingPortalInvitationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>customerId</code> | <code>double</code> | The Chargify id of the customer |
+| <code>customerId</code> | <code>int</code> | The Chargify id of the customer |
 
 </dd>
 </dl>
@@ -1055,7 +1055,7 @@ catch (SdkException<ResendBillingPortalInvitationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;RevokedInvitation&gt; RevokeBillingPortalAccess(double customerId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;RevokedInvitation&gt; RevokeBillingPortalAccess(int customerId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1103,7 +1103,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>customerId</code> | <code>double</code> | The Chargify id of the customer |
+| <code>customerId</code> | <code>int</code> | The Chargify id of the customer |
 
 </dd>
 </dl>
@@ -1345,7 +1345,7 @@ catch (SdkException<CloneComponentPricePointError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ComponentPricePointResponse&gt; CreateComponentPricePoint(double componentId, CreateComponentPricePointRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ComponentPricePointResponse&gt; CreateComponentPricePoint(int componentId, CreateComponentPricePointRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1390,7 +1390,7 @@ catch (SdkException<CreateComponentPricePointError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component |
 | <code>body</code> | <code>[CreateComponentPricePointRequest?](Models/CreateComponentPricePointRequest.cs)</code> | - |
 
 </dd>
@@ -1414,7 +1414,7 @@ catch (SdkException<CreateComponentPricePointError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ComponentCurrencyPricesResponse&gt; CreateCurrencyPrices(double pricePointId, CreateCurrencyPricesRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ComponentCurrencyPricesResponse&gt; CreateCurrencyPrices(int pricePointId, CreateCurrencyPricesRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1463,7 +1463,7 @@ catch (SdkException<CreateCurrencyPricesError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>pricePointId</code> | <code>double</code> | The Advanced Billing id of the price point |
+| <code>pricePointId</code> | <code>int</code> | The Advanced Billing id of the price point |
 | <code>body</code> | <code>[CreateCurrencyPricesRequest?](Models/CreateCurrencyPricesRequest.cs)</code> | - |
 
 </dd>
@@ -1487,7 +1487,7 @@ catch (SdkException<CreateCurrencyPricesError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListComponentsPricePointsResponse&gt; ListAllComponentPricePoints(ListComponentsPricePointsInclude? include, SortingDirection? direction, ListPricePointsFilter? filter, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListComponentsPricePointsResponse&gt; ListAllComponentPricePoints(ListComponentsPricePointsInclude? include, SortingDirection? direction, ListPricePointsFilter? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1535,8 +1535,8 @@ catch (SdkException<ListAllComponentPricePointsError> ex)
 | <code>include</code> | <code>[ListComponentsPricePointsInclude?](Models/Enums/ListComponentsPricePointsInclude.cs)</code> | Allows including additional data in the response. Use in query: `include=currency_prices`. |
 | <code>direction</code> | <code>[SortingDirection?](Models/Enums/SortingDirection.cs)</code> | Controls the order in which results are returned.<br>Use in query `direction=asc`. |
 | <code>filter</code> | <code>[ListPricePointsFilter?](Models/ListPricePointsFilter.cs)</code> | Filter to use for List PricePoints operations |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -1559,7 +1559,7 @@ catch (SdkException<ListAllComponentPricePointsError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ComponentPricePointsResponse&gt; ListComponentPricePoints(double componentId, bool? currencyPrices, IReadOnlyList&lt;PricePointType&gt;? filterType, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ComponentPricePointsResponse&gt; ListComponentPricePoints(int componentId, bool? currencyPrices, IReadOnlyList&lt;PricePointType&gt;? filterType, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1607,11 +1607,11 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component |
 | <code>currencyPrices</code> | <code>bool?</code> | Include an array of currency price data |
 | <code>filterType</code> | <code>IReadOnlyList&lt;[PricePointType](Models/Enums/PricePointType.cs)&gt;?</code> | Use in query: `filter[type]=catalog,default`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -1634,7 +1634,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ComponentResponse&gt; PromoteComponentPricePointToDefault(double componentId, double pricePointId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ComponentResponse&gt; PromoteComponentPricePointToDefault(int componentId, int pricePointId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1680,8 +1680,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component to which the price point belongs |
-| <code>pricePointId</code> | <code>double</code> | The Advanced Billing id of the price point |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component to which the price point belongs |
+| <code>pricePointId</code> | <code>int</code> | The Advanced Billing id of the price point |
 
 </dd>
 </dl>
@@ -1771,7 +1771,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ComponentPricePointResponse&gt; UnarchiveComponentPricePoint(double componentId, double pricePointId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ComponentPricePointResponse&gt; UnarchiveComponentPricePoint(int componentId, int pricePointId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1813,8 +1813,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component to which the price point belongs |
-| <code>pricePointId</code> | <code>double</code> | The Advanced Billing id of the price point |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component to which the price point belongs |
+| <code>pricePointId</code> | <code>int</code> | The Advanced Billing id of the price point |
 
 </dd>
 </dl>
@@ -1913,7 +1913,7 @@ catch (SdkException<UpdateComponentPricePointError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ComponentCurrencyPricesResponse&gt; UpdateCurrencyPrices(double pricePointId, UpdateCurrencyPricesRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ComponentCurrencyPricesResponse&gt; UpdateCurrencyPrices(int pricePointId, UpdateCurrencyPricesRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -1960,7 +1960,7 @@ catch (SdkException<UpdateCurrencyPricesError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>pricePointId</code> | <code>double</code> | The Advanced Billing id of the price point |
+| <code>pricePointId</code> | <code>int</code> | The Advanced Billing id of the price point |
 | <code>body</code> | <code>[UpdateCurrencyPricesRequest?](Models/UpdateCurrencyPricesRequest.cs)</code> | - |
 
 </dd>
@@ -1988,7 +1988,7 @@ catch (SdkException<UpdateCurrencyPricesError> ex)
 > Source: [Components](Api/Components.cs)
 
 <details>
-<summary><code>Task&lt;Component&gt; ArchiveComponent(double productFamilyId, string componentId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;Component&gt; ArchiveComponent(int productFamilyId, string componentId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -2033,7 +2033,7 @@ catch (SdkException<ArchiveComponentError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the component belongs |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the component belongs |
 | <code>componentId</code> | <code>string</code> | Either the Advanced Billing id of the component or the handle for the component prefixed with `handle:` |
 
 </dd>
@@ -2498,7 +2498,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;ComponentResponse&gt;&gt; ListComponents(BasicDateField? dateField, string? startDate, string? endDate, string? startDatetime, string? endDatetime, bool? includeArchived, ListComponentsFilter? filter, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;ComponentResponse&gt;&gt; ListComponents(BasicDateField? dateField, string? startDate, string? endDate, string? startDatetime, string? endDatetime, bool? includeArchived, ListComponentsFilter? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -2553,8 +2553,8 @@ catch (SdkException<RawError> ex)
 | <code>endDatetime</code> | <code>string?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of end_date.  optional |
 | <code>includeArchived</code> | <code>bool?</code> | Include archived items |
 | <code>filter</code> | <code>[ListComponentsFilter?](Models/ListComponentsFilter.cs)</code> | Filter to use for List Components operations |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -2577,7 +2577,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;ComponentResponse&gt;&gt; ListComponentsForProductFamily(double productFamilyId, bool? includeArchived, ListComponentsFilter? filter, BasicDateField? dateField, string? endDate, string? endDatetime, string? startDate, string? startDatetime, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;ComponentResponse&gt;&gt; ListComponentsForProductFamily(int productFamilyId, bool? includeArchived, ListComponentsFilter? filter, BasicDateField? dateField, string? endDate, string? endDatetime, string? startDate, string? startDatetime, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -2626,7 +2626,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family |
 | <code>includeArchived</code> | <code>bool?</code> | Include archived items. |
 | <code>filter</code> | <code>[ListComponentsFilter?](Models/ListComponentsFilter.cs)</code> | Filter to use for List Components operations |
 | <code>dateField</code> | <code>[BasicDateField?](Models/Enums/BasicDateField.cs)</code> | The type of filter you would like to apply to your search. Use in query `date_field=created_at`. |
@@ -2634,8 +2634,8 @@ catch (SdkException<RawError> ex)
 | <code>endDatetime</code> | <code>string?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of end_date. optional. |
 | <code>startDate</code> | <code>string?</code> | The start date (format YYYY-MM-DD) with which to filter the date_field. Returns components with a timestamp at or after midnight (12:00:00 AM) in your site’s time zone on the date specified. |
 | <code>startDatetime</code> | <code>string?</code> | The start date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or after exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of start_date. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -2658,7 +2658,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ComponentResponse&gt; ReadComponent(double productFamilyId, string componentId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ComponentResponse&gt; ReadComponent(int productFamilyId, string componentId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -2702,7 +2702,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the component belongs |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the component belongs |
 | <code>componentId</code> | <code>string</code> | Either the Advanced Billing id of the component or the handle for the component prefixed with `handle:` |
 
 </dd>
@@ -2797,7 +2797,7 @@ catch (SdkException<UpdateComponentError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ComponentResponse&gt; UpdateProductFamilyComponent(double productFamilyId, string componentId, UpdateComponentRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ComponentResponse&gt; UpdateProductFamilyComponent(int productFamilyId, string componentId, UpdateComponentRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -2844,7 +2844,7 @@ catch (SdkException<UpdateProductFamilyComponentError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the component belongs |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the component belongs |
 | <code>componentId</code> | <code>string</code> | Either the Advanced Billing id of the component or the handle for the component prefixed with `handle:` |
 | <code>body</code> | <code>[UpdateComponentRequest?](Models/UpdateComponentRequest.cs)</code> | - |
 
@@ -2873,7 +2873,7 @@ catch (SdkException<UpdateProductFamilyComponentError> ex)
 > Source: [Coupons](Api/Coupons.cs)
 
 <details>
-<summary><code>Task&lt;CouponResponse&gt; ArchiveCoupon(double productFamilyId, double couponId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponResponse&gt; ArchiveCoupon(int productFamilyId, int couponId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -2917,8 +2917,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the coupon belongs |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the coupon belongs |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon |
 
 </dd>
 </dl>
@@ -2941,7 +2941,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponResponse&gt; CreateCoupon(double productFamilyId, CouponRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponResponse&gt; CreateCoupon(int productFamilyId, CouponRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -2994,7 +2994,7 @@ catch (SdkException<CreateCouponError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the coupon belongs |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the coupon belongs |
 | <code>body</code> | <code>[CouponRequest?](Models/CouponRequest.cs)</code> | - |
 
 </dd>
@@ -3018,7 +3018,7 @@ catch (SdkException<CreateCouponError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponSubcodesResponse&gt; CreateCouponSubcodes(double couponId, CouponSubcodes? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponSubcodesResponse&gt; CreateCouponSubcodes(int couponId, CouponSubcodes? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3101,7 +3101,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon |
 | <code>body</code> | <code>[CouponSubcodes?](Models/CouponSubcodes.cs)</code> | - |
 
 </dd>
@@ -3125,7 +3125,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponCurrencyResponse&gt; CreateOrUpdateCouponCurrencyPrices(double couponId, CouponCurrencyRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponCurrencyResponse&gt; CreateOrUpdateCouponCurrencyPrices(int couponId, CouponCurrencyRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3172,7 +3172,7 @@ catch (SdkException<CreateOrUpdateCouponCurrencyPricesError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon |
 | <code>body</code> | <code>[CouponCurrencyRequest?](Models/CouponCurrencyRequest.cs)</code> | - |
 
 </dd>
@@ -3196,7 +3196,7 @@ catch (SdkException<CreateOrUpdateCouponCurrencyPricesError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteCouponSubcode(double couponId, string subcode, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteCouponSubcode(int couponId, string subcode, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3263,7 +3263,7 @@ catch (SdkException<DeleteCouponSubcodeError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon to which the subcode belongs |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon to which the subcode belongs |
 | <code>subcode</code> | <code>string</code> | The subcode of the coupon |
 
 </dd>
@@ -3287,7 +3287,7 @@ catch (SdkException<DeleteCouponSubcodeError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponResponse&gt; FindCoupon(double? productFamilyId, string? code, bool? currencyPrices, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponResponse&gt; FindCoupon(int? productFamilyId, string? code, bool? currencyPrices, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3331,7 +3331,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double?</code> | The Advanced Billing id of the product family to which the coupon belongs |
+| <code>productFamilyId</code> | <code>int?</code> | The Advanced Billing id of the product family to which the coupon belongs |
 | <code>code</code> | <code>string?</code> | The code of the coupon |
 | <code>currencyPrices</code> | <code>bool?</code> | When fetching coupons, if you have defined multiple currencies at the site level, you can optionally pass the `?currency_prices=true` query param to include an array of currency price data in the response. |
 
@@ -3356,7 +3356,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponSubcodes&gt; ListCouponSubcodes(double couponId, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponSubcodes&gt; ListCouponSubcodes(int couponId, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3398,9 +3398,9 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -3423,7 +3423,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;CouponResponse&gt;&gt; ListCoupons(ListCouponsFilter? filter, bool? currencyPrices, double? page = 1d, double? perPage = 30d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;CouponResponse&gt;&gt; ListCoupons(ListCouponsFilter? filter, bool? currencyPrices, int? page = 1, int? perPage = 30, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3467,8 +3467,8 @@ catch (SdkException<RawError> ex)
 | --- | --- | --- |
 | <code>filter</code> | <code>[ListCouponsFilter?](Models/ListCouponsFilter.cs)</code> | Filter to use for List Coupons operations |
 | <code>currencyPrices</code> | <code>bool?</code> | When fetching coupons, if you have defined multiple currencies at the site level, you can optionally pass the `?currency_prices=true` query param to include an array of currency price data in the response. Use in query `currency_prices=true`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 30. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 30d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 30. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 30 |
 
 </dd>
 </dl>
@@ -3491,7 +3491,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;CouponResponse&gt;&gt; ListCouponsForProductFamily(double productFamilyId, ListCouponsFilter? filter, bool? currencyPrices, double? page = 1d, double? perPage = 30d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;CouponResponse&gt;&gt; ListCouponsForProductFamily(int productFamilyId, ListCouponsFilter? filter, bool? currencyPrices, int? page = 1, int? perPage = 30, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3533,11 +3533,11 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the coupon belongs |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the coupon belongs |
 | <code>filter</code> | <code>[ListCouponsFilter?](Models/ListCouponsFilter.cs)</code> | Filter to use for List Coupons operations |
 | <code>currencyPrices</code> | <code>bool?</code> | When fetching coupons, if you have defined multiple currencies at the site level, you can optionally pass the `?currency_prices=true` query param to include an array of currency price data in the response. Use in query `currency_prices=true`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 30. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 30d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 30. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 30 |
 
 </dd>
 </dl>
@@ -3560,7 +3560,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponResponse&gt; ReadCoupon(double productFamilyId, double couponId, bool? currencyPrices, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponResponse&gt; ReadCoupon(int productFamilyId, int couponId, bool? currencyPrices, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3607,8 +3607,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the coupon belongs |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the coupon belongs |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon |
 | <code>currencyPrices</code> | <code>bool?</code> | When fetching coupons, if you have defined multiple currencies at the site level, you can optionally pass the `?currency_prices=true` query param to include an array of currency price data in the response. |
 
 </dd>
@@ -3632,7 +3632,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;CouponUsage&gt;&gt; ReadCouponUsage(double productFamilyId, double couponId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;CouponUsage&gt;&gt; ReadCouponUsage(int productFamilyId, int couponId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3674,8 +3674,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the coupon belongs. |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon. |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the coupon belongs. |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon. |
 
 </dd>
 </dl>
@@ -3698,7 +3698,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponResponse&gt; UpdateCoupon(double productFamilyId, double couponId, CouponRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponResponse&gt; UpdateCoupon(int productFamilyId, int couponId, CouponRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3746,8 +3746,8 @@ catch (SdkException<UpdateCouponError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productFamilyId</code> | <code>double</code> | The Advanced Billing id of the product family to which the coupon belongs |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon |
+| <code>productFamilyId</code> | <code>int</code> | The Advanced Billing id of the product family to which the coupon belongs |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon |
 | <code>body</code> | <code>[CouponRequest?](Models/CouponRequest.cs)</code> | - |
 
 </dd>
@@ -3771,7 +3771,7 @@ catch (SdkException<UpdateCouponError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponSubcodesResponse&gt; UpdateCouponSubcodes(double couponId, CouponSubcodes? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponSubcodesResponse&gt; UpdateCouponSubcodes(int couponId, CouponSubcodes? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3823,7 +3823,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>couponId</code> | <code>double</code> | The Advanced Billing id of the coupon |
+| <code>couponId</code> | <code>int</code> | The Advanced Billing id of the coupon |
 | <code>body</code> | <code>[CouponSubcodes?](Models/CouponSubcodes.cs)</code> | - |
 
 </dd>
@@ -3847,7 +3847,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CouponResponse&gt; ValidateCoupon(string code, double? productFamilyId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CouponResponse&gt; ValidateCoupon(string code, int? productFamilyId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3913,7 +3913,7 @@ catch (SdkException<ValidateCouponError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>code</code> | <code>string</code> | The code of the coupon |
-| <code>productFamilyId</code> | <code>double?</code> | The Advanced Billing id of the product family to which the coupon belongs |
+| <code>productFamilyId</code> | <code>int?</code> | The Advanced Billing id of the product family to which the coupon belongs |
 
 </dd>
 </dl>
@@ -3940,7 +3940,7 @@ catch (SdkException<ValidateCouponError> ex)
 > Source: [CustomFields](Api/CustomFields.cs)
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;Metadata&gt;&gt; CreateMetadata(ResourceType resourceType, double resourceId, CreateMetadataRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;Metadata&gt;&gt; CreateMetadata(ResourceType resourceType, int resourceId, CreateMetadataRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -3990,7 +3990,7 @@ catch (SdkException<CreateMetadataError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>resourceType</code> | <code>[ResourceType](Models/Enums/ResourceType.cs)</code> | The resource type to which the metafields belong. |
-| <code>resourceId</code> | <code>double</code> | The Advanced Billing id of the customer or the subscription for which the metadata applies |
+| <code>resourceId</code> | <code>int</code> | The Advanced Billing id of the customer or the subscription for which the metadata applies |
 | <code>body</code> | <code>[CreateMetadataRequest?](Models/CreateMetadataRequest.cs)</code> | - |
 
 </dd>
@@ -4096,7 +4096,7 @@ catch (SdkException<CreateMetafieldsError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteMetadata(ResourceType resourceType, double resourceId, string? name, IReadOnlyList&lt;string&gt;? names, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteMetadata(ResourceType resourceType, int resourceId, string? name, IReadOnlyList&lt;string&gt;? names, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4141,7 +4141,7 @@ catch (SdkException<DeleteMetadataError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>resourceType</code> | <code>[ResourceType](Models/Enums/ResourceType.cs)</code> | The resource type to which the metafields belong. |
-| <code>resourceId</code> | <code>double</code> | The Advanced Billing id of the customer or the subscription for which the metadata applies |
+| <code>resourceId</code> | <code>int</code> | The Advanced Billing id of the customer or the subscription for which the metadata applies |
 | <code>name</code> | <code>string?</code> | Name of field to be removed. |
 | <code>names</code> | <code>IReadOnlyList&lt;string&gt;?</code> | Names of fields to be removed. Use in query: `names[]=field1&names[]=my-field&names[]=another-field`. |
 
@@ -4234,7 +4234,7 @@ catch (SdkException<DeleteMetafieldError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PaginatedMetadata&gt; ListMetadata(ResourceType resourceType, double resourceId, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PaginatedMetadata&gt; ListMetadata(ResourceType resourceType, int resourceId, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4277,9 +4277,9 @@ catch (SdkException<RawError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>resourceType</code> | <code>[ResourceType](Models/Enums/ResourceType.cs)</code> | The resource type to which the metafields belong. |
-| <code>resourceId</code> | <code>double</code> | The Advanced Billing id of the customer or the subscription for which the metadata applies |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>resourceId</code> | <code>int</code> | The Advanced Billing id of the customer or the subscription for which the metadata applies |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -4302,7 +4302,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PaginatedMetadata&gt; ListMetadataForResourceType(ResourceType resourceType, BasicDateField? dateField, DateTimeOffset? startDate, DateTimeOffset? endDate, DateTimeOffset? startDatetime, DateTimeOffset? endDatetime, bool? withDeleted, IReadOnlyList&lt;double&gt;? resourceIds, SortingDirection? direction, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PaginatedMetadata&gt; ListMetadataForResourceType(ResourceType resourceType, BasicDateField? dateField, DateTimeOffset? startDate, DateTimeOffset? endDate, DateTimeOffset? startDatetime, DateTimeOffset? endDatetime, bool? withDeleted, IReadOnlyList&lt;int&gt;? resourceIds, SortingDirection? direction, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4359,10 +4359,10 @@ catch (SdkException<RawError> ex)
 | <code>startDatetime</code> | <code>DateTimeOffset?</code> | The start date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns metadata with a timestamp at or after exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of start_date. |
 | <code>endDatetime</code> | <code>DateTimeOffset?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns metadata with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of end_date. |
 | <code>withDeleted</code> | <code>bool?</code> | Allow to fetch deleted metadata. |
-| <code>resourceIds</code> | <code>IReadOnlyList&lt;double&gt;?</code> | Allow to fetch metadata for multiple records based on provided ids. Use in query: `resource_ids[]=122&resource_ids[]=123&resource_ids[]=124`. |
+| <code>resourceIds</code> | <code>IReadOnlyList&lt;int&gt;?</code> | Allow to fetch metadata for multiple records based on provided ids. Use in query: `resource_ids[]=122&resource_ids[]=123&resource_ids[]=124`. |
 | <code>direction</code> | <code>[SortingDirection?](Models/Enums/SortingDirection.cs)</code> | Controls the order in which results are returned.<br>Use in query `direction=asc`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -4385,7 +4385,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListMetafieldsResponse&gt; ListMetafields(ResourceType resourceType, string? name, SortingDirection? direction, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListMetafieldsResponse&gt; ListMetafields(ResourceType resourceType, string? name, SortingDirection? direction, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4430,8 +4430,8 @@ catch (SdkException<RawError> ex)
 | <code>resourceType</code> | <code>[ResourceType](Models/Enums/ResourceType.cs)</code> | The resource type to which the metafields belong. |
 | <code>name</code> | <code>string?</code> | Filter by the name of the metafield. |
 | <code>direction</code> | <code>[SortingDirection?](Models/Enums/SortingDirection.cs)</code> | Controls the order in which results are returned.<br>Use in query `direction=asc`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -4454,7 +4454,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;Metadata&gt;&gt; UpdateMetadata(ResourceType resourceType, double resourceId, UpdateMetadataRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;Metadata&gt;&gt; UpdateMetadata(ResourceType resourceType, int resourceId, UpdateMetadataRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4504,7 +4504,7 @@ catch (SdkException<UpdateMetadataError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>resourceType</code> | <code>[ResourceType](Models/Enums/ResourceType.cs)</code> | The resource type to which the metafields belong. |
-| <code>resourceId</code> | <code>double</code> | The Advanced Billing id of the customer or the subscription for which the metadata applies |
+| <code>resourceId</code> | <code>int</code> | The Advanced Billing id of the customer or the subscription for which the metadata applies |
 | <code>body</code> | <code>[UpdateMetadataRequest?](Models/UpdateMetadataRequest.cs)</code> | - |
 
 </dd>
@@ -4713,7 +4713,7 @@ catch (SdkException<CreateCustomerError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteCustomer(double id, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteCustomer(int id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4754,7 +4754,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>double</code> | The Advanced Billing id of the customer |
+| <code>id</code> | <code>int</code> | The Advanced Billing id of the customer |
 
 </dd>
 </dl>
@@ -4777,7 +4777,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;SubscriptionResponse&gt;&gt; ListCustomerSubscriptions(double customerId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;SubscriptionResponse&gt;&gt; ListCustomerSubscriptions(int customerId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4819,7 +4819,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>customerId</code> | <code>double</code> | The Chargify id of the customer |
+| <code>customerId</code> | <code>int</code> | The Chargify id of the customer |
 
 </dd>
 </dl>
@@ -4842,7 +4842,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;CustomerResponse&gt;&gt; ListCustomers(SortingDirection? direction, BasicDateField? dateField, string? startDate, string? endDate, string? startDatetime, string? endDatetime, string? q, double? page = 1d, double? perPage = 50d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;CustomerResponse&gt;&gt; ListCustomers(SortingDirection? direction, BasicDateField? dateField, string? startDate, string? endDate, string? startDatetime, string? endDatetime, string? q, int? page = 1, int? perPage = 50, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4911,8 +4911,8 @@ catch (SdkException<RawError> ex)
 | <code>startDatetime</code> | <code>string?</code> | The start date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns subscriptions with a timestamp at or after exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of start_date. |
 | <code>endDatetime</code> | <code>string?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns subscriptions with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of end_date. |
 | <code>q</code> | <code>string?</code> | A search query by which to filter customers (can be an email, an ID, a reference, organization) |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 50. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 50d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 50. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 50 |
 
 </dd>
 </dl>
@@ -4935,7 +4935,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CustomerResponse&gt; ReadCustomer(double id, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CustomerResponse&gt; ReadCustomer(int id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -4977,7 +4977,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>double</code> | The Advanced Billing id of the customer |
+| <code>id</code> | <code>int</code> | The Advanced Billing id of the customer |
 
 </dd>
 </dl>
@@ -5065,7 +5065,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CustomerResponse&gt; UpdateCustomer(double id, UpdateCustomerRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CustomerResponse&gt; UpdateCustomer(int id, UpdateCustomerRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -5110,7 +5110,7 @@ catch (SdkException<UpdateCustomerError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>double</code> | The Advanced Billing id of the customer |
+| <code>id</code> | <code>int</code> | The Advanced Billing id of the customer |
 | <code>body</code> | <code>[UpdateCustomerRequest?](Models/UpdateCustomerRequest.cs)</code> | - |
 
 </dd>
@@ -5138,7 +5138,7 @@ catch (SdkException<UpdateCustomerError> ex)
 > Source: [Events](Api/Events.cs)
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;EventResponse&gt;&gt; ListEvents(long? sinceId, long? maxId, Direction? direction, IReadOnlyList&lt;EventKey&gt;? filter, ListEventsDateField? dateField, string? startDate, string? endDate, string? startDatetime, string? endDatetime, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;EventResponse&gt;&gt; ListEvents(long? sinceId, long? maxId, Direction? direction, IReadOnlyList&lt;EventKey&gt;? filter, ListEventsDateField? dateField, string? startDate, string? endDate, string? startDatetime, string? endDatetime, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -5264,8 +5264,8 @@ catch (SdkException<RawError> ex)
 | <code>endDate</code> | <code>string?</code> | The end date (format YYYY-MM-DD) with which to filter the date_field. Returns components with a timestamp up to and including 11:59:59PM in your site’s time zone on the date specified. |
 | <code>startDatetime</code> | <code>string?</code> | The start date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or after exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of start_date. |
 | <code>endDatetime</code> | <code>string?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of end_date. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -5288,7 +5288,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;EventResponse&gt;&gt; ListSubscriptionEvents(double subscriptionId, long? sinceId, long? maxId, Direction? direction, IReadOnlyList&lt;EventKey&gt;? filter, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;EventResponse&gt;&gt; ListSubscriptionEvents(int subscriptionId, long? sinceId, long? maxId, Direction? direction, IReadOnlyList&lt;EventKey&gt;? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -5339,13 +5339,13 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>sinceId</code> | <code>long?</code> | Returns events with an id greater than or equal to the one specified |
 | <code>maxId</code> | <code>long?</code> | Returns events with an id less than or equal to the one specified |
 | <code>direction</code> | <code>[Direction?](Models/Enums/Direction.cs)</code> | The sort direction of the returned events. |
 | <code>filter</code> | <code>IReadOnlyList&lt;[EventKey](Models/Enums/EventKey.cs)&gt;?</code> | You can pass multiple event keys after comma.<br>Use in query `filter=signup_success,payment_success`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -5368,7 +5368,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CountResponse&gt; ReadEventsCount(long? sinceId, long? maxId, Direction? direction, IReadOnlyList&lt;EventKey&gt;? filter, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CountResponse&gt; ReadEventsCount(long? sinceId, long? maxId, Direction? direction, IReadOnlyList&lt;EventKey&gt;? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -5414,8 +5414,8 @@ catch (SdkException<RawError> ex)
 | <code>maxId</code> | <code>long?</code> | Returns events with an id less than or equal to the one specified |
 | <code>direction</code> | <code>[Direction?](Models/Enums/Direction.cs)</code> | The sort direction of the returned events. |
 | <code>filter</code> | <code>IReadOnlyList&lt;[EventKey](Models/Enums/EventKey.cs)&gt;?</code> | You can pass multiple event keys after comma.<br>Use in query `filter=signup_success,payment_success`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -5662,7 +5662,7 @@ catch (SdkException<CreateSegmentError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteSegment(string componentId, string pricePointId, decimal id, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteSegment(string componentId, string pricePointId, double id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -5710,7 +5710,7 @@ catch (SdkException<DeleteSegmentError> ex)
 | --- | --- | --- |
 | <code>componentId</code> | <code>string</code> | ID or Handle of the Component |
 | <code>pricePointId</code> | <code>string</code> | ID or Handle of the Price Point belonging to the Component |
-| <code>id</code> | <code>decimal</code> | The ID of the Segment |
+| <code>id</code> | <code>double</code> | The ID of the Segment |
 
 </dd>
 </dl>
@@ -5733,7 +5733,7 @@ catch (SdkException<DeleteSegmentError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListSegmentsResponse&gt; ListSegmentsForPricePoint(string componentId, string pricePointId, ListSegmentsFilter? filter, double? page = 1d, double? perPage = 30d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListSegmentsResponse&gt; ListSegmentsForPricePoint(string componentId, string pricePointId, ListSegmentsFilter? filter, int? page = 1, int? perPage = 30, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -5785,8 +5785,8 @@ catch (SdkException<ListSegmentsForPricePointError> ex)
 | <code>componentId</code> | <code>string</code> | ID or Handle for the Component |
 | <code>pricePointId</code> | <code>string</code> | ID or Handle for the Price Point belonging to the Component |
 | <code>filter</code> | <code>[ListSegmentsFilter?](Models/ListSegmentsFilter.cs)</code> | Filter to use for List Segments for a Price Point operation |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 30. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 30d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 30. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 30 |
 
 </dd>
 </dl>
@@ -5809,7 +5809,7 @@ catch (SdkException<ListSegmentsForPricePointError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SegmentResponse&gt; UpdateSegment(string componentId, string pricePointId, decimal id, UpdateSegmentRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SegmentResponse&gt; UpdateSegment(string componentId, string pricePointId, double id, UpdateSegmentRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -5858,7 +5858,7 @@ catch (SdkException<UpdateSegmentError> ex)
 | --- | --- | --- |
 | <code>componentId</code> | <code>string</code> | ID or Handle of the Component |
 | <code>pricePointId</code> | <code>string</code> | ID or Handle of the Price Point belonging to the Component |
-| <code>id</code> | <code>decimal</code> | The ID of the Segment |
+| <code>id</code> | <code>double</code> | The ID of the Segment |
 | <code>body</code> | <code>[UpdateSegmentRequest?](Models/UpdateSegmentRequest.cs)</code> | - |
 
 </dd>
@@ -5886,7 +5886,7 @@ catch (SdkException<UpdateSegmentError> ex)
 > Source: [Insights](Api/Insights.cs)
 
 <details>
-<summary><code>Task&lt;ListMrrResponse&gt; ListMrrMovements(double? subscriptionId, SortingDirection? direction, double? page = 1d, double? perPage = 10d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListMrrResponse&gt; ListMrrMovements(int? subscriptionId, SortingDirection? direction, int? page = 1, int? perPage = 10, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -5949,10 +5949,10 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double?</code> | optionally filter results by subscription |
+| <code>subscriptionId</code> | <code>int?</code> | optionally filter results by subscription |
 | <code>direction</code> | <code>[SortingDirection?](Models/Enums/SortingDirection.cs)</code> | Controls the order in which results are returned.<br>Use in query `direction=asc`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 10. The maximum allowed values is 50; any per_page value over 50 will be changed to 50.<br>Use in query `per_page=20`.<br>**Default**: 10d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 10. The maximum allowed values is 50; any per_page value over 50 will be changed to 50.<br>Use in query `per_page=20`.<br>**Default**: 10 |
 
 </dd>
 </dl>
@@ -5975,7 +5975,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionMrrResponse&gt; ListMrrPerSubscription(ListMrrFilter? filter, string? atTime, Direction? direction, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionMrrResponse&gt; ListMrrPerSubscription(ListMrrFilter? filter, string? atTime, Direction? direction, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -6023,8 +6023,8 @@ catch (SdkException<ListMrrPerSubscriptionError> ex)
 | <code>filter</code> | <code>[ListMrrFilter?](Models/ListMrrFilter.cs)</code> | Filter to use for List MRR per subscription operation |
 | <code>atTime</code> | <code>string?</code> | Submit a timestamp in ISO8601 format to request MRR for a historic time. Use in query: `at_time=2022-01-10T10:00:00-05:00`. |
 | <code>direction</code> | <code>[Direction?](Models/Enums/Direction.cs)</code> | Controls the order in which results are returned. Records are ordered by subscription_id in ascending order by default. Use in query `direction=desc`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -6047,7 +6047,7 @@ catch (SdkException<ListMrrPerSubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;MrrResponse&gt; ReadMrr(DateTimeOffset? atTime, double? subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;MrrResponse&gt; ReadMrr(DateTimeOffset? atTime, int? subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -6090,7 +6090,7 @@ catch (SdkException<RawError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>atTime</code> | <code>DateTimeOffset?</code> | submit a timestamp in ISO8601 format to request MRR for a historic time |
-| <code>subscriptionId</code> | <code>double?</code> | submit the id of a subscription in order to limit results |
+| <code>subscriptionId</code> | <code>int?</code> | submit the id of a subscription in order to limit results |
 
 </dd>
 </dl>
@@ -6178,7 +6178,7 @@ catch (SdkException<RawError> ex)
 > Source: [Invoices](Api/Invoices.cs)
 
 <details>
-<summary><code>Task&lt;InvoiceResponse&gt; CreateInvoice(double subscriptionId, CreateInvoiceRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;InvoiceResponse&gt; CreateInvoice(int subscriptionId, CreateInvoiceRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -6401,7 +6401,7 @@ catch (SdkException<CreateInvoiceError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[CreateInvoiceRequest?](Models/CreateInvoiceRequest.cs)</code> | - |
 
 </dd>
@@ -6503,7 +6503,7 @@ catch (SdkException<IssueInvoiceError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ConsolidatedInvoice&gt; ListConsolidatedInvoiceSegments(string invoiceUid, Direction? direction, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ConsolidatedInvoice&gt; ListConsolidatedInvoiceSegments(string invoiceUid, Direction? direction, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -6547,8 +6547,8 @@ catch (SdkException<RawError> ex)
 | --- | --- | --- |
 | <code>invoiceUid</code> | <code>string</code> | The unique identifier of the consolidated invoice |
 | <code>direction</code> | <code>[Direction?](Models/Enums/Direction.cs)</code> | Sort direction of the returned segments. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -6571,7 +6571,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListCreditNotesResponse&gt; ListCreditNotes(double? subscriptionId, double? page = 1d, double? perPage = 20d, bool? lineItems = false, bool? discounts = false, bool? taxes = false, bool? refunds = false, bool? applications = false, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListCreditNotesResponse&gt; ListCreditNotes(int? subscriptionId, int? page = 1, int? perPage = 20, bool? lineItems = false, bool? discounts = false, bool? taxes = false, bool? refunds = false, bool? applications = false, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -6615,9 +6615,9 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double?</code> | The subscription's Advanced Billing id |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>subscriptionId</code> | <code>int?</code> | The subscription's Advanced Billing id |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 | <code>lineItems</code> | <code>bool?</code> | Include line items data<br>**Default**: false |
 | <code>discounts</code> | <code>bool?</code> | Include discounts data<br>**Default**: false |
 | <code>taxes</code> | <code>bool?</code> | Include taxes data<br>**Default**: false |
@@ -6645,7 +6645,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListInvoiceEventsResponse&gt; ListInvoiceEvents(string? sinceDate, long? sinceId, string? invoiceUid, string? withChangeInvoiceStatus, IReadOnlyList&lt;InvoiceEventType&gt;? eventTypes, double? page = 1d, double? perPage = 100d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListInvoiceEventsResponse&gt; ListInvoiceEvents(string? sinceDate, long? sinceId, string? invoiceUid, string? withChangeInvoiceStatus, IReadOnlyList&lt;InvoiceEventType&gt;? eventTypes, int? page = 1, int? perPage = 100, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -6719,8 +6719,8 @@ catch (SdkException<RawError> ex)
 | <code>invoiceUid</code> | <code>string?</code> | Providing an invoice_uid allows for scoping of the invoice events to a single invoice or credit note. |
 | <code>withChangeInvoiceStatus</code> | <code>string?</code> | Use this parameter if you want to fetch also invoice events with change_invoice_status type. |
 | <code>eventTypes</code> | <code>IReadOnlyList&lt;[InvoiceEventType](Models/Enums/InvoiceEventType.cs)&gt;?</code> | Filter results by event_type. Supply a comma separated list of event types (listed above). Use in query: `event_types=void_invoice,void_remainder`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 100. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>**Default**: 100d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 100. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>**Default**: 100 |
 
 </dd>
 </dl>
@@ -6743,7 +6743,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListInvoicesResponse&gt; ListInvoices(string? startDate, string? endDate, InvoiceStatus? status, double? subscriptionId, string? subscriptionGroupUid, string? consolidationLevel, Direction? direction, InvoiceDateField? dateField, string? startDatetime, string? endDatetime, IReadOnlyList&lt;double&gt;? customerIds, IReadOnlyList&lt;string&gt;? number, IReadOnlyList&lt;double&gt;? productIds, InvoiceSortField? sort, double? page = 1d, double? perPage = 20d, bool? lineItems = false, bool? discounts = false, bool? taxes = false, bool? credits = false, bool? payments = false, bool? customFields = false, bool? refunds = false, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListInvoicesResponse&gt; ListInvoices(string? startDate, string? endDate, InvoiceStatus? status, int? subscriptionId, string? subscriptionGroupUid, string? consolidationLevel, Direction? direction, InvoiceDateField? dateField, string? startDatetime, string? endDatetime, IReadOnlyList&lt;int&gt;? customerIds, IReadOnlyList&lt;string&gt;? number, IReadOnlyList&lt;int&gt;? productIds, InvoiceSortField? sort, int? page = 1, int? perPage = 20, bool? lineItems = false, bool? discounts = false, bool? taxes = false, bool? credits = false, bool? payments = false, bool? customFields = false, bool? refunds = false, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -6801,19 +6801,19 @@ catch (SdkException<RawError> ex)
 | <code>startDate</code> | <code>string?</code> | The start date (format YYYY-MM-DD) with which to filter the date_field. Returns invoices with a timestamp at or after midnight (12:00:00 AM) in your site’s time zone on the date specified. |
 | <code>endDate</code> | <code>string?</code> | The end date (format YYYY-MM-DD) with which to filter the date_field. Returns invoices with a timestamp up to and including 11:59:59PM in your site’s time zone on the date specified. |
 | <code>status</code> | <code>[InvoiceStatus?](Models/Enums/InvoiceStatus.cs)</code> | The current status of the invoice.  Allowed Values: draft, open, paid, pending, voided |
-| <code>subscriptionId</code> | <code>double?</code> | The subscription's ID. |
+| <code>subscriptionId</code> | <code>int?</code> | The subscription's ID. |
 | <code>subscriptionGroupUid</code> | <code>string?</code> | The UID of the subscription group you want to fetch consolidated invoices for. This will return a paginated list of consolidated invoices for the specified group. |
 | <code>consolidationLevel</code> | <code>string?</code> | The consolidation level of the invoice. Allowed Values: none, parent, child or comma-separated lists of thereof, e.g. none,parent. |
 | <code>direction</code> | <code>[Direction?](Models/Enums/Direction.cs)</code> | The sort direction of the returned invoices. |
 | <code>dateField</code> | <code>[InvoiceDateField?](Models/Enums/InvoiceDateField.cs)</code> | The type of filter you would like to apply to your search. Use in query `date_field=issue_date`. |
 | <code>startDatetime</code> | <code>string?</code> | The start date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns invoices with a timestamp at or after exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of start_date. Allowed to be used only along with date_field set to created_at or updated_at. |
 | <code>endDatetime</code> | <code>string?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns invoices with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of end_date. Allowed to be used only along with date_field set to created_at or updated_at. |
-| <code>customerIds</code> | <code>IReadOnlyList&lt;double&gt;?</code> | Allows fetching invoices with matching customer id based on provided values. Use in query `customer_ids=1,2,3`. |
+| <code>customerIds</code> | <code>IReadOnlyList&lt;int&gt;?</code> | Allows fetching invoices with matching customer id based on provided values. Use in query `customer_ids=1,2,3`. |
 | <code>number</code> | <code>IReadOnlyList&lt;string&gt;?</code> | Allows fetching invoices with matching invoice number based on provided values. Use in query `number=1234,1235`. |
-| <code>productIds</code> | <code>IReadOnlyList&lt;double&gt;?</code> | Allows fetching invoices with matching line items product ids based on provided values. Use in query `product_ids=23,34`. |
+| <code>productIds</code> | <code>IReadOnlyList&lt;int&gt;?</code> | Allows fetching invoices with matching line items product ids based on provided values. Use in query `product_ids=23,34`. |
 | <code>sort</code> | <code>[InvoiceSortField?](Models/Enums/InvoiceSortField.cs)</code> | Allows specification of the order of the returned list. Use in query `sort=total_amount`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 | <code>lineItems</code> | <code>bool?</code> | Include line items data<br>**Default**: false |
 | <code>discounts</code> | <code>bool?</code> | Include discounts data<br>**Default**: false |
 | <code>taxes</code> | <code>bool?</code> | Include taxes data<br>**Default**: false |
@@ -7217,7 +7217,7 @@ catch (SdkException<RecordPaymentForMultipleInvoicesError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;RecordPaymentResponse&gt; RecordPaymentForSubscription(double subscriptionId, RecordPaymentRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;RecordPaymentResponse&gt; RecordPaymentForSubscription(int subscriptionId, RecordPaymentRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -7268,7 +7268,7 @@ catch (SdkException<RecordPaymentForSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[RecordPaymentRequest?](Models/RecordPaymentRequest.cs)</code> | - |
 
 </dd>
@@ -7663,7 +7663,7 @@ catch (SdkException<VoidInvoiceError> ex)
 > Source: [Offers](Api/Offers.cs)
 
 <details>
-<summary><code>Task ArchiveOffer(double offerId, CancellationToken ct = default);</code></summary>
+<summary><code>Task ArchiveOffer(int offerId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -7704,7 +7704,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>offerId</code> | <code>double</code> | The Chargify id of the offer |
+| <code>offerId</code> | <code>int</code> | The Chargify id of the offer |
 
 </dd>
 </dl>
@@ -7807,7 +7807,7 @@ catch (SdkException<CreateOfferError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListOffersResponse&gt; ListOffers(bool? includeArchived, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListOffersResponse&gt; ListOffers(bool? includeArchived, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -7853,8 +7853,8 @@ catch (SdkException<ListOffersError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>includeArchived</code> | <code>bool?</code> | Include archived products. Use in query: `include_archived=true`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -7877,7 +7877,7 @@ catch (SdkException<ListOffersError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;OfferResponse&gt; ReadOffer(double offerId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;OfferResponse&gt; ReadOffer(int offerId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -7919,7 +7919,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>offerId</code> | <code>double</code> | The Chargify id of the offer |
+| <code>offerId</code> | <code>int</code> | The Chargify id of the offer |
 
 </dd>
 </dl>
@@ -7942,7 +7942,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task UnarchiveOffer(double offerId, CancellationToken ct = default);</code></summary>
+<summary><code>Task UnarchiveOffer(int offerId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -7983,7 +7983,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>offerId</code> | <code>double</code> | The Chargify id of the offer |
+| <code>offerId</code> | <code>int</code> | The Chargify id of the offer |
 
 </dd>
 </dl>
@@ -8010,7 +8010,7 @@ catch (SdkException<RawError> ex)
 > Source: [PaymentProfiles](Api/PaymentProfiles.cs)
 
 <details>
-<summary><code>Task&lt;PaymentProfileResponse&gt; ChangeSubscriptionDefaultPaymentProfile(double subscriptionId, double paymentProfileId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PaymentProfileResponse&gt; ChangeSubscriptionDefaultPaymentProfile(int subscriptionId, int paymentProfileId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8058,8 +8058,8 @@ catch (SdkException<ChangeSubscriptionDefaultPaymentProfileError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>paymentProfileId</code> | <code>double</code> | The Chargify id of the payment profile |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>paymentProfileId</code> | <code>int</code> | The Chargify id of the payment profile |
 
 </dd>
 </dl>
@@ -8082,7 +8082,7 @@ catch (SdkException<ChangeSubscriptionDefaultPaymentProfileError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PaymentProfileResponse&gt; ChangeSubscriptionGroupDefaultPaymentProfile(string uid, double paymentProfileId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PaymentProfileResponse&gt; ChangeSubscriptionGroupDefaultPaymentProfile(string uid, int paymentProfileId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8132,7 +8132,7 @@ catch (SdkException<ChangeSubscriptionGroupDefaultPaymentProfileError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>uid</code> | <code>string</code> | The uid of the subscription group |
-| <code>paymentProfileId</code> | <code>double</code> | The Chargify id of the payment profile |
+| <code>paymentProfileId</code> | <code>int</code> | The Chargify id of the payment profile |
 
 </dd>
 </dl>
@@ -8255,7 +8255,7 @@ catch (SdkException<CreatePaymentProfileError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteSubscriptionGroupPaymentProfile(string uid, double paymentProfileId, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteSubscriptionGroupPaymentProfile(string uid, int paymentProfileId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8299,7 +8299,7 @@ catch (SdkException<RawError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>uid</code> | <code>string</code> | The uid of the subscription group |
-| <code>paymentProfileId</code> | <code>double</code> | The Chargify id of the payment profile |
+| <code>paymentProfileId</code> | <code>int</code> | The Chargify id of the payment profile |
 
 </dd>
 </dl>
@@ -8322,7 +8322,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteSubscriptionsPaymentProfile(double subscriptionId, double paymentProfileId, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteSubscriptionsPaymentProfile(int subscriptionId, int paymentProfileId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8367,8 +8367,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>paymentProfileId</code> | <code>double</code> | The Chargify id of the payment profile |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>paymentProfileId</code> | <code>int</code> | The Chargify id of the payment profile |
 
 </dd>
 </dl>
@@ -8391,7 +8391,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteUnusedPaymentProfile(double paymentProfileId, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteUnusedPaymentProfile(int paymentProfileId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8437,7 +8437,7 @@ catch (SdkException<DeleteUnusedPaymentProfileError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>paymentProfileId</code> | <code>double</code> | The Chargify id of the payment profile |
+| <code>paymentProfileId</code> | <code>int</code> | The Chargify id of the payment profile |
 
 </dd>
 </dl>
@@ -8460,7 +8460,7 @@ catch (SdkException<DeleteUnusedPaymentProfileError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;PaymentProfileResponse&gt;&gt; ListPaymentProfiles(double? customerId, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;PaymentProfileResponse&gt;&gt; ListPaymentProfiles(int? customerId, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8502,9 +8502,9 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>customerId</code> | <code>double?</code> | The ID of the customer for which you wish to list payment profiles |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>customerId</code> | <code>int?</code> | The ID of the customer for which you wish to list payment profiles |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -8599,7 +8599,7 @@ catch (SdkException<ReadOneTimeTokenError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PaymentProfileResponse&gt; ReadPaymentProfile(double paymentProfileId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PaymentProfileResponse&gt; ReadPaymentProfile(int paymentProfileId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8680,7 +8680,7 @@ catch (SdkException<ReadPaymentProfileError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>paymentProfileId</code> | <code>double</code> | The Chargify id of the payment profile |
+| <code>paymentProfileId</code> | <code>int</code> | The Chargify id of the payment profile |
 
 </dd>
 </dl>
@@ -8703,7 +8703,7 @@ catch (SdkException<ReadPaymentProfileError> ex)
 </details>
 
 <details>
-<summary><code>Task SendRequestUpdatePaymentEmail(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task SendRequestUpdatePaymentEmail(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8753,7 +8753,7 @@ catch (SdkException<SendRequestUpdatePaymentEmailError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -8776,7 +8776,7 @@ catch (SdkException<SendRequestUpdatePaymentEmailError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PaymentProfileResponse&gt; UpdatePaymentProfile(double paymentProfileId, UpdatePaymentProfileRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PaymentProfileResponse&gt; UpdatePaymentProfile(int paymentProfileId, UpdatePaymentProfileRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8856,7 +8856,7 @@ catch (SdkException<UpdatePaymentProfileError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>paymentProfileId</code> | <code>double</code> | The Chargify id of the payment profile |
+| <code>paymentProfileId</code> | <code>int</code> | The Chargify id of the payment profile |
 | <code>body</code> | <code>[UpdatePaymentProfileRequest?](Models/UpdatePaymentProfileRequest.cs)</code> | - |
 
 </dd>
@@ -8880,7 +8880,7 @@ catch (SdkException<UpdatePaymentProfileError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;BankAccountResponse&gt; VerifyBankAccount(double bankAccountId, BankAccountVerificationRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;BankAccountResponse&gt; VerifyBankAccount(int bankAccountId, BankAccountVerificationRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -8925,7 +8925,7 @@ catch (SdkException<VerifyBankAccountError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>bankAccountId</code> | <code>double</code> | Identifier of the bank account in the system. |
+| <code>bankAccountId</code> | <code>int</code> | Identifier of the bank account in the system. |
 | <code>body</code> | <code>[BankAccountVerificationRequest?](Models/BankAccountVerificationRequest.cs)</code> | - |
 
 </dd>
@@ -9096,7 +9096,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;ProductResponse&gt;&gt; ListProductsForProductFamily(string productFamilyId, BasicDateField? dateField, ListProductsFilter? filter, DateTimeOffset? startDate, DateTimeOffset? endDate, DateTimeOffset? startDatetime, DateTimeOffset? endDatetime, bool? includeArchived, ListProductsInclude? include, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;ProductResponse&gt;&gt; ListProductsForProductFamily(string productFamilyId, BasicDateField? dateField, ListProductsFilter? filter, DateTimeOffset? startDate, DateTimeOffset? endDate, DateTimeOffset? startDatetime, DateTimeOffset? endDatetime, bool? includeArchived, ListProductsInclude? include, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9158,8 +9158,8 @@ catch (SdkException<ListProductsForProductFamilyError> ex)
 | <code>endDatetime</code> | <code>DateTimeOffset?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns products with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site's time zone will be used. If provided, this parameter will be used instead of end_date. |
 | <code>includeArchived</code> | <code>bool?</code> | Include archived products |
 | <code>include</code> | <code>[ListProductsInclude?](Models/Enums/ListProductsInclude.cs)</code> | Allows including additional data in the response. Use in query `include=prepaid_product_price_point`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -9182,7 +9182,7 @@ catch (SdkException<ListProductsForProductFamilyError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ProductFamilyResponse&gt; ReadProductFamily(double id, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ProductFamilyResponse&gt; ReadProductFamily(int id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9226,7 +9226,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>double</code> | The Advanced Billing id of the product family |
+| <code>id</code> | <code>int</code> | The Advanced Billing id of the product family |
 
 </dd>
 </dl>
@@ -9322,7 +9322,7 @@ catch (SdkException<ArchiveProductPricePointError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;BulkCreateProductPricePointsResponse&gt; BulkCreateProductPricePoints(double productId, BulkCreateProductPricePointsRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;BulkCreateProductPricePointsResponse&gt; BulkCreateProductPricePoints(int productId, BulkCreateProductPricePointsRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9367,7 +9367,7 @@ catch (SdkException<BulkCreateProductPricePointsError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productId</code> | <code>double</code> | The Advanced Billing id of the product to which the price points belong |
+| <code>productId</code> | <code>int</code> | The Advanced Billing id of the product to which the price points belong |
 | <code>body</code> | <code>[BulkCreateProductPricePointsRequest?](Models/BulkCreateProductPricePointsRequest.cs)</code> | - |
 
 </dd>
@@ -9391,7 +9391,7 @@ catch (SdkException<BulkCreateProductPricePointsError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CurrencyPricesResponse&gt; CreateProductCurrencyPrices(double productPricePointId, CreateProductCurrencyPricesRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CurrencyPricesResponse&gt; CreateProductCurrencyPrices(int productPricePointId, CreateProductCurrencyPricesRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9440,7 +9440,7 @@ catch (SdkException<CreateProductCurrencyPricesError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productPricePointId</code> | <code>double</code> | The Advanced Billing id of the product price point |
+| <code>productPricePointId</code> | <code>int</code> | The Advanced Billing id of the product price point |
 | <code>body</code> | <code>[CreateProductCurrencyPricesRequest?](Models/CreateProductCurrencyPricesRequest.cs)</code> | - |
 
 </dd>
@@ -9533,7 +9533,7 @@ catch (SdkException<CreateProductPricePointError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListProductPricePointsResponse&gt; ListAllProductPricePoints(SortingDirection? direction, ListPricePointsFilter? filter, ListProductsPricePointsInclude? include, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListProductPricePointsResponse&gt; ListAllProductPricePoints(SortingDirection? direction, ListPricePointsFilter? filter, ListProductsPricePointsInclude? include, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9581,8 +9581,8 @@ catch (SdkException<ListAllProductPricePointsError> ex)
 | <code>direction</code> | <code>[SortingDirection?](Models/Enums/SortingDirection.cs)</code> | Controls the order in which results are returned.<br>Use in query `direction=asc`. |
 | <code>filter</code> | <code>[ListPricePointsFilter?](Models/ListPricePointsFilter.cs)</code> | Filter to use for List PricePoints operations |
 | <code>include</code> | <code>[ListProductsPricePointsInclude?](Models/Enums/ListProductsPricePointsInclude.cs)</code> | Allows including additional data in the response. Use in query: `include=currency_prices`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -9605,7 +9605,7 @@ catch (SdkException<ListAllProductPricePointsError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListProductPricePointsResponse&gt; ListProductPricePoints(ProductIdModel productId, bool? currencyPrices, IReadOnlyList&lt;PricePointType&gt;? filterType, bool? archived, double? page = 1d, double? perPage = 10d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListProductPricePointsResponse&gt; ListProductPricePoints(ProductIdModel productId, bool? currencyPrices, IReadOnlyList&lt;PricePointType&gt;? filterType, bool? archived, int? page = 1, int? perPage = 10, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9654,8 +9654,8 @@ catch (SdkException<RawError> ex)
 | <code>currencyPrices</code> | <code>bool?</code> | When fetching a product's price points, if you have defined multiple currencies at the site level, you can optionally pass the ?currency_prices=true query param to include an array of currency price data in the response. If the product price point is set to use_site_exchange_rate: true, it will return pricing based on the current exchange rate. If the flag is set to false, it will return all of the defined prices for each currency. |
 | <code>filterType</code> | <code>IReadOnlyList&lt;[PricePointType](Models/Enums/PricePointType.cs)&gt;?</code> | Use in query: `filter[type]=catalog,default`. |
 | <code>archived</code> | <code>bool?</code> | Set to include archived price points in the response. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 10. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>**Default**: 10d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 10. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>**Default**: 10 |
 
 </dd>
 </dl>
@@ -9678,7 +9678,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ProductResponse&gt; PromoteProductPricePointToDefault(double productId, double pricePointId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ProductResponse&gt; PromoteProductPricePointToDefault(int productId, int pricePointId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9722,8 +9722,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productId</code> | <code>double</code> | The Advanced Billing id of the product to which the price point belongs |
-| <code>pricePointId</code> | <code>double</code> | The Advanced Billing id of the product price point |
+| <code>productId</code> | <code>int</code> | The Advanced Billing id of the product to which the price point belongs |
+| <code>pricePointId</code> | <code>int</code> | The Advanced Billing id of the product price point |
 
 </dd>
 </dl>
@@ -9813,7 +9813,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ProductPricePointResponse&gt; UnarchiveProductPricePoint(double productId, double pricePointId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ProductPricePointResponse&gt; UnarchiveProductPricePoint(int productId, int pricePointId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9855,8 +9855,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productId</code> | <code>double</code> | The Advanced Billing id of the product to which the price point belongs |
-| <code>pricePointId</code> | <code>double</code> | The Advanced Billing id of the product price point |
+| <code>productId</code> | <code>int</code> | The Advanced Billing id of the product to which the price point belongs |
+| <code>pricePointId</code> | <code>int</code> | The Advanced Billing id of the product price point |
 
 </dd>
 </dl>
@@ -9879,7 +9879,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;CurrencyPricesResponse&gt; UpdateProductCurrencyPrices(double productPricePointId, UpdateCurrencyPricesRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CurrencyPricesResponse&gt; UpdateProductCurrencyPrices(int productPricePointId, UpdateCurrencyPricesRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -9928,7 +9928,7 @@ catch (SdkException<UpdateProductCurrencyPricesError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productPricePointId</code> | <code>double</code> | The Advanced Billing id of the product price point |
+| <code>productPricePointId</code> | <code>int</code> | The Advanced Billing id of the product price point |
 | <code>body</code> | <code>[UpdateCurrencyPricesRequest?](Models/UpdateCurrencyPricesRequest.cs)</code> | - |
 
 </dd>
@@ -10025,7 +10025,7 @@ catch (SdkException<RawError> ex)
 > Source: [Products](Api/Products.cs)
 
 <details>
-<summary><code>Task&lt;ProductResponse&gt; ArchiveProduct(double productId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ProductResponse&gt; ArchiveProduct(int productId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -10072,7 +10072,7 @@ catch (SdkException<ArchiveProductError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productId</code> | <code>double</code> | The Advanced Billing id of the product |
+| <code>productId</code> | <code>int</code> | The Advanced Billing id of the product |
 
 </dd>
 </dl>
@@ -10169,7 +10169,7 @@ catch (SdkException<CreateProductError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;ProductResponse&gt;&gt; ListProducts(BasicDateField? dateField, ListProductsFilter? filter, DateTimeOffset? endDate, DateTimeOffset? endDatetime, DateTimeOffset? startDate, DateTimeOffset? startDatetime, bool? includeArchived, ListProductsInclude? include, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;ProductResponse&gt;&gt; ListProducts(BasicDateField? dateField, ListProductsFilter? filter, DateTimeOffset? endDate, DateTimeOffset? endDatetime, DateTimeOffset? startDate, DateTimeOffset? startDatetime, bool? includeArchived, ListProductsInclude? include, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -10226,8 +10226,8 @@ catch (SdkException<RawError> ex)
 | <code>startDatetime</code> | <code>DateTimeOffset?</code> | The start date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns products with a timestamp at or after exact time provided in query. You can specify timezone in query - otherwise your site''s time zone will be used. If provided, this parameter will be used instead of start_date. |
 | <code>includeArchived</code> | <code>bool?</code> | Include archived products. Use in query: `include_archived=true`. |
 | <code>include</code> | <code>[ListProductsInclude?](Models/Enums/ListProductsInclude.cs)</code> | Allows including additional data in the response. Use in query `include=prepaid_product_price_point`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -10250,7 +10250,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ProductResponse&gt; ReadProduct(double productId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ProductResponse&gt; ReadProduct(int productId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -10292,7 +10292,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productId</code> | <code>double</code> | The Advanced Billing id of the product |
+| <code>productId</code> | <code>int</code> | The Advanced Billing id of the product |
 
 </dd>
 </dl>
@@ -10380,7 +10380,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ProductResponse&gt; UpdateProduct(double productId, CreateOrUpdateProductRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ProductResponse&gt; UpdateProduct(int productId, CreateOrUpdateProductRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -10433,7 +10433,7 @@ catch (SdkException<UpdateProductError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>productId</code> | <code>double</code> | The Advanced Billing id of the product |
+| <code>productId</code> | <code>int</code> | The Advanced Billing id of the product |
 | <code>body</code> | <code>[CreateOrUpdateProductRequest?](Models/CreateOrUpdateProductRequest.cs)</code> | - |
 
 </dd>
@@ -10534,7 +10534,7 @@ catch (SdkException<CreateConsolidatedProformaInvoiceError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ProformaInvoice&gt; CreateProformaInvoice(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ProformaInvoice&gt; CreateProformaInvoice(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -10585,7 +10585,7 @@ catch (SdkException<CreateProformaInvoiceError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -10754,7 +10754,7 @@ catch (SdkException<DeliverProformaInvoiceError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListProformaInvoicesResponse&gt; ListProformaInvoices(double subscriptionId, string? startDate, string? endDate, ProformaInvoiceStatus? status, Direction? direction, double? page = 1d, double? perPage = 20d, bool? lineItems = false, bool? discounts = false, bool? taxes = false, bool? credits = false, bool? payments = false, bool? customFields = false, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListProformaInvoicesResponse&gt; ListProformaInvoices(int subscriptionId, string? startDate, string? endDate, ProformaInvoiceStatus? status, Direction? direction, int? page = 1, int? perPage = 20, bool? lineItems = false, bool? discounts = false, bool? taxes = false, bool? credits = false, bool? payments = false, bool? customFields = false, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -10800,13 +10800,13 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>startDate</code> | <code>string?</code> | The beginning date range for the invoice's Due Date, in the YYYY-MM-DD format. |
 | <code>endDate</code> | <code>string?</code> | The ending date range for the invoice's Due Date, in the YYYY-MM-DD format. |
 | <code>status</code> | <code>[ProformaInvoiceStatus?](Models/Enums/ProformaInvoiceStatus.cs)</code> | The current status of the invoice.  Allowed Values: draft, open, paid, pending, voided |
 | <code>direction</code> | <code>[Direction?](Models/Enums/Direction.cs)</code> | The sort direction of the returned invoices. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 | <code>lineItems</code> | <code>bool?</code> | Include line items data<br>**Default**: false |
 | <code>discounts</code> | <code>bool?</code> | Include discounts data<br>**Default**: false |
 | <code>taxes</code> | <code>bool?</code> | Include taxes data<br>**Default**: false |
@@ -10912,7 +10912,7 @@ catch (SdkException<ListSubscriptionGroupProformaInvoicesError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ProformaInvoice&gt; PreviewProformaInvoice(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ProformaInvoice&gt; PreviewProformaInvoice(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -10963,7 +10963,7 @@ catch (SdkException<PreviewProformaInvoiceError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -11296,7 +11296,7 @@ catch (SdkException<CreateReasonCodeError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;OkResponse&gt; DeleteReasonCode(double reasonCodeId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;OkResponse&gt; DeleteReasonCode(int reasonCodeId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -11341,7 +11341,7 @@ catch (SdkException<DeleteReasonCodeError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>reasonCodeId</code> | <code>double</code> | The Advanced Billing id of the reason code |
+| <code>reasonCodeId</code> | <code>int</code> | The Advanced Billing id of the reason code |
 
 </dd>
 </dl>
@@ -11364,7 +11364,7 @@ catch (SdkException<DeleteReasonCodeError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;ReasonCodeResponse&gt;&gt; ListReasonCodes(double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;ReasonCodeResponse&gt;&gt; ListReasonCodes(int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -11409,8 +11409,8 @@ catch (SdkException<ListReasonCodesError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -11433,7 +11433,7 @@ catch (SdkException<ListReasonCodesError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ReasonCodeResponse&gt; ReadReasonCode(double reasonCodeId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ReasonCodeResponse&gt; ReadReasonCode(int reasonCodeId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -11478,7 +11478,7 @@ catch (SdkException<ReadReasonCodeError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>reasonCodeId</code> | <code>double</code> | The Advanced Billing id of the reason code |
+| <code>reasonCodeId</code> | <code>int</code> | The Advanced Billing id of the reason code |
 
 </dd>
 </dl>
@@ -11501,7 +11501,7 @@ catch (SdkException<ReadReasonCodeError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ReasonCodeResponse&gt; UpdateReasonCode(double reasonCodeId, UpdateReasonCodeRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ReasonCodeResponse&gt; UpdateReasonCode(int reasonCodeId, UpdateReasonCodeRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -11546,7 +11546,7 @@ catch (SdkException<UpdateReasonCodeError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>reasonCodeId</code> | <code>double</code> | The Advanced Billing id of the reason code |
+| <code>reasonCodeId</code> | <code>int</code> | The Advanced Billing id of the reason code |
 | <code>body</code> | <code>[UpdateReasonCodeRequest?](Models/UpdateReasonCodeRequest.cs)</code> | - |
 
 </dd>
@@ -11654,7 +11654,7 @@ catch (SdkException<ValidateReferralCodeError> ex)
 > Source: [SalesCommissions](Api/SalesCommissions.cs)
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;SaleRepSettings&gt;&gt; ListSalesCommissionSettings(string sellerId, bool? liveMode, double? page = 1d, double? perPage = 100d, string? authorization = "Bearer &lt;&lt;apiKey&gt;&gt;", CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;SaleRepSettings&gt;&gt; ListSalesCommissionSettings(string sellerId, bool? liveMode, int? page = 1, int? perPage = 100, string? authorization = "Bearer &lt;&lt;apiKey&gt;&gt;", CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -11706,8 +11706,8 @@ catch (SdkException<RawError> ex)
 | --- | --- | --- |
 | <code>sellerId</code> | <code>string</code> | The Chargify id of your seller account |
 | <code>liveMode</code> | <code>bool?</code> | This parameter indicates if records should be fetched from live mode sites. Default value is true. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 100.<br>**Default**: 100d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 100.<br>**Default**: 100 |
 | <code>authorization</code> | <code>string?</code> | For authorization use user API key. See details [here](https://developers.chargify.com/docs/developer-docs/ZG9jOjMyNzk5NTg0-2020-04-20-new-api-authentication).<br>**Default**: "Bearer <<apiKey>>" |
 
 </dd>
@@ -11731,7 +11731,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;ListSaleRepItem&gt;&gt; ListSalesReps(string sellerId, bool? liveMode, double? page = 1d, double? perPage = 100d, string? authorization = "Bearer &lt;&lt;apiKey&gt;&gt;", CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;ListSaleRepItem&gt;&gt; ListSalesReps(string sellerId, bool? liveMode, int? page = 1, int? perPage = 100, string? authorization = "Bearer &lt;&lt;apiKey&gt;&gt;", CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -11783,8 +11783,8 @@ catch (SdkException<RawError> ex)
 | --- | --- | --- |
 | <code>sellerId</code> | <code>string</code> | The Chargify id of your seller account |
 | <code>liveMode</code> | <code>bool?</code> | This parameter indicates if records should be fetched from live mode sites. Default value is true. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 100.<br>**Default**: 100d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 100.<br>**Default**: 100 |
 | <code>authorization</code> | <code>string?</code> | For authorization use user API key. See details [here](https://developers.chargify.com/docs/developer-docs/ZG9jOjMyNzk5NTg0-2020-04-20-new-api-authentication).<br>**Default**: "Bearer <<apiKey>>" |
 
 </dd>
@@ -11808,7 +11808,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SaleRep&gt; ReadSalesRep(string sellerId, string salesRepId, bool? liveMode, double? page = 1d, double? perPage = 100d, string? authorization = "Bearer &lt;&lt;apiKey&gt;&gt;", CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SaleRep&gt; ReadSalesRep(string sellerId, string salesRepId, bool? liveMode, int? page = 1, int? perPage = 100, string? authorization = "Bearer &lt;&lt;apiKey&gt;&gt;", CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -11861,8 +11861,8 @@ catch (SdkException<RawError> ex)
 | <code>sellerId</code> | <code>string</code> | The Chargify id of your seller account |
 | <code>salesRepId</code> | <code>string</code> | The Advanced Billing id of sales rep. |
 | <code>liveMode</code> | <code>bool?</code> | This parameter indicates if records should be fetched from live mode sites. Default value is true. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 100.<br>**Default**: 100d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 100.<br>**Default**: 100 |
 | <code>authorization</code> | <code>string?</code> | For authorization use user API key. See details [here](https://developers.chargify.com/docs/developer-docs/ZG9jOjMyNzk5NTg0-2020-04-20-new-api-authentication).<br>**Default**: "Bearer <<apiKey>>" |
 
 </dd>
@@ -11957,7 +11957,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListPublicKeysResponse&gt; ListChargifyJsPublicKeys(double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListPublicKeysResponse&gt; ListChargifyJsPublicKeys(int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -11999,8 +11999,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -12093,7 +12093,7 @@ catch (SdkException<RawError> ex)
 > Source: [SubscriptionComponents](Api/SubscriptionComponents.cs)
 
 <details>
-<summary><code>Task ActivateEventBasedComponent(double subscriptionId, double componentId, ActivateEventBasedComponent? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task ActivateEventBasedComponent(int subscriptionId, int componentId, ActivateEventBasedComponent? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12142,8 +12142,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Advanced Billing id of the subscription |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component |
+| <code>subscriptionId</code> | <code>int</code> | The Advanced Billing id of the subscription |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component |
 | <code>body</code> | <code>[ActivateEventBasedComponent?](Models/ActivateEventBasedComponent.cs)</code> | - |
 
 </dd>
@@ -12167,7 +12167,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;AllocationResponse&gt; AllocateComponent(double subscriptionId, double componentId, CreateAllocationRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;AllocationResponse&gt; AllocateComponent(int subscriptionId, int componentId, CreateAllocationRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12234,8 +12234,8 @@ catch (SdkException<AllocateComponentError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component |
 | <code>body</code> | <code>[CreateAllocationRequest?](Models/CreateAllocationRequest.cs)</code> | - |
 
 </dd>
@@ -12259,7 +12259,7 @@ catch (SdkException<AllocateComponentError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;AllocationResponse&gt;&gt; AllocateComponents(double subscriptionId, AllocateComponents? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;AllocationResponse&gt;&gt; AllocateComponents(int subscriptionId, AllocateComponents? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12322,7 +12322,7 @@ catch (SdkException<AllocateComponentsError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[AllocateComponents?](Models/AllocateComponents.cs)</code> | - |
 
 </dd>
@@ -12416,7 +12416,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; BulkResetSubscriptionComponentsPricePoints(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; BulkResetSubscriptionComponentsPricePoints(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12460,7 +12460,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -12483,7 +12483,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;BulkComponentsPricePointAssignment&gt; BulkUpdateSubscriptionComponentsPricePoints(double subscriptionId, BulkComponentsPricePointAssignment? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;BulkComponentsPricePointAssignment&gt; BulkUpdateSubscriptionComponentsPricePoints(int subscriptionId, BulkComponentsPricePointAssignment? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12534,7 +12534,7 @@ catch (SdkException<BulkUpdateSubscriptionComponentsPricePointsError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[BulkComponentsPricePointAssignment?](Models/BulkComponentsPricePointAssignment.cs)</code> | - |
 
 </dd>
@@ -12677,7 +12677,7 @@ catch (SdkException<CreateUsageError> ex)
 </details>
 
 <details>
-<summary><code>Task DeactivateEventBasedComponent(double subscriptionId, double componentId, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeactivateEventBasedComponent(int subscriptionId, int componentId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12718,8 +12718,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Advanced Billing id of the subscription |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component |
+| <code>subscriptionId</code> | <code>int</code> | The Advanced Billing id of the subscription |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component |
 
 </dd>
 </dl>
@@ -12742,7 +12742,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task DeletePrepaidUsageAllocation(double subscriptionId, double componentId, double allocationId, CreditSchemeRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeletePrepaidUsageAllocation(int subscriptionId, int componentId, int allocationId, CreditSchemeRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12799,9 +12799,9 @@ catch (SdkException<DeletePrepaidUsageAllocationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component |
-| <code>allocationId</code> | <code>double</code> | The Advanced Billing id of the allocation |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component |
+| <code>allocationId</code> | <code>int</code> | The Advanced Billing id of the allocation |
 | <code>body</code> | <code>[CreditSchemeRequest?](Models/CreditSchemeRequest.cs)</code> | - |
 
 </dd>
@@ -12825,7 +12825,7 @@ catch (SdkException<DeletePrepaidUsageAllocationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;AllocationResponse&gt;&gt; ListAllocations(double subscriptionId, double componentId, double? page = 1d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;AllocationResponse&gt;&gt; ListAllocations(int subscriptionId, int componentId, int? page = 1, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12874,9 +12874,9 @@ catch (SdkException<ListAllocationsError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
 
 </dd>
 </dl>
@@ -12899,7 +12899,7 @@ catch (SdkException<ListAllocationsError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;SubscriptionComponentResponse&gt;&gt; ListSubscriptionComponents(double subscriptionId, SubscriptionListDateField? dateField, SortingDirection? direction, ListSubscriptionComponentsFilter? filter, string? endDate, string? endDatetime, IncludeNotNull? pricePointIds, IReadOnlyList&lt;double&gt;? productFamilyIds, ListSubscriptionComponentsSort? sort, string? startDate, string? startDatetime, IReadOnlyList&lt;ListSubscriptionComponentsInclude&gt;? include, bool? inUse, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;SubscriptionComponentResponse&gt;&gt; ListSubscriptionComponents(int subscriptionId, SubscriptionListDateField? dateField, SortingDirection? direction, ListSubscriptionComponentsFilter? filter, string? endDate, string? endDatetime, IncludeNotNull? pricePointIds, IReadOnlyList&lt;int&gt;? productFamilyIds, ListSubscriptionComponentsSort? sort, string? startDate, string? startDatetime, IReadOnlyList&lt;ListSubscriptionComponentsInclude&gt;? include, bool? inUse, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -12957,14 +12957,14 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>dateField</code> | <code>[SubscriptionListDateField?](Models/Enums/SubscriptionListDateField.cs)</code> | The type of filter you'd like to apply to your search. Use in query `date_field=updated_at`. |
 | <code>direction</code> | <code>[SortingDirection?](Models/Enums/SortingDirection.cs)</code> | Controls the order in which results are returned.<br>Use in query `direction=asc`. |
 | <code>filter</code> | <code>[ListSubscriptionComponentsFilter?](Models/ListSubscriptionComponentsFilter.cs)</code> | Filter to use for List Subscription Components operation |
 | <code>endDate</code> | <code>string?</code> | The end date (format YYYY-MM-DD) with which to filter the date_field. Returns components with a timestamp up to and including 11:59:59PM in your site’s time zone on the date specified. |
 | <code>endDatetime</code> | <code>string?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site''s time zone will be used. If provided, this parameter will be used instead of end_date. |
 | <code>pricePointIds</code> | <code>[IncludeNotNull?](Models/Enums/IncludeNotNull.cs)</code> | Allows fetching components allocation only if price point id is present. Use in query `price_point_ids=not_null`. |
-| <code>productFamilyIds</code> | <code>IReadOnlyList&lt;double&gt;?</code> | Allows fetching components allocation with matching product family id based on provided ids. Use in query `product_family_ids=1,2,3`. |
+| <code>productFamilyIds</code> | <code>IReadOnlyList&lt;int&gt;?</code> | Allows fetching components allocation with matching product family id based on provided ids. Use in query `product_family_ids=1,2,3`. |
 | <code>sort</code> | <code>[ListSubscriptionComponentsSort?](Models/Enums/ListSubscriptionComponentsSort.cs)</code> | The attribute by which to sort. Use in query `sort=updated_at`. |
 | <code>startDate</code> | <code>string?</code> | The start date (format YYYY-MM-DD) with which to filter the date_field. Returns components with a timestamp at or after midnight (12:00:00 AM) in your site’s time zone on the date specified. |
 | <code>startDatetime</code> | <code>string?</code> | The start date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or after exact time provided in query. You can specify timezone in query - otherwise your site''s time zone will be used. If provided, this parameter will be used instead of start_date. |
@@ -12992,7 +12992,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListSubscriptionComponentsResponse&gt; ListSubscriptionComponentsForSite(ListSubscriptionComponentsSort? sort, SortingDirection? direction, ListSubscriptionComponentsForSiteFilter? filter, SubscriptionListDateField? dateField, string? startDate, string? startDatetime, string? endDate, string? endDatetime, IReadOnlyList&lt;double&gt;? subscriptionIds, IncludeNotNull? pricePointIds, IReadOnlyList&lt;double&gt;? productFamilyIds, ListSubscriptionComponentsInclude? include, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListSubscriptionComponentsResponse&gt; ListSubscriptionComponentsForSite(ListSubscriptionComponentsSort? sort, SortingDirection? direction, ListSubscriptionComponentsForSiteFilter? filter, SubscriptionListDateField? dateField, string? startDate, string? startDatetime, string? endDate, string? endDatetime, IReadOnlyList&lt;int&gt;? subscriptionIds, IncludeNotNull? pricePointIds, IReadOnlyList&lt;int&gt;? productFamilyIds, ListSubscriptionComponentsInclude? include, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -13053,12 +13053,12 @@ catch (SdkException<RawError> ex)
 | <code>startDatetime</code> | <code>string?</code> | The start date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or after exact time provided in query. You can specify timezone in query - otherwise your site''s time zone will be used. If provided, this parameter will be used instead of start_date. Use in query `start_datetime=2022-07-01 09:00:05`. |
 | <code>endDate</code> | <code>string?</code> | The end date (format YYYY-MM-DD) with which to filter the date_field. Returns components with a timestamp up to and including 11:59:59PM in your site’s time zone on the date specified. Use in query `end_date=2011-12-16`. |
 | <code>endDatetime</code> | <code>string?</code> | The end date and time (format YYYY-MM-DD HH:MM:SS) with which to filter the date_field. Returns components with a timestamp at or before exact time provided in query. You can specify timezone in query - otherwise your site''s time zone will be used. If provided, this parameter will be used instead of end_date. Use in query `end_datetime=2022-07-01 09:00:05`. |
-| <code>subscriptionIds</code> | <code>IReadOnlyList&lt;double&gt;?</code> | Allows fetching components allocation with matching subscription id based on provided ids. Use in query `subscription_ids=1,2,3`. |
+| <code>subscriptionIds</code> | <code>IReadOnlyList&lt;int&gt;?</code> | Allows fetching components allocation with matching subscription id based on provided ids. Use in query `subscription_ids=1,2,3`. |
 | <code>pricePointIds</code> | <code>[IncludeNotNull?](Models/Enums/IncludeNotNull.cs)</code> | Allows fetching components allocation only if price point id is present. Use in query `price_point_ids=not_null`. |
-| <code>productFamilyIds</code> | <code>IReadOnlyList&lt;double&gt;?</code> | Allows fetching components allocation with matching product family id based on provided ids. Use in query `product_family_ids=1,2,3`. |
+| <code>productFamilyIds</code> | <code>IReadOnlyList&lt;int&gt;?</code> | Allows fetching components allocation with matching product family id based on provided ids. Use in query `product_family_ids=1,2,3`. |
 | <code>include</code> | <code>[ListSubscriptionComponentsInclude?](Models/Enums/ListSubscriptionComponentsInclude.cs)</code> | Allows including additional data in the response. Use in query `include=subscription,historic_usages`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -13081,7 +13081,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;UsageResponse&gt;&gt; ListUsages(SubscriptionIdOrReference subscriptionIdOrReference, ComponentIdModel componentId, long? sinceId, long? maxId, DateTimeOffset? sinceDate, DateTimeOffset? untilDate, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;UsageResponse&gt;&gt; ListUsages(SubscriptionIdOrReference subscriptionIdOrReference, ComponentIdModel componentId, long? sinceId, long? maxId, DateTimeOffset? sinceDate, DateTimeOffset? untilDate, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -13148,8 +13148,8 @@ catch (SdkException<RawError> ex)
 | <code>maxId</code> | <code>long?</code> | Returns usages with an id less than or equal to the one specified |
 | <code>sinceDate</code> | <code>DateTimeOffset?</code> | Returns usages with a created_at date greater than or equal to midnight (12:00 AM) on the date specified. |
 | <code>untilDate</code> | <code>DateTimeOffset?</code> | Returns usages with a created_at date less than or equal to midnight (12:00 AM) on the date specified. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -13172,7 +13172,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;AllocationPreviewResponse&gt; PreviewAllocations(double subscriptionId, PreviewAllocationsRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;AllocationPreviewResponse&gt; PreviewAllocations(int subscriptionId, PreviewAllocationsRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -13223,7 +13223,7 @@ catch (SdkException<PreviewAllocationsError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[PreviewAllocationsRequest?](Models/PreviewAllocationsRequest.cs)</code> | - |
 
 </dd>
@@ -13247,7 +13247,7 @@ catch (SdkException<PreviewAllocationsError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionComponentResponse&gt; ReadSubscriptionComponent(double subscriptionId, double componentId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionComponentResponse&gt; ReadSubscriptionComponent(int subscriptionId, int componentId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -13292,8 +13292,8 @@ catch (SdkException<ReadSubscriptionComponentError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component. Alternatively, the component's handle prefixed by `handle:` |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component. Alternatively, the component's handle prefixed by `handle:` |
 
 </dd>
 </dl>
@@ -13402,7 +13402,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task UpdatePrepaidUsageAllocationExpirationDate(double subscriptionId, double componentId, double allocationId, UpdateAllocationExpirationDate? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task UpdatePrepaidUsageAllocationExpirationDate(int subscriptionId, int componentId, int allocationId, UpdateAllocationExpirationDate? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -13459,9 +13459,9 @@ catch (SdkException<UpdatePrepaidUsageAllocationExpirationDateError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>componentId</code> | <code>double</code> | The Advanced Billing id of the component |
-| <code>allocationId</code> | <code>double</code> | The Advanced Billing id of the allocation |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>componentId</code> | <code>int</code> | The Advanced Billing id of the component |
+| <code>allocationId</code> | <code>int</code> | The Advanced Billing id of the allocation |
 | <code>body</code> | <code>[UpdateAllocationExpirationDate?](Models/UpdateAllocationExpirationDate.cs)</code> | - |
 
 </dd>
@@ -13696,7 +13696,7 @@ catch (SdkException<IssueSubscriptionGroupServiceCreditError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListSubscriptionGroupPrepaymentResponse&gt; ListPrepaymentsForSubscriptionGroup(string uid, ListPrepaymentsFilter? filter, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListSubscriptionGroupPrepaymentResponse&gt; ListPrepaymentsForSubscriptionGroup(string uid, ListPrepaymentsFilter? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -13743,8 +13743,8 @@ catch (SdkException<ListPrepaymentsForSubscriptionGroupError> ex)
 | --- | --- | --- |
 | <code>uid</code> | <code>string</code> | The uid of the subscription group |
 | <code>filter</code> | <code>[ListPrepaymentsFilter?](Models/ListPrepaymentsFilter.cs)</code> | Filter to use for List Prepayments operations |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -14077,7 +14077,7 @@ catch (SdkException<ReactivateSubscriptionGroupError> ex)
 > Source: [SubscriptionGroups](Api/SubscriptionGroups.cs)
 
 <details>
-<summary><code>Task&lt;SubscriptionGroupResponse&gt; AddSubscriptionToGroup(double subscriptionId, AddSubscriptionToAGroup? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionGroupResponse&gt; AddSubscriptionToGroup(int subscriptionId, AddSubscriptionToAGroup? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -14132,7 +14132,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[AddSubscriptionToAGroup?](Models/AddSubscriptionToAGroup.cs)</code> | - |
 
 </dd>
@@ -14363,7 +14363,7 @@ catch (SdkException<FindSubscriptionGroupError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListSubscriptionGroupsResponse&gt; ListSubscriptionGroups(IReadOnlyList&lt;SubscriptionGroupsListInclude&gt;? include, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListSubscriptionGroupsResponse&gt; ListSubscriptionGroups(IReadOnlyList&lt;SubscriptionGroupsListInclude&gt;? include, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -14410,8 +14410,8 @@ catch (SdkException<RawError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>include</code> | <code>IReadOnlyList&lt;[SubscriptionGroupsListInclude](Models/Enums/SubscriptionGroupsListInclude.cs)&gt;?</code> | A list of additional information to include in the response. The following values are supported:<br><br>- `account_balances`: Account balance information for the subscription groups. Use in query: `include[]=account_balances` |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -14504,7 +14504,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task RemoveSubscriptionFromGroup(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task RemoveSubscriptionFromGroup(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -14548,7 +14548,7 @@ catch (SdkException<RemoveSubscriptionFromGroupError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -14723,7 +14723,7 @@ catch (SdkException<UpdateSubscriptionGroupMembersError> ex)
 > Source: [SubscriptionInvoiceAccount](Api/SubscriptionInvoiceAccount.cs)
 
 <details>
-<summary><code>Task&lt;CreatePrepaymentResponse&gt; CreatePrepayment(double subscriptionId, CreatePrepaymentRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;CreatePrepaymentResponse&gt; CreatePrepayment(int subscriptionId, CreatePrepaymentRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -14781,7 +14781,7 @@ catch (SdkException<CreatePrepaymentApiError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[CreatePrepaymentRequest?](Models/CreatePrepaymentRequest.cs)</code> | - |
 
 </dd>
@@ -14805,7 +14805,7 @@ catch (SdkException<CreatePrepaymentApiError> ex)
 </details>
 
 <details>
-<summary><code>Task DeductServiceCredit(double subscriptionId, DeductServiceCreditRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeductServiceCredit(int subscriptionId, DeductServiceCreditRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -14849,7 +14849,7 @@ catch (SdkException<DeductServiceCreditApiError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[DeductServiceCreditRequest?](Models/DeductServiceCreditRequest.cs)</code> | - |
 
 </dd>
@@ -14873,7 +14873,7 @@ catch (SdkException<DeductServiceCreditApiError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ServiceCredit&gt; IssueServiceCredit(double subscriptionId, IssueServiceCreditRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ServiceCredit&gt; IssueServiceCredit(int subscriptionId, IssueServiceCreditRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -14918,7 +14918,7 @@ catch (SdkException<IssueServiceCreditApiError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[IssueServiceCreditRequest?](Models/IssueServiceCreditRequest.cs)</code> | - |
 
 </dd>
@@ -14942,7 +14942,7 @@ catch (SdkException<IssueServiceCreditApiError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PrepaymentsResponse&gt; ListPrepayments(double subscriptionId, ListPrepaymentsFilter? filter, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PrepaymentsResponse&gt; ListPrepayments(int subscriptionId, ListPrepaymentsFilter? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -14987,10 +14987,10 @@ catch (SdkException<ListPrepaymentsError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>filter</code> | <code>[ListPrepaymentsFilter?](Models/ListPrepaymentsFilter.cs)</code> | Filter to use for List Prepayments operations |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -15013,7 +15013,7 @@ catch (SdkException<ListPrepaymentsError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ListServiceCreditsResponse&gt; ListServiceCredits(double subscriptionId, SortingDirection? direction, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ListServiceCreditsResponse&gt; ListServiceCredits(int subscriptionId, SortingDirection? direction, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15058,10 +15058,10 @@ catch (SdkException<ListServiceCreditsError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>direction</code> | <code>[SortingDirection?](Models/Enums/SortingDirection.cs)</code> | Controls the order in which results are returned.<br>Use in query `direction=asc`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -15084,7 +15084,7 @@ catch (SdkException<ListServiceCreditsError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;AccountBalances&gt; ReadAccountBalances(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;AccountBalances&gt; ReadAccountBalances(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15126,7 +15126,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -15149,7 +15149,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PrepaymentResponse&gt; RefundPrepayment(double subscriptionId, long prepaymentId, RefundPrepaymentRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PrepaymentResponse&gt; RefundPrepayment(int subscriptionId, long prepaymentId, RefundPrepaymentRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15196,7 +15196,7 @@ catch (SdkException<RefundPrepaymentApiError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>prepaymentId</code> | <code>long</code> | id of prepayment |
 | <code>body</code> | <code>[RefundPrepaymentRequest?](Models/RefundPrepaymentRequest.cs)</code> | - |
 
@@ -15225,7 +15225,7 @@ catch (SdkException<RefundPrepaymentApiError> ex)
 > Source: [SubscriptionNotes](Api/SubscriptionNotes.cs)
 
 <details>
-<summary><code>Task&lt;SubscriptionNoteResponse&gt; CreateSubscriptionNote(double subscriptionId, UpdateSubscriptionNoteRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionNoteResponse&gt; CreateSubscriptionNote(int subscriptionId, UpdateSubscriptionNoteRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15278,7 +15278,7 @@ catch (SdkException<CreateSubscriptionNoteError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[UpdateSubscriptionNoteRequest?](Models/UpdateSubscriptionNoteRequest.cs)</code> | - |
 
 </dd>
@@ -15302,7 +15302,7 @@ catch (SdkException<CreateSubscriptionNoteError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteSubscriptionNote(double subscriptionId, double noteId, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteSubscriptionNote(int subscriptionId, int noteId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15343,8 +15343,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>noteId</code> | <code>double</code> | The Advanced Billing id of the note |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>noteId</code> | <code>int</code> | The Advanced Billing id of the note |
 
 </dd>
 </dl>
@@ -15367,7 +15367,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;SubscriptionNoteResponse&gt;&gt; ListSubscriptionNotes(double subscriptionId, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;SubscriptionNoteResponse&gt;&gt; ListSubscriptionNotes(int subscriptionId, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15412,9 +15412,9 @@ catch (SdkException<ListSubscriptionNotesError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -15437,7 +15437,7 @@ catch (SdkException<ListSubscriptionNotesError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionNoteResponse&gt; ReadSubscriptionNote(double subscriptionId, double noteId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionNoteResponse&gt; ReadSubscriptionNote(int subscriptionId, int noteId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15479,8 +15479,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>noteId</code> | <code>double</code> | The Advanced Billing id of the note |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>noteId</code> | <code>int</code> | The Advanced Billing id of the note |
 
 </dd>
 </dl>
@@ -15503,7 +15503,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionNoteResponse&gt; UpdateSubscriptionNote(double subscriptionId, double noteId, UpdateSubscriptionNoteRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionNoteResponse&gt; UpdateSubscriptionNote(int subscriptionId, int noteId, UpdateSubscriptionNoteRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15548,8 +15548,8 @@ catch (SdkException<UpdateSubscriptionNoteError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>noteId</code> | <code>double</code> | The Advanced Billing id of the note |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>noteId</code> | <code>int</code> | The Advanced Billing id of the note |
 | <code>body</code> | <code>[UpdateSubscriptionNoteRequest?](Models/UpdateSubscriptionNoteRequest.cs)</code> | - |
 
 </dd>
@@ -15577,7 +15577,7 @@ catch (SdkException<UpdateSubscriptionNoteError> ex)
 > Source: [SubscriptionProducts](Api/SubscriptionProducts.cs)
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; MigrateSubscriptionProduct(double subscriptionId, SubscriptionProductMigrationRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; MigrateSubscriptionProduct(int subscriptionId, SubscriptionProductMigrationRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15644,7 +15644,7 @@ catch (SdkException<MigrateSubscriptionProductError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[SubscriptionProductMigrationRequest?](Models/SubscriptionProductMigrationRequest.cs)</code> | - |
 
 </dd>
@@ -15668,7 +15668,7 @@ catch (SdkException<MigrateSubscriptionProductError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionMigrationPreviewResponse&gt; PreviewSubscriptionProductMigration(double subscriptionId, SubscriptionMigrationPreviewRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionMigrationPreviewResponse&gt; PreviewSubscriptionProductMigration(int subscriptionId, SubscriptionMigrationPreviewRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15718,7 +15718,7 @@ catch (SdkException<PreviewSubscriptionProductMigrationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[SubscriptionMigrationPreviewRequest?](Models/SubscriptionMigrationPreviewRequest.cs)</code> | - |
 
 </dd>
@@ -15746,7 +15746,7 @@ catch (SdkException<PreviewSubscriptionProductMigrationError> ex)
 > Source: [SubscriptionRenewals](Api/SubscriptionRenewals.cs)
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; CancelScheduledRenewalConfiguration(double subscriptionId, double id, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; CancelScheduledRenewalConfiguration(int subscriptionId, int id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15791,8 +15791,8 @@ catch (SdkException<CancelScheduledRenewalConfigurationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>id</code> | <code>double</code> | The renewal id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>id</code> | <code>int</code> | The renewal id. |
 
 </dd>
 </dl>
@@ -15815,7 +15815,7 @@ catch (SdkException<CancelScheduledRenewalConfigurationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; CreateScheduledRenewalConfiguration(double subscriptionId, ScheduledRenewalConfigurationRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; CreateScheduledRenewalConfiguration(int subscriptionId, ScheduledRenewalConfigurationRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15860,7 +15860,7 @@ catch (SdkException<CreateScheduledRenewalConfigurationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[ScheduledRenewalConfigurationRequest?](Models/ScheduledRenewalConfigurationRequest.cs)</code> | - |
 
 </dd>
@@ -15884,7 +15884,7 @@ catch (SdkException<CreateScheduledRenewalConfigurationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationItemResponse&gt; CreateScheduledRenewalConfigurationItem(double subscriptionId, double scheduledRenewalsConfigurationId, ScheduledRenewalConfigurationItemRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationItemResponse&gt; CreateScheduledRenewalConfigurationItem(int subscriptionId, int scheduledRenewalsConfigurationId, ScheduledRenewalConfigurationItemRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -15931,8 +15931,8 @@ catch (SdkException<CreateScheduledRenewalConfigurationItemError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>scheduledRenewalsConfigurationId</code> | <code>double</code> | The scheduled renewal configuration id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>scheduledRenewalsConfigurationId</code> | <code>int</code> | The scheduled renewal configuration id. |
 | <code>body</code> | <code>[ScheduledRenewalConfigurationItemRequest?](Models/ScheduledRenewalConfigurationItemRequest.cs)</code> | - |
 
 </dd>
@@ -15956,7 +15956,7 @@ catch (SdkException<CreateScheduledRenewalConfigurationItemError> ex)
 </details>
 
 <details>
-<summary><code>Task DeleteScheduledRenewalConfigurationItem(double subscriptionId, double scheduledRenewalsConfigurationId, double id, CancellationToken ct = default);</code></summary>
+<summary><code>Task DeleteScheduledRenewalConfigurationItem(int subscriptionId, int scheduledRenewalsConfigurationId, int id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16002,9 +16002,9 @@ catch (SdkException<DeleteScheduledRenewalConfigurationItemError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>scheduledRenewalsConfigurationId</code> | <code>double</code> | The scheduled renewal configuration id. |
-| <code>id</code> | <code>double</code> | The scheduled renewal configuration item id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>scheduledRenewalsConfigurationId</code> | <code>int</code> | The scheduled renewal configuration id. |
+| <code>id</code> | <code>int</code> | The scheduled renewal configuration item id. |
 
 </dd>
 </dl>
@@ -16027,7 +16027,7 @@ catch (SdkException<DeleteScheduledRenewalConfigurationItemError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationsResponse&gt; ListScheduledRenewalConfigurations(double subscriptionId, Status? status, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationsResponse&gt; ListScheduledRenewalConfigurations(int subscriptionId, Status? status, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16069,7 +16069,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>status</code> | <code>[Status?](Models/Enums/Status.cs)</code> | (Optional) Status filter for scheduled renewal configurations. |
 
 </dd>
@@ -16093,7 +16093,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; LockInScheduledRenewalImmediately(double subscriptionId, double id, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; LockInScheduledRenewalImmediately(int subscriptionId, int id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16138,8 +16138,8 @@ catch (SdkException<LockInScheduledRenewalImmediatelyError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>id</code> | <code>double</code> | The renewal id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>id</code> | <code>int</code> | The renewal id. |
 
 </dd>
 </dl>
@@ -16162,7 +16162,7 @@ catch (SdkException<LockInScheduledRenewalImmediatelyError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; ReadScheduledRenewalConfiguration(double subscriptionId, double id, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; ReadScheduledRenewalConfiguration(int subscriptionId, int id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16204,8 +16204,8 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>id</code> | <code>double</code> | The renewal id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>id</code> | <code>int</code> | The renewal id. |
 
 </dd>
 </dl>
@@ -16228,7 +16228,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; ScheduleScheduledRenewalLockIn(double subscriptionId, double id, ScheduledRenewalLockInRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; ScheduleScheduledRenewalLockIn(int subscriptionId, int id, ScheduledRenewalLockInRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16273,8 +16273,8 @@ catch (SdkException<ScheduleScheduledRenewalLockInError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>id</code> | <code>double</code> | The renewal id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>id</code> | <code>int</code> | The renewal id. |
 | <code>body</code> | <code>[ScheduledRenewalLockInRequest?](Models/ScheduledRenewalLockInRequest.cs)</code> | - |
 
 </dd>
@@ -16298,7 +16298,7 @@ catch (SdkException<ScheduleScheduledRenewalLockInError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; UnpublishScheduledRenewalConfiguration(double subscriptionId, double id, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; UnpublishScheduledRenewalConfiguration(int subscriptionId, int id, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16343,8 +16343,8 @@ catch (SdkException<UnpublishScheduledRenewalConfigurationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>id</code> | <code>double</code> | The renewal id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>id</code> | <code>int</code> | The renewal id. |
 
 </dd>
 </dl>
@@ -16367,7 +16367,7 @@ catch (SdkException<UnpublishScheduledRenewalConfigurationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; UpdateScheduledRenewalConfiguration(double subscriptionId, double id, ScheduledRenewalConfigurationRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationResponse&gt; UpdateScheduledRenewalConfiguration(int subscriptionId, int id, ScheduledRenewalConfigurationRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16412,8 +16412,8 @@ catch (SdkException<UpdateScheduledRenewalConfigurationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>id</code> | <code>double</code> | The renewal id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>id</code> | <code>int</code> | The renewal id. |
 | <code>body</code> | <code>[ScheduledRenewalConfigurationRequest?](Models/ScheduledRenewalConfigurationRequest.cs)</code> | - |
 
 </dd>
@@ -16437,7 +16437,7 @@ catch (SdkException<UpdateScheduledRenewalConfigurationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;ScheduledRenewalConfigurationItemResponse&gt; UpdateScheduledRenewalConfigurationItem(double subscriptionId, double scheduledRenewalsConfigurationId, double id, ScheduledRenewalUpdateRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;ScheduledRenewalConfigurationItemResponse&gt; UpdateScheduledRenewalConfigurationItem(int subscriptionId, int scheduledRenewalsConfigurationId, int id, ScheduledRenewalUpdateRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16485,9 +16485,9 @@ catch (SdkException<UpdateScheduledRenewalConfigurationItemError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>scheduledRenewalsConfigurationId</code> | <code>double</code> | The scheduled renewal configuration id. |
-| <code>id</code> | <code>double</code> | The scheduled renewal configuration item id. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>scheduledRenewalsConfigurationId</code> | <code>int</code> | The scheduled renewal configuration id. |
+| <code>id</code> | <code>int</code> | The scheduled renewal configuration item id. |
 | <code>body</code> | <code>[ScheduledRenewalUpdateRequest?](Models/ScheduledRenewalUpdateRequest.cs)</code> | - |
 
 </dd>
@@ -16515,7 +16515,7 @@ catch (SdkException<UpdateScheduledRenewalConfigurationItemError> ex)
 > Source: [SubscriptionStatus](Api/SubscriptionStatus.cs)
 
 <details>
-<summary><code>Task&lt;DelayedCancellationResponse&gt; CancelDelayedCancellation(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;DelayedCancellationResponse&gt; CancelDelayedCancellation(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16562,7 +16562,7 @@ catch (SdkException<CancelDelayedCancellationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -16585,7 +16585,7 @@ catch (SdkException<CancelDelayedCancellationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; CancelDunning(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; CancelDunning(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16630,7 +16630,7 @@ catch (SdkException<CancelDunningError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -16653,7 +16653,7 @@ catch (SdkException<CancelDunningError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; CancelSubscription(double subscriptionId, CancellationRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; CancelSubscription(int subscriptionId, CancellationRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16699,7 +16699,7 @@ catch (SdkException<CancelSubscriptionApiError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[CancellationRequest?](Models/CancellationRequest.cs)</code> | - |
 
 </dd>
@@ -16723,7 +16723,7 @@ catch (SdkException<CancelSubscriptionApiError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;DelayedCancellationResponse&gt; InitiateDelayedCancellation(double subscriptionId, CancellationRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;DelayedCancellationResponse&gt; InitiateDelayedCancellation(int subscriptionId, CancellationRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16768,7 +16768,7 @@ catch (SdkException<InitiateDelayedCancellationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[CancellationRequest?](Models/CancellationRequest.cs)</code> | - |
 
 </dd>
@@ -16792,7 +16792,7 @@ catch (SdkException<InitiateDelayedCancellationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; PauseSubscription(double subscriptionId, PauseRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; PauseSubscription(int subscriptionId, PauseRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16841,7 +16841,7 @@ catch (SdkException<PauseSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[PauseRequest?](Models/PauseRequest.cs)</code> | - |
 
 </dd>
@@ -16865,7 +16865,7 @@ catch (SdkException<PauseSubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;RenewalPreviewResponse&gt; PreviewRenewal(double subscriptionId, RenewalPreviewRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;RenewalPreviewResponse&gt; PreviewRenewal(int subscriptionId, RenewalPreviewRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -16931,7 +16931,7 @@ catch (SdkException<PreviewRenewalError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[RenewalPreviewRequest?](Models/RenewalPreviewRequest.cs)</code> | - |
 
 </dd>
@@ -16955,7 +16955,7 @@ catch (SdkException<PreviewRenewalError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; ReactivateSubscription(double subscriptionId, ReactivateSubscriptionRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; ReactivateSubscription(int subscriptionId, ReactivateSubscriptionRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -17159,7 +17159,7 @@ catch (SdkException<ReactivateSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[ReactivateSubscriptionRequest?](Models/ReactivateSubscriptionRequest.cs)</code> | - |
 
 </dd>
@@ -17183,7 +17183,7 @@ catch (SdkException<ReactivateSubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; ResumeSubscription(double subscriptionId, ResumptionCharge? calendarBillingResumptionCharge, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; ResumeSubscription(int subscriptionId, ResumptionCharge? calendarBillingResumptionCharge, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -17228,7 +17228,7 @@ catch (SdkException<ResumeSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>calendarBillingResumptionCharge</code> | <code>[ResumptionCharge?](Models/Enums/ResumptionCharge.cs)</code> | (For calendar billing subscriptions only) The way that the resumed subscription's charge should be handled. |
 
 </dd>
@@ -17252,7 +17252,7 @@ catch (SdkException<ResumeSubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; RetrySubscription(double subscriptionId, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; RetrySubscription(int subscriptionId, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -17303,7 +17303,7 @@ catch (SdkException<RetrySubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 
 </dd>
 </dl>
@@ -17326,7 +17326,7 @@ catch (SdkException<RetrySubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; UpdateAutomaticSubscriptionResumption(double subscriptionId, PauseRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; UpdateAutomaticSubscriptionResumption(int subscriptionId, PauseRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -17377,7 +17377,7 @@ catch (SdkException<UpdateAutomaticSubscriptionResumptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[PauseRequest?](Models/PauseRequest.cs)</code> | - |
 
 </dd>
@@ -17405,7 +17405,7 @@ catch (SdkException<UpdateAutomaticSubscriptionResumptionError> ex)
 > Source: [Subscriptions](Api/Subscriptions.cs)
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; ActivateSubscription(double subscriptionId, ActivateSubscriptionRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; ActivateSubscription(int subscriptionId, ActivateSubscriptionRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -17492,7 +17492,7 @@ catch (SdkException<ActivateSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[ActivateSubscriptionRequest?](Models/ActivateSubscriptionRequest.cs)</code> | - |
 
 </dd>
@@ -17516,7 +17516,7 @@ catch (SdkException<ActivateSubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; ApplyCouponsToSubscription(double subscriptionId, string? code, AddCouponsRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; ApplyCouponsToSubscription(int subscriptionId, string? code, AddCouponsRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -17569,7 +17569,7 @@ catch (SdkException<ApplyCouponsToSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>code</code> | <code>string?</code> | A code for the coupon that would be applied to a subscription |
 | <code>body</code> | <code>[AddCouponsRequest?](Models/AddCouponsRequest.cs)</code> | - |
 
@@ -17753,7 +17753,7 @@ catch (SdkException<FindSubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;SubscriptionResponse&gt;&gt; ListSubscriptions(SubscriptionStateFilter? state, double? product, double? productPricePointId, double? coupon, string? couponCode, SubscriptionDateField? dateField, DateTimeOffset? startDate, DateTimeOffset? endDate, DateTimeOffset? startDatetime, DateTimeOffset? endDatetime, IReadOnlyDictionary&lt;string, string&gt;? metadata, SortingDirection? direction, SubscriptionSort? sort, IReadOnlyList&lt;SubscriptionListInclude&gt;? include, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;SubscriptionResponse&gt;&gt; ListSubscriptions(SubscriptionStateFilter? state, int? product, int? productPricePointId, int? coupon, string? couponCode, SubscriptionDateField? dateField, DateTimeOffset? startDate, DateTimeOffset? endDate, DateTimeOffset? startDatetime, DateTimeOffset? endDatetime, IReadOnlyDictionary&lt;string, string&gt;? metadata, SortingDirection? direction, SubscriptionSort? sort, IReadOnlyList&lt;SubscriptionListInclude&gt;? include, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -17817,9 +17817,9 @@ catch (SdkException<RawError> ex)
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>state</code> | <code>[SubscriptionStateFilter?](Models/Enums/SubscriptionStateFilter.cs)</code> | The current state of the subscription |
-| <code>product</code> | <code>double?</code> | The product id of the subscription. (Note that the product handle cannot be used.) |
-| <code>productPricePointId</code> | <code>double?</code> | The ID of the product price point. If supplied, product is required |
-| <code>coupon</code> | <code>double?</code> | The numeric id of the coupon currently applied to the subscription. (This can be found in the URL when editing a coupon. Note that the coupon code cannot be used.) |
+| <code>product</code> | <code>int?</code> | The product id of the subscription. (Note that the product handle cannot be used.) |
+| <code>productPricePointId</code> | <code>int?</code> | The ID of the product price point. If supplied, product is required |
+| <code>coupon</code> | <code>int?</code> | The numeric id of the coupon currently applied to the subscription. (This can be found in the URL when editing a coupon. Note that the coupon code cannot be used.) |
 | <code>couponCode</code> | <code>string?</code> | The coupon code currently applied to the subscription |
 | <code>dateField</code> | <code>[SubscriptionDateField?](Models/Enums/SubscriptionDateField.cs)</code> | The type of filter you'd like to apply to your search.  Allowed Values: , current_period_ends_at, current_period_starts_at, created_at, activated_at, canceled_at, expires_at, trial_started_at, trial_ended_at, updated_at |
 | <code>startDate</code> | <code>DateTimeOffset?</code> | The start date (format YYYY-MM-DD) with which to filter the date_field. Returns subscriptions with a timestamp at or after midnight (12:00:00 AM) in your site’s time zone on the date specified. Use in query `start_date=2022-07-01`. |
@@ -17830,8 +17830,8 @@ catch (SdkException<RawError> ex)
 | <code>direction</code> | <code>[SortingDirection?](Models/Enums/SortingDirection.cs)</code> | Controls the order in which results are returned.<br>Use in query `direction=asc`. |
 | <code>sort</code> | <code>[SubscriptionSort?](Models/Enums/SubscriptionSort.cs)</code> | The attribute by which to sort |
 | <code>include</code> | <code>IReadOnlyList&lt;[SubscriptionListInclude](Models/Enums/SubscriptionListInclude.cs)&gt;?</code> | Allows including additional data in the response. Use in query: `include[]=self_service_page_token`. |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -17854,7 +17854,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task OverrideSubscription(double subscriptionId, OverrideSubscriptionRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task OverrideSubscription(int subscriptionId, OverrideSubscriptionRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -17916,7 +17916,7 @@ catch (SdkException<OverrideSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[OverrideSubscriptionRequest?](Models/OverrideSubscriptionRequest.cs)</code> | - |
 
 </dd>
@@ -18029,7 +18029,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; PurgeSubscription(double subscriptionId, double ack, IReadOnlyList&lt;SubscriptionPurgeType&gt;? cascade, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; PurgeSubscription(int subscriptionId, int ack, IReadOnlyList&lt;SubscriptionPurgeType&gt;? cascade, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -18082,8 +18082,8 @@ catch (SdkException<PurgeSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
-| <code>ack</code> | <code>double</code> | id of the customer. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
+| <code>ack</code> | <code>int</code> | id of the customer. |
 | <code>cascade</code> | <code>IReadOnlyList&lt;[SubscriptionPurgeType](Models/Enums/SubscriptionPurgeType.cs)&gt;?</code> | Options are "customer" or "payment_profile".<br>Use in query: `cascade[]=customer&cascade[]=payment_profile`. |
 
 </dd>
@@ -18107,7 +18107,7 @@ catch (SdkException<PurgeSubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; ReadSubscription(double subscriptionId, IReadOnlyList&lt;SubscriptionInclude&gt;? include, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; ReadSubscription(int subscriptionId, IReadOnlyList&lt;SubscriptionInclude&gt;? include, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -18153,7 +18153,7 @@ catch (SdkException<RawError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>include</code> | <code>IReadOnlyList&lt;[SubscriptionInclude](Models/Enums/SubscriptionInclude.cs)&gt;?</code> | Allows including additional data in the response. Use in query: `include[]=coupons&include[]=self_service_page_token`. |
 
 </dd>
@@ -18177,7 +18177,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;string&gt; RemoveCouponFromSubscription(double subscriptionId, string? couponCode, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;string&gt; RemoveCouponFromSubscription(int subscriptionId, string? couponCode, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -18224,7 +18224,7 @@ catch (SdkException<RemoveCouponFromSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>couponCode</code> | <code>string?</code> | The coupon code |
 
 </dd>
@@ -18248,7 +18248,7 @@ catch (SdkException<RemoveCouponFromSubscriptionError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;PrepaidConfigurationResponse&gt; UpdatePrepaidSubscriptionConfiguration(double subscriptionId, UpsertPrepaidConfigurationRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;PrepaidConfigurationResponse&gt; UpdatePrepaidSubscriptionConfiguration(int subscriptionId, UpsertPrepaidConfigurationRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -18293,7 +18293,7 @@ catch (SdkException<UpdatePrepaidSubscriptionConfigurationError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[UpsertPrepaidConfigurationRequest?](Models/UpsertPrepaidConfigurationRequest.cs)</code> | - |
 
 </dd>
@@ -18317,7 +18317,7 @@ catch (SdkException<UpdatePrepaidSubscriptionConfigurationError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;SubscriptionResponse&gt; UpdateSubscription(double subscriptionId, UpdateSubscriptionRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;SubscriptionResponse&gt; UpdateSubscription(int subscriptionId, UpdateSubscriptionRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -18410,7 +18410,7 @@ catch (SdkException<UpdateSubscriptionError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>subscriptionId</code> | <code>double</code> | The Chargify id of the subscription. |
+| <code>subscriptionId</code> | <code>int</code> | The Chargify id of the subscription. |
 | <code>body</code> | <code>[UpdateSubscriptionRequest?](Models/UpdateSubscriptionRequest.cs)</code> | - |
 
 </dd>
@@ -18625,7 +18625,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;IReadOnlyList&lt;WebhookResponse&gt;&gt; ListWebhooks(WebhookStatus? status, string? sinceDate, string? untilDate, WebhookOrder? order, double? subscription, double? page = 1d, double? perPage = 20d, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;IReadOnlyList&lt;WebhookResponse&gt;&gt; ListWebhooks(WebhookStatus? status, string? sinceDate, string? untilDate, WebhookOrder? order, int? subscription, int? page = 1, int? perPage = 20, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -18671,9 +18671,9 @@ catch (SdkException<RawError> ex)
 | <code>sinceDate</code> | <code>string?</code> | Format YYYY-MM-DD. Returns Webhooks with the created_at date greater than or equal to the one specified. |
 | <code>untilDate</code> | <code>string?</code> | Format YYYY-MM-DD. Returns Webhooks with the created_at date less than or equal to the one specified. |
 | <code>order</code> | <code>[WebhookOrder?](Models/Enums/WebhookOrder.cs)</code> | The order in which the Webhooks are returned. |
-| <code>subscription</code> | <code>double?</code> | The Advanced Billing id of a subscription you'd like to filter for |
-| <code>page</code> | <code>double?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1d |
-| <code>perPage</code> | <code>double?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20d |
+| <code>subscription</code> | <code>int?</code> | The Advanced Billing id of a subscription you'd like to filter for |
+| <code>page</code> | <code>int?</code> | Result records are organized in pages. By default, the first page of results is displayed. The page parameter specifies a page number of results to fetch. You can start navigating through the pages to consume the results. You do this by passing in a page parameter. Retrieve the next page by adding ?page=2 to the query string. If there are no results to return, then an empty result set will be returned.<br>Use in query `page=1`.<br>**Default**: 1 |
+| <code>perPage</code> | <code>int?</code> | This parameter indicates how many records to fetch in each request. Default value is 20. The maximum allowed values is 200; any per_page value over 200 will be changed to 200.<br>Use in query `per_page=200`.<br>**Default**: 20 |
 
 </dd>
 </dl>
@@ -18761,7 +18761,7 @@ catch (SdkException<RawError> ex)
 </details>
 
 <details>
-<summary><code>Task&lt;EndpointResponse&gt; UpdateEndpoint(double endpointId, CreateOrUpdateEndpointRequest? body, CancellationToken ct = default);</code></summary>
+<summary><code>Task&lt;EndpointResponse&gt; UpdateEndpoint(int endpointId, CreateOrUpdateEndpointRequest? body, CancellationToken ct = default);</code></summary>
 
 <dl>
 <dd>
@@ -18810,7 +18810,7 @@ catch (SdkException<UpdateEndpointError> ex)
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>endpointId</code> | <code>double</code> | The Advanced Billing id for the endpoint that should be updated |
+| <code>endpointId</code> | <code>int</code> | The Advanced Billing id for the endpoint that should be updated |
 | <code>body</code> | <code>[CreateOrUpdateEndpointRequest?](Models/CreateOrUpdateEndpointRequest.cs)</code> | - |
 
 </dd>

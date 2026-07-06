@@ -61,7 +61,7 @@ public sealed class BillingPortal
     /// In order to prevent abuse &amp; overuse, we ask that you request a new URL only when absolutely necessary. Management URLs are good for 65 days, so you should re-use a previously generated one as much as possible. If you use the URL frequently (such as to display on your website), <b>do not</b> make an API request to Advanced Billing every time.
     /// </para>
     /// </remarks>
-    public Task<CustomerResponse> EnableBillingPortalForCustomer(double customerId,
+    public Task<CustomerResponse> EnableBillingPortalForCustomer(int customerId,
         AutoInvite? autoInvite,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/portal/customers/{customer_id}/enable.json"),
@@ -95,7 +95,7 @@ public sealed class BillingPortal
     ///   <item><description>You are limited to 15 requests for the same URL. If you make more than 15 requests before <c>new_link_available_at</c>, you will be blocked from further Management URL requests (with a response code <c>429</c>)</description></item>
     /// </list>
     /// </remarks>
-    public Task<PortalManagementLink> ReadBillingPortalLink(double customerId, CancellationToken ct = default) =>
+    public Task<PortalManagementLink> ReadBillingPortalLink(int customerId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/portal/customers/{customer_id}/management_link.json"),
             [new TemplateParam("customer_id", customerId)],
             [],
@@ -132,7 +132,7 @@ public sealed class BillingPortal
     /// This endpoint will only return a JSON response.
     /// </para>
     /// </remarks>
-    public Task<ResentInvitation> ResendBillingPortalInvitation(double customerId, CancellationToken ct = default) =>
+    public Task<ResentInvitation> ResendBillingPortalInvitation(int customerId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/portal/customers/{customer_id}/invitations/invite.json"),
             [new TemplateParam("customer_id", customerId)],
             [],
@@ -163,7 +163,7 @@ public sealed class BillingPortal
     /// This endpoint will only return a JSON response.
     /// </para>
     /// </remarks>
-    public Task<RevokedInvitation> RevokeBillingPortalAccess(double customerId, CancellationToken ct = default) =>
+    public Task<RevokedInvitation> RevokeBillingPortalAccess(int customerId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/portal/customers/{customer_id}/invitations/revoke.json"),
             [new TemplateParam("customer_id", customerId)],
             [],

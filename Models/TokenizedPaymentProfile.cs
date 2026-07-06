@@ -5,7 +5,7 @@ namespace MaxioAdvancedBilling.Models;
 public record TokenizedPaymentProfile
 {
     [JsonPropertyName("id")]
-    public required double Id { get; init; }
+    public required int Id { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("vault_token")]

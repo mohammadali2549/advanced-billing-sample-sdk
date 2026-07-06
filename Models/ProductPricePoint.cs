@@ -9,7 +9,7 @@ public record ProductPricePoint
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// The product price point name
@@ -37,7 +37,7 @@ public record ProductPricePoint
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this product price point, either month or day
@@ -58,7 +58,7 @@ public record ProductPricePoint
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("trial_interval")]
-    public double? TrialInterval { get; init; }
+    public int? TrialInterval { get; init; }
 
     /// <summary>
     /// A string representing the trial interval unit for this product price point, either month or day
@@ -97,7 +97,7 @@ public record ProductPricePoint
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_interval")]
-    public double? ExpirationInterval { get; init; }
+    public int? ExpirationInterval { get; init; }
 
     /// <summary>
     /// A string representing the expiration interval unit for this product price point, either month, day or never
@@ -111,7 +111,7 @@ public record ProductPricePoint
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     /// <summary>
     /// Timestamp indicating when this price point was archived
@@ -160,7 +160,7 @@ public record ProductPricePoint
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_id")]
-    public double? SubscriptionId { get; init; }
+    public int? SubscriptionId { get; init; }
 
     /// <summary>
     /// An array of currency pricing data is available when multiple currencies are defined for the site. It varies based on the use_site_exchange_rate setting for the price point. This parameter is present only in the response of read endpoints, after including the appropriate query parameter.

@@ -11,7 +11,7 @@ public record CustomFieldValueChange
     public required string MetafieldName { get; init; }
 
     [JsonPropertyName("metafield_id")]
-    public required double MetafieldId { get; init; }
+    public required int MetafieldId { get; init; }
 
     [JsonPropertyName("old_value")]
     public required string? OldValue { get; init; }
@@ -23,5 +23,5 @@ public record CustomFieldValueChange
     public required string ResourceType { get; init; }
 
     [JsonPropertyName("resource_id")]
-    public required double ResourceId { get; init; }
+    public required int ResourceId { get; init; }
 }

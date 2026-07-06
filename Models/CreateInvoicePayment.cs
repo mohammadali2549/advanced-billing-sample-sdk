@@ -40,7 +40,7 @@ public record CreateInvoicePayment
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_profile_id")]
-    public double? PaymentProfileId { get; init; }
+    public int? PaymentProfileId { get; init; }
 
     /// <summary>
     /// Date reflecting when the payment was received from a customer. Must be in the past. Applicable only to

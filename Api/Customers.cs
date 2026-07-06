@@ -93,7 +93,7 @@ public sealed class Customers
     /// <remarks>
     /// Deletes the customer.
     /// </remarks>
-    public Task DeleteCustomer(double id, CancellationToken ct = default) =>
+    public Task DeleteCustomer(int id, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/customers/{id}.json"),
             [new TemplateParam("id", id)],
             [],
@@ -115,7 +115,7 @@ public sealed class Customers
     /// <remarks>
     /// Lists all subscriptions that belong to a customer.
     /// </remarks>
-    public Task<IReadOnlyList<SubscriptionResponse>> ListCustomerSubscriptions(double customerId,
+    public Task<IReadOnlyList<SubscriptionResponse>> ListCustomerSubscriptions(int customerId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/customers/{customer_id}/subscriptions.json"),
             [new TemplateParam("customer_id", customerId)],
@@ -172,8 +172,8 @@ public sealed class Customers
         string? startDatetime,
         string? endDatetime,
         string? q,
-        double? page = 1d,
-        double? perPage = 50d,
+        int? page = 1,
+        int? perPage = 50,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/customers.json"),
             [],
@@ -204,7 +204,7 @@ public sealed class Customers
     /// <remarks>
     /// Retrieves the Customer properties by Advanced Billing-generated Customer ID.
     /// </remarks>
-    public Task<CustomerResponse> ReadCustomer(double id, CancellationToken ct = default) =>
+    public Task<CustomerResponse> ReadCustomer(int id, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/customers/{id}.json"),
             [new TemplateParam("id", id)],
             [],
@@ -249,7 +249,7 @@ public sealed class Customers
     /// <remarks>
     /// Updates the customer.
     /// </remarks>
-    public Task<CustomerResponse> UpdateCustomer(double id,
+    public Task<CustomerResponse> UpdateCustomer(int id,
         UpdateCustomerRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/customers/{id}.json"),

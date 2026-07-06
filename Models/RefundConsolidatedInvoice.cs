@@ -18,7 +18,7 @@ public record RefundConsolidatedInvoice
     /// The ID of the payment to be refunded
     /// </summary>
     [JsonPropertyName("payment_id")]
-    public required double PaymentId { get; init; }
+    public required int PaymentId { get; init; }
 
     /// <summary>
     /// An array of segment uids to refund or the string 'all' to indicate that all segments should be refunded

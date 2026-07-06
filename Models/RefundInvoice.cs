@@ -23,7 +23,7 @@ public record RefundInvoice
     /// The ID of the payment to be refunded
     /// </summary>
     [JsonPropertyName("payment_id")]
-    public required double PaymentId { get; init; }
+    public required int PaymentId { get; init; }
 
     /// <summary>
     /// Flag that marks refund as external (no money is returned to the customer). Defaults to <c>false</c>.
