@@ -25,10 +25,10 @@ public record GetOneTimeTokenPaymentProfile
     public required CardType CardType { get; init; }
 
     [JsonPropertyName("expiration_month")]
-    public required decimal ExpirationMonth { get; init; }
+    public required double ExpirationMonth { get; init; }
 
     [JsonPropertyName("expiration_year")]
-    public required decimal ExpirationYear { get; init; }
+    public required double ExpirationYear { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_id")]
@@ -69,7 +69,7 @@ public record GetOneTimeTokenPaymentProfile
     public required bool Disabled { get; init; }
 
     [JsonPropertyName("site_gateway_setting_id")]
-    public required double SiteGatewaySettingId { get; init; }
+    public required int SiteGatewaySettingId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_vault_token")]

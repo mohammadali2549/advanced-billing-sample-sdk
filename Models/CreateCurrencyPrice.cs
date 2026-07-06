@@ -16,12 +16,12 @@ public record CreateCurrencyPrice
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price")]
-    public decimal? Price { get; init; }
+    public double? Price { get; init; }
 
     /// <summary>
     /// ID of the price that this corresponds with
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_id")]
-    public double? PriceId { get; init; }
+    public int? PriceId { get; init; }
 }

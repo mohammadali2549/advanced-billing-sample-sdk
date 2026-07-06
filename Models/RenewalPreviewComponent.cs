@@ -26,7 +26,7 @@ public record RenewalPreviewComponent
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("quantity")]
-    public double? Quantity { get; init; }
+    public int? Quantity { get; init; }
 
     /// <summary>
     /// Either the component price point's Chargify id or its handle prefixed with <c>handle:</c>

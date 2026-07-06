@@ -13,7 +13,7 @@ public static class ServiceCollectionExtensions
             var options = new MaxioAdvancedBillingClientOptions();
             configure?.Invoke(options);
             services.AddHttpClient();
-            services.AddTransient(sp =>
+            services.AddSingleton(sp =>
                 {
                     var httpClientFactory = sp.GetRequiredService<IHttpClientFactory>();
                     var httpClient = httpClientFactory.CreateClient();

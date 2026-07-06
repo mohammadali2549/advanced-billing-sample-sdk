@@ -9,25 +9,25 @@ namespace MaxioAdvancedBilling.Models.AnyOf;
 [JsonConverter(typeof(Quantity1Converter))]
 public record Quantity1
 {
-    private readonly Optional<double> _doubleValue;
+    private readonly Optional<int> _intValue;
 
     private readonly Optional<string> _stringValue;
 
-    private Quantity1(Optional<double> doubleValue, Optional<string> stringValue)
+    private Quantity1(Optional<int> intValue, Optional<string> stringValue)
     {
-        _doubleValue = doubleValue;
+        _intValue = intValue;
         _stringValue = stringValue;
     }
 
-    public static Quantity1 Double(double value) => new(Optional<double>.Some(value), default);
+    public static Quantity1 Int(int value) => new(Optional<int>.Some(value), default);
 
     public static Quantity1 String(string value) => new(default, Optional<string>.Some(value));
 
-    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
+    public bool TryGetInt(out int value) => _intValue.TryGetValue(out value);
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public static implicit operator Quantity1(double value) => Double(value);
+    public static implicit operator Quantity1(int value) => Int(value);
 
     public static implicit operator Quantity1(string value) => String(value);
 }
@@ -38,22 +38,22 @@ file sealed class Quantity1Converter : JsonConverter<Quantity1>
     {
         using var doc = JsonDocument.ParseValue(ref reader);
         var root = doc.RootElement;
-        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
+        if (JsonSerializer.TryDeserialize<int>(root, options, out var intValue))
         {
-            return Quantity1.Double(doubleValue);
+            return Quantity1.Int(intValue);
         }
         if (JsonSerializer.TryDeserialize<string>(root, options, out var stringValue))
         {
             return Quantity1.String(stringValue);
         }
-        throw new JsonException($"JSON does not match double or string schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match int or string schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, Quantity1 value, JsonSerializerOptions options)
     {
-        if (value.TryGetDouble(out var doubleValue))
+        if (value.TryGetInt(out var intValue))
         {
-            JsonSerializer.Serialize(writer, doubleValue, options);
+            JsonSerializer.Serialize(writer, intValue, options);
         }
         else if (value.TryGetString(out var stringValue))
         {

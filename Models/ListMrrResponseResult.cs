@@ -7,19 +7,19 @@ public record ListMrrResponseResult
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("page")]
-    public double? Page { get; init; }
+    public int? Page { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("per_page")]
-    public double? PerPage { get; init; }
+    public int? PerPage { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_pages")]
-    public double? TotalPages { get; init; }
+    public int? TotalPages { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("total_entries")]
-    public double? TotalEntries { get; init; }
+    public int? TotalEntries { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("currency")]

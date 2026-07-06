@@ -9,5 +9,5 @@ public record ChjsTokenizationSuccess
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("gateway_customer_id")]
-    public double? GatewayCustomerId { get; init; }
+    public int? GatewayCustomerId { get; init; }
 }

@@ -11,7 +11,7 @@ public record PortalManagementLink
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("fetch_count")]
-    public double? FetchCount { get; init; }
+    public int? FetchCount { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("created_at")]

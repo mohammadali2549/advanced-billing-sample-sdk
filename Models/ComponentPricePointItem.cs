@@ -26,7 +26,7 @@ public record ComponentPricePointItem
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this component price point, either month or day. This property is only available for sites with Multifrequency enabled.

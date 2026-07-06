@@ -38,9 +38,7 @@ public sealed class Components
     /// <remarks>
     /// Archives the component; all current subscribers will continue to be charged as usual.
     /// </remarks>
-    public Task<Component> ArchiveComponent(double productFamilyId,
-        string componentId,
-        CancellationToken ct = default) =>
+    public Task<Component> ArchiveComponent(int productFamilyId, string componentId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/components/{component_id}.json"),
             [new TemplateParam("product_family_id", productFamilyId), new TemplateParam("component_id", componentId)],
             [],
@@ -269,8 +267,8 @@ public sealed class Components
         string? endDatetime,
         bool? includeArchived,
         ListComponentsFilter? filter,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/components.json"),
             [],
@@ -310,7 +308,7 @@ public sealed class Components
     /// <remarks>
     /// Lists components for a particular product family.
     /// </remarks>
-    public Task<IReadOnlyList<ComponentResponse>> ListComponentsForProductFamily(double productFamilyId,
+    public Task<IReadOnlyList<ComponentResponse>> ListComponentsForProductFamily(int productFamilyId,
         bool? includeArchived,
         ListComponentsFilter? filter,
         BasicDateField? dateField,
@@ -318,8 +316,8 @@ public sealed class Components
         string? endDatetime,
         string? startDate,
         string? startDatetime,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/components.json"),
             [new TemplateParam("product_family_id", productFamilyId)],
@@ -354,7 +352,7 @@ public sealed class Components
     /// You can read the component by either the component's id or handle. When using the handle, it must be prefixed with <c>handle:</c>.
     /// </para>
     /// </remarks>
-    public Task<ComponentResponse> ReadComponent(double productFamilyId,
+    public Task<ComponentResponse> ReadComponent(int productFamilyId,
         string componentId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/components/{component_id}.json"),
@@ -411,7 +409,7 @@ public sealed class Components
     /// You may read the component by either the component's id or handle. When using the handle, it must be prefixed with <c>handle:</c>.
     /// </para>
     /// </remarks>
-    public Task<ComponentResponse> UpdateProductFamilyComponent(double productFamilyId,
+    public Task<ComponentResponse> UpdateProductFamilyComponent(int productFamilyId,
         string componentId,
         UpdateComponentRequest? body,
         CancellationToken ct = default) =>

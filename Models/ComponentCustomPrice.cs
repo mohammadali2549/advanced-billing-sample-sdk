@@ -28,7 +28,7 @@ public record ComponentCustomPrice
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this component price point, either month or day. This property is only available for sites with Multifrequency enabled.
@@ -43,7 +43,7 @@ public record ComponentCustomPrice
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("list_price_point_id")]
-    public double? ListPricePointId { get; init; }
+    public int? ListPricePointId { get; init; }
 
     /// <summary>
     /// When true, list price calculations will continue to use the default price point even when a <c>custom_price</c> is supplied.
@@ -77,7 +77,7 @@ public record ComponentCustomPrice
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_interval")]
-    public double? ExpirationInterval { get; init; }
+    public int? ExpirationInterval { get; init; }
 
     /// <summary>
     /// Applicable only when rollover is enabled. Interval unit for rollover expiration (month or day).

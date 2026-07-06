@@ -81,7 +81,7 @@ public sealed class ReasonCodes
     /// <remarks>
     /// Deletes a reason code from the Churn Reason Codes. This code will be immediately removed. This action is not reversible.
     /// </remarks>
-    public Task<OkResponse> DeleteReasonCode(double reasonCodeId, CancellationToken ct = default) =>
+    public Task<OkResponse> DeleteReasonCode(int reasonCodeId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/reason_codes/{reason_code_id}.json"),
             [new TemplateParam("reason_code_id", reasonCodeId)],
             [],
@@ -104,8 +104,8 @@ public sealed class ReasonCodes
     /// <remarks>
     /// Lists all current churn codes for a given site.
     /// </remarks>
-    public Task<IReadOnlyList<ReasonCodeResponse>> ListReasonCodes(double? page = 1d,
-        double? perPage = 20d,
+    public Task<IReadOnlyList<ReasonCodeResponse>> ListReasonCodes(int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/reason_codes.json"),
             [],
@@ -128,7 +128,7 @@ public sealed class ReasonCodes
     /// <remarks>
     /// Returns a particular churn reason code for a given site by its unique ID.
     /// </remarks>
-    public Task<ReasonCodeResponse> ReadReasonCode(double reasonCodeId, CancellationToken ct = default) =>
+    public Task<ReasonCodeResponse> ReadReasonCode(int reasonCodeId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/reason_codes/{reason_code_id}.json"),
             [new TemplateParam("reason_code_id", reasonCodeId)],
             [],
@@ -151,7 +151,7 @@ public sealed class ReasonCodes
     /// <remarks>
     /// Updates an existing reason code for a given site.
     /// </remarks>
-    public Task<ReasonCodeResponse> UpdateReasonCode(double reasonCodeId,
+    public Task<ReasonCodeResponse> UpdateReasonCode(int reasonCodeId,
         UpdateReasonCodeRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/reason_codes/{reason_code_id}.json"),

@@ -14,25 +14,25 @@ public record SnapDay1
 {
     private readonly Optional<string> _stringValue;
 
-    private readonly Optional<double> _doubleValue;
+    private readonly Optional<int> _intValue;
 
-    private SnapDay1(Optional<string> stringValue, Optional<double> doubleValue)
+    private SnapDay1(Optional<string> stringValue, Optional<int> intValue)
     {
         _stringValue = stringValue;
-        _doubleValue = doubleValue;
+        _intValue = intValue;
     }
 
     public static SnapDay1 String(string value) => new(Optional<string>.Some(value), default);
 
-    public static SnapDay1 Double(double value) => new(default, Optional<double>.Some(value));
+    public static SnapDay1 Int(int value) => new(default, Optional<int>.Some(value));
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
+    public bool TryGetInt(out int value) => _intValue.TryGetValue(out value);
 
     public static implicit operator SnapDay1(string value) => String(value);
 
-    public static implicit operator SnapDay1(double value) => Double(value);
+    public static implicit operator SnapDay1(int value) => Int(value);
 }
 
 file sealed class SnapDay1Converter : JsonConverter<SnapDay1>
@@ -45,11 +45,11 @@ file sealed class SnapDay1Converter : JsonConverter<SnapDay1>
         {
             return SnapDay1.String(stringValue);
         }
-        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
+        if (JsonSerializer.TryDeserialize<int>(root, options, out var intValue))
         {
-            return SnapDay1.Double(doubleValue);
+            return SnapDay1.Int(intValue);
         }
-        throw new JsonException($"JSON does not match string or double schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match string or int schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, SnapDay1 value, JsonSerializerOptions options)
@@ -58,9 +58,9 @@ file sealed class SnapDay1Converter : JsonConverter<SnapDay1>
         {
             JsonSerializer.Serialize(writer, stringValue, options);
         }
-        else if (value.TryGetDouble(out var doubleValue))
+        else if (value.TryGetInt(out var intValue))
         {
-            JsonSerializer.Serialize(writer, doubleValue, options);
+            JsonSerializer.Serialize(writer, intValue, options);
         }
         else
         {

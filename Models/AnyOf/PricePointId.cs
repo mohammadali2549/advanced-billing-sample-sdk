@@ -11,25 +11,25 @@ public record PricePointId
 {
     private readonly Optional<string> _stringValue;
 
-    private readonly Optional<double> _doubleValue;
+    private readonly Optional<int> _intValue;
 
-    private PricePointId(Optional<string> stringValue, Optional<double> doubleValue)
+    private PricePointId(Optional<string> stringValue, Optional<int> intValue)
     {
         _stringValue = stringValue;
-        _doubleValue = doubleValue;
+        _intValue = intValue;
     }
 
     public static PricePointId String(string value) => new(Optional<string>.Some(value), default);
 
-    public static PricePointId Double(double value) => new(default, Optional<double>.Some(value));
+    public static PricePointId Int(int value) => new(default, Optional<int>.Some(value));
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
+    public bool TryGetInt(out int value) => _intValue.TryGetValue(out value);
 
     public static implicit operator PricePointId(string value) => String(value);
 
-    public static implicit operator PricePointId(double value) => Double(value);
+    public static implicit operator PricePointId(int value) => Int(value);
 }
 
 file sealed class PricePointIdConverter : JsonConverter<PricePointId>
@@ -42,11 +42,11 @@ file sealed class PricePointIdConverter : JsonConverter<PricePointId>
         {
             return PricePointId.String(stringValue);
         }
-        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
+        if (JsonSerializer.TryDeserialize<int>(root, options, out var intValue))
         {
-            return PricePointId.Double(doubleValue);
+            return PricePointId.Int(intValue);
         }
-        throw new JsonException($"JSON does not match string or double schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match string or int schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, PricePointId value, JsonSerializerOptions options)
@@ -55,9 +55,9 @@ file sealed class PricePointIdConverter : JsonConverter<PricePointId>
         {
             JsonSerializer.Serialize(writer, stringValue, options);
         }
-        else if (value.TryGetDouble(out var doubleValue))
+        else if (value.TryGetInt(out var intValue))
         {
-            JsonSerializer.Serialize(writer, doubleValue, options);
+            JsonSerializer.Serialize(writer, intValue, options);
         }
         else
         {

@@ -7,7 +7,7 @@ public record SubscriptionGroupSignupFailureData
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payer_id")]
-    public double? PayerId { get; init; }
+    public int? PayerId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payer_reference")]
@@ -15,7 +15,7 @@ public record SubscriptionGroupSignupFailureData
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_profile_id")]
-    public double? PaymentProfileId { get; init; }
+    public int? PaymentProfileId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_collection_method")]

@@ -12,19 +12,19 @@ public record PrepaidUsage
     public required string PreviousOverageUnitBalance { get; init; }
 
     [JsonPropertyName("new_unit_balance")]
-    public required double NewUnitBalance { get; init; }
+    public required int NewUnitBalance { get; init; }
 
     [JsonPropertyName("new_overage_unit_balance")]
-    public required double NewOverageUnitBalance { get; init; }
+    public required int NewOverageUnitBalance { get; init; }
 
     [JsonPropertyName("usage_quantity")]
-    public required double UsageQuantity { get; init; }
+    public required int UsageQuantity { get; init; }
 
     [JsonPropertyName("overage_usage_quantity")]
-    public required double OverageUsageQuantity { get; init; }
+    public required int OverageUsageQuantity { get; init; }
 
     [JsonPropertyName("component_id")]
-    public required double ComponentId { get; init; }
+    public required int ComponentId { get; init; }
 
     [JsonPropertyName("component_handle")]
     public required string ComponentHandle { get; init; }

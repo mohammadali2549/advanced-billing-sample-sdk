@@ -7,18 +7,18 @@ public record MovementLineItem
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     /// <summary>
     /// For Product (or "baseline") line items, this field will have a value of <c>0</c>.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_id")]
-    public double? ComponentId { get; init; }
+    public int? ComponentId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_id")]
-    public double? PricePointId { get; init; }
+    public int? PricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("name")]
@@ -26,7 +26,7 @@ public record MovementLineItem
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("mrr")]
-    public double? Mrr { get; init; }
+    public int? Mrr { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("mrr_movements")]
@@ -34,11 +34,11 @@ public record MovementLineItem
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("quantity")]
-    public double? Quantity { get; init; }
+    public int? Quantity { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("prev_quantity")]
-    public double? PrevQuantity { get; init; }
+    public int? PrevQuantity { get; init; }
 
     /// <summary>
     /// When <c>true</c>, the line item's MRR value will contribute to the <c>plan</c> breakout. When <c>false</c>, the line item contributes to the <c>usage</c> breakout.

@@ -10,7 +10,7 @@ public record BulkUpdateSegmentsItem
     /// The ID of the segment you want to update.
     /// </summary>
     [JsonPropertyName("id")]
-    public required double Id { get; init; }
+    public required int Id { get; init; }
 
     /// <summary>
     /// The identifier for the pricing scheme. See <see href="https://help.chargify.com/products/product-components.html">Product Components</see> for an overview of pricing schemes.

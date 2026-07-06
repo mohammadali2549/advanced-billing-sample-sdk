@@ -10,7 +10,7 @@ public record CreateAllocation
     /// The allocated quantity to which to set the line-items allocated quantity. By default, this is an integer. If decimal allocations are enabled for the component, it will be a decimal number. For On/Off components, use 1for on and 0 for off.
     /// </summary>
     [JsonPropertyName("quantity")]
-    public required decimal Quantity { get; init; }
+    public required double Quantity { get; init; }
 
     /// <summary>
     /// Decimal representation of the allocated quantity. Only valid when decimal
@@ -27,7 +27,7 @@ public record CreateAllocation
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("previous_quantity")]
-    public decimal? PreviousQuantity { get; init; }
+    public double? PreviousQuantity { get; init; }
 
     /// <summary>
     /// Decimal representation of <c>previous_quantity</c>. Only valid when decimal
@@ -42,7 +42,7 @@ public record CreateAllocation
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_id")]
-    public double? ComponentId { get; init; }
+    public int? ComponentId { get; init; }
 
     /// <summary>
     /// A memo to record along with the allocation.

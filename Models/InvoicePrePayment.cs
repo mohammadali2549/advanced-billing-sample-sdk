@@ -9,7 +9,7 @@ public record InvoicePrePayment
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_id")]
-    public double? SubscriptionId { get; init; }
+    public int? SubscriptionId { get; init; }
 
     /// <summary>
     /// The amount in cents of the prepayment that was created as a result of this payment.

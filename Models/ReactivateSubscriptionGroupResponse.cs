@@ -12,23 +12,23 @@ public record ReactivateSubscriptionGroupResponse
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("scheme")]
-    public double? Scheme { get; init; }
+    public int? Scheme { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_id")]
-    public double? CustomerId { get; init; }
+    public int? CustomerId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_profile_id")]
-    public double? PaymentProfileId { get; init; }
+    public int? PaymentProfileId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_ids")]
-    public IReadOnlyList<double>? SubscriptionIds { get; init; }
+    public IReadOnlyList<int>? SubscriptionIds { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("primary_subscription_id")]
-    public double? PrimarySubscriptionId { get; init; }
+    public int? PrimarySubscriptionId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("next_assessment_at")]

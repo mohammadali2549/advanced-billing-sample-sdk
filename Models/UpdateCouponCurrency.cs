@@ -14,5 +14,5 @@ public record UpdateCouponCurrency
     /// Price for the given currency.
     /// </summary>
     [JsonPropertyName("price")]
-    public required double Price { get; init; }
+    public required int Price { get; init; }
 }

@@ -10,7 +10,7 @@ public record ListComponentsFilter
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("ids")]
-    public IReadOnlyList<double>? Ids { get; init; }
+    public IReadOnlyList<int>? Ids { get; init; }
 
     /// <summary>
     /// Allows fetching components with matching use_site_exchange_rate based on provided value (refers to default price point). Use in query <c>filter[use_site_exchange_rate]=true</c>.

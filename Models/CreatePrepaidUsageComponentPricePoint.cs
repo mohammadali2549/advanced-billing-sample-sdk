@@ -50,7 +50,7 @@ public record CreatePrepaidUsageComponentPricePoint
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_interval")]
-    public decimal? ExpirationInterval { get; init; }
+    public double? ExpirationInterval { get; init; }
 
     /// <summary>
     /// (only for prepaid usage components where rollover_prepaid_remainder is true) A string representing the expiration interval unit for this component, either month or day

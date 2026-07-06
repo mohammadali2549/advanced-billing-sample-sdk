@@ -13,7 +13,7 @@ public record SubscriptionGroup
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_id")]
-    public double? CustomerId { get; init; }
+    public int? CustomerId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_profile")]
@@ -28,7 +28,7 @@ public record SubscriptionGroup
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_ids")]
-    public IReadOnlyList<double>? SubscriptionIds { get; init; }
+    public IReadOnlyList<int>? SubscriptionIds { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("created_at")]

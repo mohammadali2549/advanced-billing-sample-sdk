@@ -82,14 +82,14 @@ public record EbbComponent
     /// The ID of an event based billing metric that will be attached to this component.
     /// </summary>
     [JsonPropertyName("event_based_billing_metric_id")]
-    public required double EventBasedBillingMetricId { get; init; }
+    public required int EventBasedBillingMetricId { get; init; }
 
     /// <summary>
     /// The numerical interval. i.e. an interval of ‘30’ coupled with an interval_unit of day would mean this component's default price point would renew every 30 days. This property is only available for sites with Multifrequency enabled.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this component's default price point, either month or day. This property is only available for sites with Multifrequency enabled.

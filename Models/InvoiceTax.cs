@@ -24,7 +24,7 @@ public record InvoiceTax
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("source_id")]
-    public double? SourceId { get; init; }
+    public int? SourceId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("percentage")]
@@ -40,7 +40,7 @@ public record InvoiceTax
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("transaction_id")]
-    public double? TransactionId { get; init; }
+    public int? TransactionId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("line_item_breakouts")]

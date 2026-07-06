@@ -19,21 +19,21 @@ public record CreditNote
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("site_id")]
-    public double? SiteId { get; init; }
+    public int? SiteId { get; init; }
 
     /// <summary>
     /// ID of the customer to which the credit note belongs.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_id")]
-    public double? CustomerId { get; init; }
+    public int? CustomerId { get; init; }
 
     /// <summary>
     /// ID of the subscription that generated the credit note.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_id")]
-    public double? SubscriptionId { get; init; }
+    public int? SubscriptionId { get; init; }
 
     /// <summary>
     /// A unique, identifying string that appears on the credit note and in places it is referenced.
@@ -50,7 +50,7 @@ public record CreditNote
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("sequence_number")]
-    public double? SequenceNumber { get; init; }
+    public int? SequenceNumber { get; init; }
 
     /// <summary>
     /// Date the credit note was issued to the customer.  This is the date that the credit was made available for application, and may come before it is fully applied.

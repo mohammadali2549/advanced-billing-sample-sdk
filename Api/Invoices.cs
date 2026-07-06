@@ -244,7 +244,7 @@ public sealed class Invoices
     /// By default, invoices will be created with open status. Possible alternative is <c>draft</c>.
     /// </para>
     /// </remarks>
-    public Task<InvoiceResponse> CreateInvoice(double subscriptionId,
+    public Task<InvoiceResponse> CreateInvoice(int subscriptionId,
         CreateInvoiceRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/invoices.json"),
@@ -308,8 +308,8 @@ public sealed class Invoices
     /// </remarks>
     public Task<ConsolidatedInvoice> ListConsolidatedInvoiceSegments(string invoiceUid,
         Direction? direction,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/invoices/{invoice_uid}/segments.json"),
             [new TemplateParam("invoice_uid", invoiceUid)],
@@ -342,9 +342,9 @@ public sealed class Invoices
     /// By default, the credit notes returned by this endpoint will exclude the arrays of <c>line_items</c>, <c>discounts</c>, <c>taxes</c>, <c>applications</c>, or <c>refunds</c>. To include these arrays, pass the specific field as a key in the query with a value set to <c>true</c>.
     /// </para>
     /// </remarks>
-    public Task<ListCreditNotesResponse> ListCreditNotes(double? subscriptionId,
-        double? page = 1d,
-        double? perPage = 20d,
+    public Task<ListCreditNotesResponse> ListCreditNotes(int? subscriptionId,
+        int? page = 1,
+        int? perPage = 20,
         bool? lineItems = false,
         bool? discounts = false,
         bool? taxes = false,
@@ -418,8 +418,8 @@ public sealed class Invoices
         string? invoiceUid,
         string? withChangeInvoiceStatus,
         IReadOnlyList<InvoiceEventType>? eventTypes,
-        double? page = 1d,
-        double? perPage = 100d,
+        int? page = 1,
+        int? perPage = 100,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/invoices/events.json"),
             [],
@@ -473,19 +473,19 @@ public sealed class Invoices
     public Task<ListInvoicesResponse> ListInvoices(string? startDate,
         string? endDate,
         InvoiceStatus? status,
-        double? subscriptionId,
+        int? subscriptionId,
         string? subscriptionGroupUid,
         string? consolidationLevel,
         Direction? direction,
         InvoiceDateField? dateField,
         string? startDatetime,
         string? endDatetime,
-        IReadOnlyList<double>? customerIds,
+        IReadOnlyList<int>? customerIds,
         IReadOnlyList<string>? number,
-        IReadOnlyList<double>? productIds,
+        IReadOnlyList<int>? productIds,
         InvoiceSortField? sort,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         bool? lineItems = false,
         bool? discounts = false,
         bool? taxes = false,
@@ -705,7 +705,7 @@ public sealed class Invoices
     /// Only ungrouped or primary subscriptions may be paid using the "bulk" payment request.
     /// </para>
     /// </remarks>
-    public Task<RecordPaymentResponse> RecordPaymentForSubscription(double subscriptionId,
+    public Task<RecordPaymentResponse> RecordPaymentForSubscription(int subscriptionId,
         RecordPaymentRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/payments.json"),

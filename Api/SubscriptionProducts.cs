@@ -68,7 +68,7 @@ public sealed class SubscriptionProducts
     /// See the <see href="https://docs.maxio.com/hc/en-us/articles/44277749524365-3D-Secure-Post-Authentication-Flow">3D Secure Post-Authentication Flow</see> article in the product documentation to learn how to manage the redirect flow.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> MigrateSubscriptionProduct(double subscriptionId,
+    public Task<SubscriptionResponse> MigrateSubscriptionProduct(int subscriptionId,
         SubscriptionProductMigrationRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/migrations.json"),
@@ -100,7 +100,7 @@ public sealed class SubscriptionProducts
     /// This will calculate the prorated adjustment, charge, payment and credit applied values assuming the migration is done at that date in the future as opposed to right now.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionMigrationPreviewResponse> PreviewSubscriptionProductMigration(double subscriptionId,
+    public Task<SubscriptionMigrationPreviewResponse> PreviewSubscriptionProductMigration(int subscriptionId,
         SubscriptionMigrationPreviewRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/migrations/preview.json"),

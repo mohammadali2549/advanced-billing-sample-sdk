@@ -114,9 +114,9 @@ public sealed class Webhooks
         string? sinceDate,
         string? untilDate,
         WebhookOrder? order,
-        double? subscription,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? subscription,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/webhooks.json"),
             [],
@@ -174,7 +174,7 @@ public sealed class Webhooks
     /// If you want to unsubscribe from a specific event, send a list of <c>webhook_subscriptions</c> without the specific event key.
     /// </para>
     /// </remarks>
-    public Task<EndpointResponse> UpdateEndpoint(double endpointId,
+    public Task<EndpointResponse> UpdateEndpoint(int endpointId,
         CreateOrUpdateEndpointRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/endpoints/{endpoint_id}.json"),

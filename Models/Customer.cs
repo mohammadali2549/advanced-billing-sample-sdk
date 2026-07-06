@@ -52,7 +52,7 @@ public record Customer
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// The timestamp in which the customer object was created in Chargify
@@ -178,7 +178,7 @@ public record Customer
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("parent_id")]
-    public double? ParentId { get; init; }
+    public int? ParentId { get; init; }
 
     /// <summary>
     /// The locale for the customer to identify language-region
@@ -210,7 +210,7 @@ public record Customer
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("default_auto_renewal_profile_id")]
-    public double? DefaultAutoRenewalProfileId { get; init; }
+    public int? DefaultAutoRenewalProfileId { get; init; }
 
     /// <summary>
     /// The Maxio-generated unique identifier for the customer.

@@ -107,8 +107,8 @@ public sealed class ApiExports
     /// </para>
     /// </remarks>
     public Task<IReadOnlyList<Invoice>> ListExportedInvoices(string batchId,
-        double? perPage = 100d,
-        double? page = 1d,
+        int? perPage = 100,
+        int? page = 1,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/api_exports/invoices/{batch_id}/rows.json"),
             [new TemplateParam("batch_id", batchId)],
@@ -137,8 +137,8 @@ public sealed class ApiExports
     /// </para>
     /// </remarks>
     public Task<IReadOnlyList<ProformaInvoice>> ListExportedProformaInvoices(string batchId,
-        double? perPage = 100d,
-        double? page = 1d,
+        int? perPage = 100,
+        int? page = 1,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/api_exports/proforma_invoices/{batch_id}/rows.json"),
             [new TemplateParam("batch_id", batchId)],
@@ -167,8 +167,8 @@ public sealed class ApiExports
     /// </para>
     /// </remarks>
     public Task<IReadOnlyList<Subscription>> ListExportedSubscriptions(string batchId,
-        double? perPage = 100d,
-        double? page = 1d,
+        int? perPage = 100,
+        int? page = 1,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/api_exports/subscriptions/{batch_id}/rows.json"),
             [new TemplateParam("batch_id", batchId)],

@@ -53,8 +53,8 @@ public sealed class SalesCommissions
     /// </remarks>
     public Task<IReadOnlyList<SaleRepSettings>> ListSalesCommissionSettings(string sellerId,
         bool? liveMode,
-        double? page = 1d,
-        double? perPage = 100d,
+        int? page = 1,
+        int? perPage = 100,
         string? authorization = "Bearer <<apiKey>>",
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/sellers/{seller_id}/sales_commission_settings.json"),
@@ -96,8 +96,8 @@ public sealed class SalesCommissions
     /// </remarks>
     public Task<IReadOnlyList<ListSaleRepItem>> ListSalesReps(string sellerId,
         bool? liveMode,
-        double? page = 1d,
-        double? perPage = 100d,
+        int? page = 1,
+        int? perPage = 100,
         string? authorization = "Bearer <<apiKey>>",
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/sellers/{seller_id}/sales_reps.json"),
@@ -141,8 +141,8 @@ public sealed class SalesCommissions
     public Task<SaleRep> ReadSalesRep(string sellerId,
         string salesRepId,
         bool? liveMode,
-        double? page = 1d,
-        double? perPage = 100d,
+        int? page = 1,
+        int? perPage = 100,
         string? authorization = "Bearer <<apiKey>>",
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/sellers/{seller_id}/sales_reps/{sales_rep_id}.json"),

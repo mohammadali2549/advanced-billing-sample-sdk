@@ -6,7 +6,7 @@ public record CouponCurrency
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("currency")]
@@ -14,9 +14,9 @@ public record CouponCurrency
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price")]
-    public decimal? Price { get; init; }
+    public double? Price { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("coupon_id")]
-    public double? CouponId { get; init; }
+    public int? CouponId { get; init; }
 }

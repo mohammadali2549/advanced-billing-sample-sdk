@@ -7,7 +7,7 @@ public record Metadata
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("value")]
@@ -15,7 +15,7 @@ public record Metadata
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("resource_id")]
-    public double? ResourceId { get; init; }
+    public int? ResourceId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("name")]
@@ -27,5 +27,5 @@ public record Metadata
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("metafield_id")]
-    public double? MetafieldId { get; init; }
+    public int? MetafieldId { get; init; }
 }

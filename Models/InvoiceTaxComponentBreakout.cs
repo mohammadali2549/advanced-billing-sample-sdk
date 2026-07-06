@@ -6,7 +6,7 @@ public record InvoiceTaxComponentBreakout
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("tax_rule_id")]
-    public double? TaxRuleId { get; init; }
+    public int? TaxRuleId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("percentage")]
@@ -50,7 +50,7 @@ public record InvoiceTaxComponentBreakout
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("tax_authority_type")]
-    public double? TaxAuthorityType { get; init; }
+    public int? TaxAuthorityType { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("state_assigned_no")]

@@ -5,13 +5,13 @@ namespace MaxioAdvancedBilling.Models;
 public record NetTerms
 {
     [JsonPropertyName("default_net_terms")]
-    public double? DefaultNetTerms { get; init; } = 0d;
+    public int? DefaultNetTerms { get; init; } = 0;
 
     [JsonPropertyName("automatic_net_terms")]
-    public double? AutomaticNetTerms { get; init; } = 0d;
+    public int? AutomaticNetTerms { get; init; } = 0;
 
     [JsonPropertyName("remittance_net_terms")]
-    public double? RemittanceNetTerms { get; init; } = 0d;
+    public int? RemittanceNetTerms { get; init; } = 0;
 
     [JsonPropertyName("net_terms_on_remittance_signups_enabled")]
     public bool? NetTermsOnRemittanceSignupsEnabled { get; init; } = false;

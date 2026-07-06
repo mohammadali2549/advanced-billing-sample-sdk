@@ -77,7 +77,7 @@ public record CreateCustomer
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("parent_id")]
-    public double? ParentId { get; init; }
+    public int? ParentId { get; init; }
 
     /// <summary>
     /// The Salesforce ID of the customer

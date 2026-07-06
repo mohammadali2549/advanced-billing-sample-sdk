@@ -6,7 +6,7 @@ namespace MaxioAdvancedBilling.Models;
 public record SubscriptionGroupPrepayment
 {
     [JsonPropertyName("amount")]
-    public required double Amount { get; init; }
+    public required int Amount { get; init; }
 
     [JsonPropertyName("details")]
     public required string Details { get; init; }

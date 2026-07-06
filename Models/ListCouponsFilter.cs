@@ -47,7 +47,7 @@ public record ListCouponsFilter
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("ids")]
-    public IReadOnlyList<double>? Ids { get; init; }
+    public IReadOnlyList<int>? Ids { get; init; }
 
     /// <summary>
     /// Allows fetching coupons with matching codes based on provided values. Use in query <c>filter[codes]=free,free_trial</c>.

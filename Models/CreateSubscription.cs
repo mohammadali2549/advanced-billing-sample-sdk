@@ -20,7 +20,7 @@ public record CreateSubscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     /// <summary>
     /// The user-friendly API handle of a product's particular price point.
@@ -34,7 +34,7 @@ public record CreateSubscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     /// <summary>
     /// (Optional) Used in place of <c>product_price_point_id</c> to define a custom price point unique to the subscription. A subscription can have up to 30 custom price points. Exceeding this limit will result in an API error.
@@ -83,7 +83,7 @@ public record CreateSubscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_id")]
-    public double? CustomerId { get; init; }
+    public int? CustomerId { get; init; }
 
     /// <summary>
     /// (Optional) Set this attribute to a future date/time to sync imported subscriptions to your existing renewal schedule. See the notes on “Date/Time Format” in our <see href="https://maxio.zendesk.com/hc/en-us/articles/24251489107213-Advanced-Billing-Subscription-Imports#date-format">subscription import documentation</see>. If you provide a next_billing_at timestamp that is in the future, no trial or initial charges will be applied when you create the subscription. In fact, no payment will be captured at all. The first payment will be captured, according to the prices defined by the product, near the time specified by next_billing_at. If you do not provide a value for next_billing_at, any trial and/or initial charges will be assessed and charged at the time of subscription creation. If the card cannot be successfully charged, the subscription will not be created. See further notes in the section on Importing Subscriptions.
@@ -110,18 +110,18 @@ public record CreateSubscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("stored_credential_transaction_id")]
-    public double? StoredCredentialTransactionId { get; init; }
+    public int? StoredCredentialTransactionId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("sales_rep_id")]
-    public double? SalesRepId { get; init; }
+    public int? SalesRepId { get; init; }
 
     /// <summary>
     /// The Payment Profile ID of an existing card or bank account, which belongs to an existing customer to use for payment for this subscription. If the card, bank account, or customer does not exist already, or if you want to use a new (unstored) card or bank account for the subscription, use <c>payment_profile_attributes</c> instead to create a new payment profile along with the subscription. (This value is available on an existing subscription via the API as <c>credit_card</c> &gt; id or <c>bank_account</c> &gt; id)
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_profile_id")]
-    public double? PaymentProfileId { get; init; }
+    public int? PaymentProfileId { get; init; }
 
     /// <summary>
     /// The reference value (provided by your app) for the subscription itself.

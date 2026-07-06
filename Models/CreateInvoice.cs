@@ -23,7 +23,7 @@ public record CreateInvoice
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("net_terms")]
-    public double? NetTerms { get; init; }
+    public int? NetTerms { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payment_instructions")]

@@ -12,7 +12,7 @@ public record Subscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// The state of a subscription.
@@ -68,7 +68,7 @@ public record Subscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_version_number")]
-    public double? ProductVersionNumber { get; init; }
+    public int? ProductVersionNumber { get; init; }
 
     /// <summary>
     /// Timestamp relating to the end of the current (recurring) period (i.e.,when the next regularly scheduled attempted charge will occur)
@@ -173,7 +173,7 @@ public record Subscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("signup_payment_id")]
-    public double? SignupPaymentId { get; init; }
+    public int? SignupPaymentId { get; init; }
 
     /// <summary>
     /// The revenue, formatted as a string of decimal separated dollars and,cents, from the subscription signup ($50.00 would be formatted as,50.00)
@@ -249,7 +249,7 @@ public record Subscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("next_product_id")]
-    public double? NextProductId { get; init; }
+    public int? NextProductId { get; init; }
 
     /// <summary>
     /// If a delayed product change is scheduled, the handle of the product that the subscription will be changed to at the next renewal.
@@ -263,14 +263,14 @@ public record Subscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("coupon_use_count")]
-    public double? CouponUseCount { get; init; }
+    public int? CouponUseCount { get; init; }
 
     /// <summary>
     /// (deprecated) How many times the subscription's single coupon may be used. This field has no replacement for multiple coupons.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("coupon_uses_allowed")]
-    public double? CouponUsesAllowed { get; init; }
+    public int? CouponUsesAllowed { get; init; }
 
     /// <summary>
     /// The churn reason code associated to a cancelled subscription.
@@ -298,14 +298,14 @@ public record Subscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("offer_id")]
-    public double? OfferId { get; init; }
+    public int? OfferId { get; init; }
 
     /// <summary>
     /// On Relationship Invoicing, the ID of the individual paying for the subscription. Defaults to the Customer ID unless the 'Customer Hierarchies &amp; WhoPays' feature is enabled.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("payer_id")]
-    public double? PayerId { get; init; }
+    public int? PayerId { get; init; }
 
     /// <summary>
     /// The balance in cents plus the estimated renewal amount in cents. Returned ONLY for the readSubscription operation as it's a compute intensive operation.
@@ -319,7 +319,7 @@ public record Subscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     /// <summary>
     /// Price point type. We expose the following types:
@@ -336,21 +336,21 @@ public record Subscription
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("next_product_price_point_id")]
-    public double? NextProductPricePointId { get; init; }
+    public int? NextProductPricePointId { get; init; }
 
     /// <summary>
     /// On Relationship Invoicing, the number of days before a renewal invoice is due.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("net_terms")]
-    public double? NetTerms { get; init; }
+    public int? NetTerms { get; init; }
 
     /// <summary>
     /// For European sites subject to PSD2 and using 3D Secure, this can be used to reference a previous transaction for the customer. This will ensure the card will be charged successfully at renewal.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("stored_credential_transaction_id")]
-    public double? StoredCredentialTransactionId { get; init; }
+    public int? StoredCredentialTransactionId { get; init; }
 
     /// <summary>
     /// The reference value (provided by your app) for the subscription istelf.

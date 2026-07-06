@@ -132,8 +132,8 @@ public sealed class Events
         string? endDate,
         string? startDatetime,
         string? endDatetime,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/events.json"),
             [],
@@ -184,13 +184,13 @@ public sealed class Events
     /// For precise mappings from key to event_specific_data, refer to <see href="$m/Event">Event</see>.
     /// </para>
     /// </remarks>
-    public Task<IReadOnlyList<EventResponse>> ListSubscriptionEvents(double subscriptionId,
+    public Task<IReadOnlyList<EventResponse>> ListSubscriptionEvents(int subscriptionId,
         long? sinceId,
         long? maxId,
         Direction? direction,
         IReadOnlyList<EventKey>? filter,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/events.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
@@ -227,8 +227,8 @@ public sealed class Events
         long? maxId,
         Direction? direction,
         IReadOnlyList<EventKey>? filter,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/events/count.json"),
             [],

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using MaxioAdvancedBilling.Core.ErrorResponse;
@@ -13,34 +15,54 @@ internal sealed class OAuth2PasswordCredentialsStrategy : IOAuth2TokenStrategy<O
 {
     private readonly UrlTemplate _tokenUrl;
     private readonly RawClient _rawClient;
+    private readonly CredentialParamsFactory<HeaderParam> _headerParams;
+    private readonly CredentialParamsFactory<Param> _bodyParams;
 
-    public OAuth2PasswordCredentialsStrategy(UrlTemplate tokenUrl, RawClient rawClient)
-        => (_tokenUrl, _rawClient) = (tokenUrl, rawClient);
+    public static OAuth2PasswordCredentialsStrategy ForBasicAuthRequest(UrlTemplate tokenUrl, RawClient rawClient) =>
+        new(tokenUrl, rawClient, HeaderParams, (_, _) => []);
 
-    public Task<OAuthToken> GetToken(OAuth2PasswordCredentials credentials, CancellationToken ct)
-    {
-        var formParams = new List<Param>
-        {
-            new("grant_type", "password"),
-            new("client_id", credentials.ClientId),
-            new("username", credentials.Username),
-            new("password", credentials.Password)
-        };
-        if (!string.IsNullOrEmpty(credentials.ClientSecret))
-            formParams.Add(new Param("client_secret", credentials.ClientSecret));
-        if (!string.IsNullOrEmpty(credentials.Scope))
-            formParams.Add(new Param("scope", credentials.Scope!));
+    public static OAuth2PasswordCredentialsStrategy ForFormBodyRequest(UrlTemplate tokenUrl, RawClient rawClient) =>
+        new(tokenUrl, rawClient, (_, _) => [], BodyParams);
 
-        return _rawClient.Execute(
-            _tokenUrl,
-            [],
-            [],
-            [],
+    private OAuth2PasswordCredentialsStrategy(
+        UrlTemplate tokenUrl, RawClient rawClient,
+        CredentialParamsFactory<HeaderParam> authHeaders,
+        CredentialParamsFactory<Param> authBodyParams)
+        => (_tokenUrl, _rawClient, _headerParams, _bodyParams) =
+            (tokenUrl, rawClient, authHeaders, authBodyParams);
+
+    public Task<OAuthToken> GetToken(OAuth2PasswordCredentials credentials, CancellationToken ct) =>
+        _rawClient.Execute(
+            _tokenUrl, [], [],
+            _headerParams(credentials.ClientId, credentials.ClientSecret),
             HttpMethod.Post,
-            FormUrlEncodedRequest.Create(formParams),
+            FormUrlEncodedRequest.Create([
+                new Param("grant_type", "password"),
+                new Param("username", credentials.Username),
+                new Param("password", credentials.Password),
+                .. ScopeParams(credentials.Scope),
+                .. _bodyParams(credentials.ClientId, credentials.ClientSecret),
+            ]),
             JsonResponse.Create<OAuthToken>(),
             RawErrorResponse.Instance,
             [],
             ct);
+
+    private static IReadOnlyList<Param> ScopeParams(string? scope) =>
+        string.IsNullOrEmpty(scope) ? [] : [new Param("scope", scope!)];
+
+    private static IReadOnlyList<HeaderParam> HeaderParams(string clientId, string? clientSecret)
+    {
+        var credential = $"{clientId}:{clientSecret ?? string.Empty}";
+        var encoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(credential));
+        return [new HeaderParam("Authorization", $"Basic {encoded}")];
+    }
+
+    private static IReadOnlyList<Param> BodyParams(string clientId, string? clientSecret)
+    {
+        List<Param> parameters = [new("client_id", clientId)];
+        if (clientSecret != null)
+            parameters.Add(new Param("client_secret", clientSecret));
+        return parameters;
     }
 }

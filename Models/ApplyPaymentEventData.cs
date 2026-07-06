@@ -48,11 +48,11 @@ public record ApplyPaymentEventData
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("transaction_id")]
-    public double? TransactionId { get; init; }
+    public int? TransactionId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("parent_invoice_number")]
-    public double? ParentInvoiceNumber { get; init; }
+    public int? ParentInvoiceNumber { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("remaining_prepayment_amount")]

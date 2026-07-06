@@ -17,10 +17,10 @@ public record Event
     public required string Message { get; init; }
 
     [JsonPropertyName("subscription_id")]
-    public required double? SubscriptionId { get; init; }
+    public required int? SubscriptionId { get; init; }
 
     [JsonPropertyName("customer_id")]
-    public required double? CustomerId { get; init; }
+    public required int? CustomerId { get; init; }
 
     [JsonPropertyName("created_at")]
     public required DateTimeOffset CreatedAt { get; init; }

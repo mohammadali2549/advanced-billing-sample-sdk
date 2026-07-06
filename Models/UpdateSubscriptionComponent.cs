@@ -6,7 +6,7 @@ public record UpdateSubscriptionComponent
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_id")]
-    public double? ComponentId { get; init; }
+    public int? ComponentId { get; init; }
 
     /// <summary>
     /// Create or update custom pricing unique to the subscription. Used in place of <c>price_point_id</c>.

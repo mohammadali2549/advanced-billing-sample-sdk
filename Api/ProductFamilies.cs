@@ -119,8 +119,8 @@ public sealed class ProductFamilies
         DateTimeOffset? endDatetime,
         bool? includeArchived,
         ListProductsInclude? include,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/products.json"),
             [new TemplateParam("product_family_id", productFamilyId)],
@@ -155,7 +155,7 @@ public sealed class ProductFamilies
     /// The product family can be specified either with the id number, or with the <c>handle:my-family</c> format.
     /// </para>
     /// </remarks>
-    public Task<ProductFamilyResponse> ReadProductFamily(double id, CancellationToken ct = default) =>
+    public Task<ProductFamilyResponse> ReadProductFamily(int id, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{id}.json"),
             [new TemplateParam("id", id)],
             [],

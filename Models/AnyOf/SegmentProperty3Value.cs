@@ -14,48 +14,48 @@ public record SegmentProperty3Value
 {
     private readonly Optional<string> _stringValue;
 
-    private readonly Optional<decimal> _decimalValue;
-
     private readonly Optional<double> _doubleValue;
+
+    private readonly Optional<int> _intValue;
 
     private readonly Optional<bool> _boolValue;
 
     private SegmentProperty3Value(Optional<string> stringValue,
-        Optional<decimal> decimalValue,
         Optional<double> doubleValue,
+        Optional<int> intValue,
         Optional<bool> boolValue)
     {
         _stringValue = stringValue;
-        _decimalValue = decimalValue;
         _doubleValue = doubleValue;
+        _intValue = intValue;
         _boolValue = boolValue;
     }
 
     public static SegmentProperty3Value String(string value) =>
         new(Optional<string>.Some(value), default, default, default);
 
-    public static SegmentProperty3Value Decimal(decimal value) =>
-        new(default, Optional<decimal>.Some(value), default, default);
-
     public static SegmentProperty3Value Double(double value) =>
-        new(default, default, Optional<double>.Some(value), default);
+        new(default, Optional<double>.Some(value), default, default);
+
+    public static SegmentProperty3Value Int(int value) =>
+        new(default, default, Optional<int>.Some(value), default);
 
     public static SegmentProperty3Value Bool(bool value) =>
         new(default, default, default, Optional<bool>.Some(value));
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public bool TryGetDecimal(out decimal value) => _decimalValue.TryGetValue(out value);
-
     public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
+
+    public bool TryGetInt(out int value) => _intValue.TryGetValue(out value);
 
     public bool TryGetBool(out bool value) => _boolValue.TryGetValue(out value);
 
     public static implicit operator SegmentProperty3Value(string value) => String(value);
 
-    public static implicit operator SegmentProperty3Value(decimal value) => Decimal(value);
-
     public static implicit operator SegmentProperty3Value(double value) => Double(value);
+
+    public static implicit operator SegmentProperty3Value(int value) => Int(value);
 
     public static implicit operator SegmentProperty3Value(bool value) => Bool(value);
 }
@@ -72,19 +72,19 @@ file sealed class SegmentProperty3ValueConverter : JsonConverter<SegmentProperty
         {
             return SegmentProperty3Value.String(stringValue);
         }
-        if (JsonSerializer.TryDeserialize<decimal>(root, options, out var decimalValue))
-        {
-            return SegmentProperty3Value.Decimal(decimalValue);
-        }
         if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
         {
             return SegmentProperty3Value.Double(doubleValue);
+        }
+        if (JsonSerializer.TryDeserialize<int>(root, options, out var intValue))
+        {
+            return SegmentProperty3Value.Int(intValue);
         }
         if (JsonSerializer.TryDeserialize<bool>(root, options, out var boolValue))
         {
             return SegmentProperty3Value.Bool(boolValue);
         }
-        throw new JsonException($"JSON does not match string or decimal or double or bool schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match string or double or int or bool schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, SegmentProperty3Value value, JsonSerializerOptions options)
@@ -93,13 +93,13 @@ file sealed class SegmentProperty3ValueConverter : JsonConverter<SegmentProperty
         {
             JsonSerializer.Serialize(writer, stringValue, options);
         }
-        else if (value.TryGetDecimal(out var decimalValue))
-        {
-            JsonSerializer.Serialize(writer, decimalValue, options);
-        }
         else if (value.TryGetDouble(out var doubleValue))
         {
             JsonSerializer.Serialize(writer, doubleValue, options);
+        }
+        else if (value.TryGetInt(out var intValue))
+        {
+            JsonSerializer.Serialize(writer, intValue, options);
         }
         else if (value.TryGetBool(out var boolValue))
         {

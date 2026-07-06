@@ -11,7 +11,7 @@ public record CreditCardPaymentProfile
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// The first name of the card holder.
@@ -46,21 +46,21 @@ public record CreditCardPaymentProfile
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_month")]
-    public double? ExpirationMonth { get; init; }
+    public int? ExpirationMonth { get; init; }
 
     /// <summary>
     /// An integer representing the 4-digit expiration year of the card(i.e. ‘2012’).
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expiration_year")]
-    public double? ExpirationYear { get; init; }
+    public int? ExpirationYear { get; init; }
 
     /// <summary>
     /// The Chargify-assigned id for the customer record to which the card belongs.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_id")]
-    public double? CustomerId { get; init; }
+    public int? CustomerId { get; init; }
 
     /// <summary>
     /// The vault that stores the payment profile with the provided <c>vault_token</c>. Use <c>bogus</c> for testing.
@@ -141,7 +141,7 @@ public record CreditCardPaymentProfile
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("site_gateway_setting_id")]
-    public double? SiteGatewaySettingId { get; init; }
+    public int? SiteGatewaySettingId { get; init; }
 
     /// <summary>
     /// An identifier of connected gateway.

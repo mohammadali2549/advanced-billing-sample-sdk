@@ -12,14 +12,14 @@ public record Allocation
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("allocation_id")]
-    public double? AllocationId { get; init; }
+    public int? AllocationId { get; init; }
 
     /// <summary>
     /// The integer component ID for the allocation. This references a component that you have created in your Product setup
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("component_id")]
-    public double? ComponentId { get; init; }
+    public int? ComponentId { get; init; }
 
     /// <summary>
     /// The handle of the component. This references a component that you have created in your Product setup
@@ -33,7 +33,7 @@ public record Allocation
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("subscription_id")]
-    public double? SubscriptionId { get; init; }
+    public int? SubscriptionId { get; init; }
 
     /// <summary>
     /// The allocated quantity set in to effect by the allocation. String for components supporting fractional quantities
@@ -86,7 +86,7 @@ public record Allocation
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_id")]
-    public double? PricePointId { get; init; }
+    public int? PricePointId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_name")]
@@ -101,7 +101,7 @@ public record Allocation
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("interval")]
-    public double? Interval { get; init; }
+    public int? Interval { get; init; }
 
     /// <summary>
     /// A string representing the interval unit for this component price point, either month or day. This property is only available for sites with Multifrequency enabled.
@@ -112,7 +112,7 @@ public record Allocation
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("previous_price_point_id")]
-    public double? PreviousPricePointId { get; init; }
+    public int? PreviousPricePointId { get; init; }
 
     /// <summary>
     /// If the change in cost is an upgrade, this determines if the charge should accrue to the next renewal or if capture should be attempted immediately.

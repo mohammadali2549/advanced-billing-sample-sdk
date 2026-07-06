@@ -64,7 +64,7 @@ public sealed class ProductPricePoints
     /// <remarks>
     /// Creates multiple product price points in one request.
     /// </remarks>
-    public Task<BulkCreateProductPricePointsResponse> BulkCreateProductPricePoints(double productId,
+    public Task<BulkCreateProductPricePointsResponse> BulkCreateProductPricePoints(int productId,
         BulkCreateProductPricePointsRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products/{product_id}/price_points/bulk.json"),
@@ -95,7 +95,7 @@ public sealed class ProductPricePoints
     /// Note: Currency Prices are not able to be created for custom product price points.
     /// </para>
     /// </remarks>
-    public Task<CurrencyPricesResponse> CreateProductCurrencyPrices(double productPricePointId,
+    public Task<CurrencyPricesResponse> CreateProductCurrencyPrices(int productPricePointId,
         CreateProductCurrencyPricesRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_price_points/{product_price_point_id}/currency_prices.json"),
@@ -151,8 +151,8 @@ public sealed class ProductPricePoints
     public Task<ListProductPricePointsResponse> ListAllProductPricePoints(SortingDirection? direction,
         ListPricePointsFilter? filter,
         ListProductsPricePointsInclude? include,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products_price_points.json"),
             [],
@@ -188,8 +188,8 @@ public sealed class ProductPricePoints
         bool? currencyPrices,
         IReadOnlyList<PricePointType>? filterType,
         bool? archived,
-        double? page = 1d,
-        double? perPage = 10d,
+        int? page = 1,
+        int? perPage = 10,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products/{product_id}/price_points.json"),
             [new TemplateParam("product_id", productId)],
@@ -220,8 +220,8 @@ public sealed class ProductPricePoints
     /// Note: Custom product price points cannot be set as the default for a product.
     /// </para>
     /// </remarks>
-    public Task<ProductResponse> PromoteProductPricePointToDefault(double productId,
-        double pricePointId,
+    public Task<ProductResponse> PromoteProductPricePointToDefault(int productId,
+        int pricePointId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products/{product_id}/price_points/{price_point_id}/default.json"),
             [new TemplateParam("product_id", productId), new TemplateParam("price_point_id", pricePointId)],
@@ -272,8 +272,8 @@ public sealed class ProductPricePoints
     /// <remarks>
     /// Unarchives an archived product price point.
     /// </remarks>
-    public Task<ProductPricePointResponse> UnarchiveProductPricePoint(double productId,
-        double pricePointId,
+    public Task<ProductPricePointResponse> UnarchiveProductPricePoint(int productId,
+        int pricePointId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products/{product_id}/price_points/{price_point_id}/unarchive.json"),
             [new TemplateParam("product_id", productId), new TemplateParam("price_point_id", pricePointId)],
@@ -303,7 +303,7 @@ public sealed class ProductPricePoints
     /// Note: Currency Prices cannot be updated for custom product price points.
     /// </para>
     /// </remarks>
-    public Task<CurrencyPricesResponse> UpdateProductCurrencyPrices(double productPricePointId,
+    public Task<CurrencyPricesResponse> UpdateProductCurrencyPrices(int productPricePointId,
         UpdateCurrencyPricesRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_price_points/{product_price_point_id}/currency_prices.json"),

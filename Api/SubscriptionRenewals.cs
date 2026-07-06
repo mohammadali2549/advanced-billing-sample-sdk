@@ -37,8 +37,8 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Cancels a scheduled renewal configuration.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationResponse> CancelScheduledRenewalConfiguration(double subscriptionId,
-        double id,
+    public Task<ScheduledRenewalConfigurationResponse> CancelScheduledRenewalConfiguration(int subscriptionId,
+        int id,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{id}/cancel.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("id", id)],
@@ -62,7 +62,7 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Creates a scheduled renewal configuration for a subscription. The scheduled renewal is based on the subscription’s current product and component setup.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationResponse> CreateScheduledRenewalConfiguration(double subscriptionId,
+    public Task<ScheduledRenewalConfigurationResponse> CreateScheduledRenewalConfiguration(int subscriptionId,
         ScheduledRenewalConfigurationRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals.json"),
@@ -88,8 +88,8 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Adds product and component line items to the scheduled renewal.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationItemResponse> CreateScheduledRenewalConfigurationItem(double subscriptionId,
-        double scheduledRenewalsConfigurationId,
+    public Task<ScheduledRenewalConfigurationItemResponse> CreateScheduledRenewalConfigurationItem(int subscriptionId,
+        int scheduledRenewalsConfigurationId,
         ScheduledRenewalConfigurationItemRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{scheduled_renewals_configuration_id}/configuration_items.json"),
@@ -116,9 +116,9 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Removes an item from the pending renewal configuration.
     /// </remarks>
-    public Task DeleteScheduledRenewalConfigurationItem(double subscriptionId,
-        double scheduledRenewalsConfigurationId,
-        double id,
+    public Task DeleteScheduledRenewalConfigurationItem(int subscriptionId,
+        int scheduledRenewalsConfigurationId,
+        int id,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{scheduled_renewals_configuration_id}/configuration_items/{id}.json"),
             [new TemplateParam("subscription_id", subscriptionId),
@@ -144,7 +144,7 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Lists scheduled renewal configurations for the subscription and permits an optional status query filter.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationsResponse> ListScheduledRenewalConfigurations(double subscriptionId,
+    public Task<ScheduledRenewalConfigurationsResponse> ListScheduledRenewalConfigurations(int subscriptionId,
         Status? status,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals.json"),
@@ -169,8 +169,8 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Locks in the renewal immediately.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationResponse> LockInScheduledRenewalImmediately(double subscriptionId,
-        double id,
+    public Task<ScheduledRenewalConfigurationResponse> LockInScheduledRenewalImmediately(int subscriptionId,
+        int id,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{id}/immediate_lock_in.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("id", id)],
@@ -194,8 +194,8 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Retrieves the configuration settings for the scheduled renewal.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationResponse> ReadScheduledRenewalConfiguration(double subscriptionId,
-        double id,
+    public Task<ScheduledRenewalConfigurationResponse> ReadScheduledRenewalConfiguration(int subscriptionId,
+        int id,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{id}.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("id", id)],
@@ -220,8 +220,8 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Schedules a future lock-in date for the renewal.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationResponse> ScheduleScheduledRenewalLockIn(double subscriptionId,
-        double id,
+    public Task<ScheduledRenewalConfigurationResponse> ScheduleScheduledRenewalLockIn(int subscriptionId,
+        int id,
         ScheduledRenewalLockInRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{id}/schedule_lock_in.json"),
@@ -246,8 +246,8 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Returns a scheduled renewal configuration to an editable state.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationResponse> UnpublishScheduledRenewalConfiguration(double subscriptionId,
-        double id,
+    public Task<ScheduledRenewalConfigurationResponse> UnpublishScheduledRenewalConfiguration(int subscriptionId,
+        int id,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{id}/unpublish.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("id", id)],
@@ -272,8 +272,8 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Updates an existing configuration.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationResponse> UpdateScheduledRenewalConfiguration(double subscriptionId,
-        double id,
+    public Task<ScheduledRenewalConfigurationResponse> UpdateScheduledRenewalConfiguration(int subscriptionId,
+        int id,
         ScheduledRenewalConfigurationRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{id}.json"),
@@ -300,9 +300,9 @@ public sealed class SubscriptionRenewals
     /// <remarks>
     /// Updates an existing configuration item’s pricing and quantity.
     /// </remarks>
-    public Task<ScheduledRenewalConfigurationItemResponse> UpdateScheduledRenewalConfigurationItem(double subscriptionId,
-        double scheduledRenewalsConfigurationId,
-        double id,
+    public Task<ScheduledRenewalConfigurationItemResponse> UpdateScheduledRenewalConfigurationItem(int subscriptionId,
+        int scheduledRenewalsConfigurationId,
+        int id,
         ScheduledRenewalUpdateRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/scheduled_renewals/{scheduled_renewals_configuration_id}/configuration_items/{id}.json"),

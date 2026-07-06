@@ -14,21 +14,21 @@ public record ScheduledRenewalItemRequestBodyComponent
     /// Product or component identifier.
     /// </summary>
     [JsonPropertyName("item_id")]
-    public required double ItemId { get; init; }
+    public required int ItemId { get; init; }
 
     /// <summary>
     /// Price point identifier.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("price_point_id")]
-    public double? PricePointId { get; init; }
+    public int? PricePointId { get; init; }
 
     /// <summary>
     /// Optional quantity for the item.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("quantity")]
-    public double? Quantity { get; init; }
+    public int? Quantity { get; init; }
 
     /// <summary>
     /// Custom pricing for a component within a scheduled renewal.

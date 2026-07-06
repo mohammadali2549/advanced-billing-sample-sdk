@@ -55,7 +55,7 @@ public sealed class SubscriptionInvoiceAccount
     /// See the <see href="https://docs.maxio.com/hc/en-us/articles/44277749524365-3D-Secure-Post-Authentication-Flow">3D Secure Post-Authentication Flow</see> article in the product documentation to learn how to manage the redirect flow.
     /// </para>
     /// </remarks>
-    public Task<CreatePrepaymentResponse> CreatePrepayment(double subscriptionId,
+    public Task<CreatePrepaymentResponse> CreatePrepayment(int subscriptionId,
         CreatePrepaymentRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/prepayments.json"),
@@ -80,7 +80,7 @@ public sealed class SubscriptionInvoiceAccount
     /// <remarks>
     /// Deducts a service credit from the subscription in the specified amount. The credit amount being deducted must be equal to or less than the current credit balance.
     /// </remarks>
-    public Task DeductServiceCredit(double subscriptionId,
+    public Task DeductServiceCredit(int subscriptionId,
         DeductServiceCreditRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/service_credit_deductions.json"),
@@ -105,7 +105,7 @@ public sealed class SubscriptionInvoiceAccount
     /// <remarks>
     /// Adds a service credit to the subscription in the specified amount. The credit is subsequently applied to the next generated invoice.
     /// </remarks>
-    public Task<ServiceCredit> IssueServiceCredit(double subscriptionId,
+    public Task<ServiceCredit> IssueServiceCredit(int subscriptionId,
         IssueServiceCreditRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/service_credits.json"),
@@ -132,10 +132,10 @@ public sealed class SubscriptionInvoiceAccount
     /// <remarks>
     /// Lists a subscription's prepayments.
     /// </remarks>
-    public Task<PrepaymentsResponse> ListPrepayments(double subscriptionId,
+    public Task<PrepaymentsResponse> ListPrepayments(int subscriptionId,
         ListPrepaymentsFilter? filter,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/prepayments.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
@@ -161,10 +161,10 @@ public sealed class SubscriptionInvoiceAccount
     /// <remarks>
     /// Lists a subscription's service credits.
     /// </remarks>
-    public Task<ListServiceCreditsResponse> ListServiceCredits(double subscriptionId,
+    public Task<ListServiceCreditsResponse> ListServiceCredits(int subscriptionId,
         SortingDirection? direction,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/service_credits/list.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
@@ -187,7 +187,7 @@ public sealed class SubscriptionInvoiceAccount
     /// <remarks>
     /// Returns the <c>balance_in_cents</c> of the Subscription's Pending Discount, Service Credit, and Prepayment accounts, as well as the sum of the Subscription's open, payable invoices.
     /// </remarks>
-    public Task<AccountBalances> ReadAccountBalances(double subscriptionId, CancellationToken ct = default) =>
+    public Task<AccountBalances> ReadAccountBalances(int subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/account_balances.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
             [],
@@ -214,7 +214,7 @@ public sealed class SubscriptionInvoiceAccount
     /// The amount may be passed either as a decimal, with <c>amount</c>, or an integer in cents, with <c>amount_in_cents</c>.
     /// </para>
     /// </remarks>
-    public Task<PrepaymentResponse> RefundPrepayment(double subscriptionId,
+    public Task<PrepaymentResponse> RefundPrepayment(int subscriptionId,
         long prepaymentId,
         RefundPrepaymentRequest? body,
         CancellationToken ct = default) =>

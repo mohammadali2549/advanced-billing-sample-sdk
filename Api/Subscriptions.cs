@@ -88,7 +88,7 @@ public sealed class Subscriptions
     /// When the <c>revert_on_failure</c> parameter is set to <c>true</c>, the subscription's state will remain as Trialing, we will void the invoice from activation and return any prepayments and credits applied to the invoice back to the subscription.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> ActivateSubscription(double subscriptionId,
+    public Task<SubscriptionResponse> ActivateSubscription(int subscriptionId,
         ActivateSubscriptionRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/activate.json"),
@@ -126,7 +126,7 @@ public sealed class Subscriptions
     /// For this reason, using this query parameter on this endpoint has been deprecated in favor of using the request body parameters as described below. When passing in request body parameters, the list of coupon codes will simply be added to any existing list of codes on the subscription.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> ApplyCouponsToSubscription(double subscriptionId,
+    public Task<SubscriptionResponse> ApplyCouponsToSubscription(int subscriptionId,
         string? code,
         AddCouponsRequest? body,
         CancellationToken ct = default) =>
@@ -258,9 +258,9 @@ public sealed class Subscriptions
     /// </para>
     /// </remarks>
     public Task<IReadOnlyList<SubscriptionResponse>> ListSubscriptions(SubscriptionStateFilter? state,
-        double? product,
-        double? productPricePointId,
-        double? coupon,
+        int? product,
+        int? productPricePointId,
+        int? coupon,
         string? couponCode,
         SubscriptionDateField? dateField,
         DateTimeOffset? startDate,
@@ -271,8 +271,8 @@ public sealed class Subscriptions
         SortingDirection? direction,
         SubscriptionSort? sort,
         IReadOnlyList<SubscriptionListInclude>? include,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions.json"),
             [],
@@ -337,7 +337,7 @@ public sealed class Subscriptions
     /// If unpermitted parameters are sent, a 400 HTTP response is sent along with a string giving the reason for the problem.
     /// </para>
     /// </remarks>
-    public Task OverrideSubscription(double subscriptionId,
+    public Task OverrideSubscription(int subscriptionId,
         OverrideSubscriptionRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/override.json"),
@@ -433,8 +433,8 @@ public sealed class Subscriptions
     /// The query params will be: <c>?ack={customer_id}&amp;cascade[]=customer&amp;cascade[]=payment_profile</c>
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> PurgeSubscription(double subscriptionId,
-        double ack,
+    public Task<SubscriptionResponse> PurgeSubscription(int subscriptionId,
+        int ack,
         IReadOnlyList<SubscriptionPurgeType>? cascade,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/purge.json"),
@@ -465,7 +465,7 @@ public sealed class Subscriptions
     /// Self-Service Page token for the subscription is not returned by default. If this information is desired, the include[]=self_service_page_token parameter must be provided with the request.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> ReadSubscription(double subscriptionId,
+    public Task<SubscriptionResponse> ReadSubscription(int subscriptionId,
         IReadOnlyList<SubscriptionInclude>? include,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}.json"),
@@ -493,7 +493,7 @@ public sealed class Subscriptions
     /// For more information on the expected behavior of removing a coupon from a subscription, see our documentation <see href="https://maxio.zendesk.com/hc/en-us/articles/24261259337101-Coupons-and-Subscriptions#removing-a-coupon">here.</see>
     /// </para>
     /// </remarks>
-    public Task<string> RemoveCouponFromSubscription(double subscriptionId,
+    public Task<string> RemoveCouponFromSubscription(int subscriptionId,
         string? couponCode,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/remove_coupon.json"),
@@ -518,7 +518,7 @@ public sealed class Subscriptions
     /// <remarks>
     /// Updates a subscription's prepaid configuration.
     /// </remarks>
-    public Task<PrepaidConfigurationResponse> UpdatePrepaidSubscriptionConfiguration(double subscriptionId,
+    public Task<PrepaidConfigurationResponse> UpdatePrepaidSubscriptionConfiguration(int subscriptionId,
         UpsertPrepaidConfigurationRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/prepaid_configurations.json"),
@@ -615,7 +615,7 @@ public sealed class Subscriptions
     /// &gt; Note: If you change the product associated with a subscription that contains a <c>snap_day</c> and immediately <c>READ/GET</c> the subscription data, it will still contain original <c>snap_day</c>. The <c>snap_day</c> will reset to null on the next billing cycle. This is because a product change is instantaneous and only affects the product associated with a subscription.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionResponse> UpdateSubscription(double subscriptionId,
+    public Task<SubscriptionResponse> UpdateSubscription(int subscriptionId,
         UpdateSubscriptionRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}.json"),

@@ -39,9 +39,7 @@ public sealed class Coupons
     /// Archiving makes that Coupon unavailable for future use, but allows it to remain attached and functional on existing Subscriptions that are using it.
     /// The <c>archived_at</c> date and time will be assigned.
     /// </remarks>
-    public Task<CouponResponse> ArchiveCoupon(double productFamilyId,
-        double couponId,
-        CancellationToken ct = default) =>
+    public Task<CouponResponse> ArchiveCoupon(int productFamilyId, int couponId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/coupons/{coupon_id}.json"),
             [new TemplateParam("product_family_id", productFamilyId), new TemplateParam("coupon_id", couponId)],
             [],
@@ -75,7 +73,7 @@ public sealed class Coupons
     /// See <see href="https://maxio.zendesk.com/hc/en-us/articles/24261259337101-Coupons-and-Subscriptions">Apply Coupons to Subscriptions</see> for information on applying a coupon to a subscription in the Advanced Billing UI.
     /// </para>
     /// </remarks>
-    public Task<CouponResponse> CreateCoupon(double productFamilyId,
+    public Task<CouponResponse> CreateCoupon(int productFamilyId,
         CouponRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/coupons.json"),
@@ -158,7 +156,7 @@ public sealed class Coupons
     /// So, if the coupon subcode is <c>20%OFF</c>, the URL to delete this coupon subcode would be: <c>https://&lt;subdomain&gt;.chargify.com/coupons/567/codes/20%25OFF.&lt;format&gt;</c>
     /// </para>
     /// </remarks>
-    public Task<CouponSubcodesResponse> CreateCouponSubcodes(double couponId,
+    public Task<CouponSubcodesResponse> CreateCouponSubcodes(int couponId,
         CouponSubcodes? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/coupons/{coupon_id}/codes.json"),
@@ -186,7 +184,7 @@ public sealed class Coupons
     /// Currency pricing for coupons must mirror the setup of the primary coupon pricing - if the primary coupon is percentage based, you will not be able to define pricing in non-primary currencies.
     /// </para>
     /// </remarks>
-    public Task<CouponCurrencyResponse> CreateOrUpdateCouponCurrencyPrices(double couponId,
+    public Task<CouponCurrencyResponse> CreateOrUpdateCouponCurrencyPrices(int couponId,
         CouponCurrencyRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/coupons/{coupon_id}/currency_prices.json"),
@@ -236,7 +234,7 @@ public sealed class Coupons
     /// </para>
     /// </example>
     /// </remarks>
-    public Task DeleteCouponSubcode(double couponId, string subcode, CancellationToken ct = default) =>
+    public Task DeleteCouponSubcode(int couponId, string subcode, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/coupons/{coupon_id}/codes/{subcode}.json"),
             [new TemplateParam("coupon_id", couponId), new TemplateParam("subcode", subcode)],
             [],
@@ -263,7 +261,7 @@ public sealed class Coupons
     /// If you have more than one product family and if the coupon you are trying to find does not belong to the default product family in your site, then you will need to specify (either in the url or as a query string param) the product family id.
     /// </para>
     /// </remarks>
-    public Task<CouponResponse> FindCoupon(double? productFamilyId,
+    public Task<CouponResponse> FindCoupon(int? productFamilyId,
         string? code,
         bool? currencyPrices,
         CancellationToken ct = default) =>
@@ -292,9 +290,9 @@ public sealed class Coupons
     /// <remarks>
     /// Lists the subcodes attached to a coupon.
     /// </remarks>
-    public Task<CouponSubcodes> ListCouponSubcodes(double couponId,
-        double? page = 1d,
-        double? perPage = 20d,
+    public Task<CouponSubcodes> ListCouponSubcodes(int couponId,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/coupons/{coupon_id}/codes.json"),
             [new TemplateParam("coupon_id", couponId)],
@@ -322,8 +320,8 @@ public sealed class Coupons
     /// </remarks>
     public Task<IReadOnlyList<CouponResponse>> ListCoupons(ListCouponsFilter? filter,
         bool? currencyPrices,
-        double? page = 1d,
-        double? perPage = 30d,
+        int? page = 1,
+        int? perPage = 30,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/coupons.json"),
             [],
@@ -353,11 +351,11 @@ public sealed class Coupons
     /// <remarks>
     /// Lists coupons for a specific product family in a site.
     /// </remarks>
-    public Task<IReadOnlyList<CouponResponse>> ListCouponsForProductFamily(double productFamilyId,
+    public Task<IReadOnlyList<CouponResponse>> ListCouponsForProductFamily(int productFamilyId,
         ListCouponsFilter? filter,
         bool? currencyPrices,
-        double? page = 1d,
-        double? perPage = 30d,
+        int? page = 1,
+        int? perPage = 30,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/coupons.json"),
             [new TemplateParam("product_family_id", productFamilyId)],
@@ -392,8 +390,8 @@ public sealed class Coupons
     /// If the coupon is set to <c>use_site_exchange_rate: true</c>, it will return pricing based on the current exchange rate. If the flag is set to false, it will return all of the defined prices for each currency.
     /// </para>
     /// </remarks>
-    public Task<CouponResponse> ReadCoupon(double productFamilyId,
-        double couponId,
+    public Task<CouponResponse> ReadCoupon(int productFamilyId,
+        int couponId,
         bool? currencyPrices,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/coupons/{coupon_id}.json"),
@@ -418,8 +416,8 @@ public sealed class Coupons
     /// <remarks>
     /// Lists coupon usage details, one entry per product.
     /// </remarks>
-    public Task<IReadOnlyList<CouponUsage>> ReadCouponUsage(double productFamilyId,
-        double couponId,
+    public Task<IReadOnlyList<CouponUsage>> ReadCouponUsage(int productFamilyId,
+        int couponId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/coupons/{coupon_id}/usage.json"),
             [new TemplateParam("product_family_id", productFamilyId), new TemplateParam("coupon_id", couponId)],
@@ -448,8 +446,8 @@ public sealed class Coupons
     /// <c>{ "&lt;product/component_id&gt;": boolean_value }</c>
     /// </para>
     /// </remarks>
-    public Task<CouponResponse> UpdateCoupon(double productFamilyId,
-        double couponId,
+    public Task<CouponResponse> UpdateCoupon(int productFamilyId,
+        int couponId,
         CouponRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/product_families/{product_family_id}/coupons/{coupon_id}.json"),
@@ -488,7 +486,7 @@ public sealed class Coupons
     ///   <item><description>Any subcodes not created because they are invalid.</description></item>
     /// </list>
     /// </remarks>
-    public Task<CouponSubcodesResponse> UpdateCouponSubcodes(double couponId,
+    public Task<CouponSubcodesResponse> UpdateCouponSubcodes(int couponId,
         CouponSubcodes? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/coupons/{coupon_id}/codes.json"),
@@ -536,7 +534,7 @@ public sealed class Coupons
     /// https://&lt;subdomain&gt;.chargify.com/coupons/validate.&lt;format&gt;?code=&lt;coupon_code&gt;&amp;product_family_id=&lt;id&gt;
     /// </code>
     /// </remarks>
-    public Task<CouponResponse> ValidateCoupon(string code, double? productFamilyId, CancellationToken ct = default) =>
+    public Task<CouponResponse> ValidateCoupon(string code, int? productFamilyId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/coupons/validate.json"),
             [],
             [new Param("code", code), new Param("product_family_id", productFamilyId)],

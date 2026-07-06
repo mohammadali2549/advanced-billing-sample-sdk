@@ -40,8 +40,8 @@ public sealed class PaymentProfiles
     /// You must elect to change the existing payment profile to a new payment profile ID in order to receive a satisfactory response from this endpoint.
     /// </para>
     /// </remarks>
-    public Task<PaymentProfileResponse> ChangeSubscriptionDefaultPaymentProfile(double subscriptionId,
-        double paymentProfileId,
+    public Task<PaymentProfileResponse> ChangeSubscriptionDefaultPaymentProfile(int subscriptionId,
+        int paymentProfileId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/payment_profiles/{payment_profile_id}/change_payment_profile.json"),
             [new TemplateParam("subscription_id", subscriptionId),
@@ -73,7 +73,7 @@ public sealed class PaymentProfiles
     /// </para>
     /// </remarks>
     public Task<PaymentProfileResponse> ChangeSubscriptionGroupDefaultPaymentProfile(string uid,
-        double paymentProfileId,
+        int paymentProfileId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscription_groups/{uid}/payment_profiles/{payment_profile_id}/change_payment_profile.json"),
             [new TemplateParam("uid", uid), new TemplateParam("payment_profile_id", paymentProfileId)],
@@ -168,7 +168,7 @@ public sealed class PaymentProfiles
     /// </para>
     /// </remarks>
     public Task DeleteSubscriptionGroupPaymentProfile(string uid,
-        double paymentProfileId,
+        int paymentProfileId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscription_groups/{uid}/payment_profiles/{payment_profile_id}.json"),
             [new TemplateParam("uid", uid), new TemplateParam("payment_profile_id", paymentProfileId)],
@@ -198,8 +198,8 @@ public sealed class PaymentProfiles
     ///   <item><description>If you delete the default payment profile for a subscription, you will need to specify another payment profile to be the default through the api, or either prompt the user to enter a card in the billing portal or on the self-service page, or visit the Payment Details tab on the subscription in the Admin UI and use the “Add New Credit Card” or “Make Active Payment Method” link, (depending on whether there are other cards present).</description></item>
     /// </list>
     /// </remarks>
-    public Task DeleteSubscriptionsPaymentProfile(double subscriptionId,
-        double paymentProfileId,
+    public Task DeleteSubscriptionsPaymentProfile(int subscriptionId,
+        int paymentProfileId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/payment_profiles/{payment_profile_id}.json"),
             [new TemplateParam("subscription_id", subscriptionId),
@@ -226,7 +226,7 @@ public sealed class PaymentProfiles
     /// If the payment profile is in use by one or more subscriptions or groups, a 422 and error message will be returned.
     /// </para>
     /// </remarks>
-    public Task DeleteUnusedPaymentProfile(double paymentProfileId, CancellationToken ct = default) =>
+    public Task DeleteUnusedPaymentProfile(int paymentProfileId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/payment_profiles/{payment_profile_id}.json"),
             [new TemplateParam("payment_profile_id", paymentProfileId)],
             [],
@@ -250,9 +250,9 @@ public sealed class PaymentProfiles
     /// <remarks>
     /// Returns all active payment profiles for a site, or for one customer within a site. If no payment profiles are found, this endpoint will return an empty array, not a 404.
     /// </remarks>
-    public Task<IReadOnlyList<PaymentProfileResponse>> ListPaymentProfiles(double? customerId,
-        double? page = 1d,
-        double? perPage = 20d,
+    public Task<IReadOnlyList<PaymentProfileResponse>> ListPaymentProfiles(int? customerId,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/payment_profiles.json"),
             [],
@@ -341,7 +341,7 @@ public sealed class PaymentProfiles
     /// }
     /// </code>
     /// </remarks>
-    public Task<PaymentProfileResponse> ReadPaymentProfile(double paymentProfileId, CancellationToken ct = default) =>
+    public Task<PaymentProfileResponse> ReadPaymentProfile(int paymentProfileId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/payment_profiles/{payment_profile_id}.json"),
             [new TemplateParam("payment_profile_id", paymentProfileId)],
             [],
@@ -372,7 +372,7 @@ public sealed class PaymentProfiles
     /// These error responses are designed to prevent excessive or invalid requests, and to provide clear and helpful information to users who encounter errors during the request process.
     /// </para>
     /// </remarks>
-    public Task SendRequestUpdatePaymentEmail(double subscriptionId, CancellationToken ct = default) =>
+    public Task SendRequestUpdatePaymentEmail(int subscriptionId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/request_payment_profiles_update.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
             [],
@@ -439,7 +439,7 @@ public sealed class PaymentProfiles
     ///   <item><description>If you are using Authorize.net or Stripe, you may elect to manually trigger a retry for a past due subscription after a partial update.</description></item>
     /// </list>
     /// </remarks>
-    public Task<PaymentProfileResponse> UpdatePaymentProfile(double paymentProfileId,
+    public Task<PaymentProfileResponse> UpdatePaymentProfile(int paymentProfileId,
         UpdatePaymentProfileRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/payment_profiles/{payment_profile_id}.json"),
@@ -464,7 +464,7 @@ public sealed class PaymentProfiles
     /// <remarks>
     /// Verifies a bank account. Submit the two small deposit amounts the customer received in their bank account to verify the bank account. (Stripe only)
     /// </remarks>
-    public Task<BankAccountResponse> VerifyBankAccount(double bankAccountId,
+    public Task<BankAccountResponse> VerifyBankAccount(int bankAccountId,
         BankAccountVerificationRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/bank_accounts/{bank_account_id}/verification.json"),

@@ -10,11 +10,11 @@ public record SubscriptionIncludedCoupon
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("use_count")]
-    public double? UseCount { get; init; }
+    public int? UseCount { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("uses_allowed")]
-    public double? UsesAllowed { get; init; }
+    public int? UsesAllowed { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("expires_at")]

@@ -11,7 +11,7 @@ public record ApplePayPaymentProfile
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("id")]
-    public double? Id { get; init; }
+    public int? Id { get; init; }
 
     /// <summary>
     /// The first name of the Apple Pay account holder
@@ -32,7 +32,7 @@ public record ApplePayPaymentProfile
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("customer_id")]
-    public double? CustomerId { get; init; }
+    public int? CustomerId { get; init; }
 
     /// <summary>
     /// The vault that stores the payment profile with the provided vault_token.
@@ -99,7 +99,7 @@ public record ApplePayPaymentProfile
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("site_gateway_setting_id")]
-    public double? SiteGatewaySettingId { get; init; }
+    public int? SiteGatewaySettingId { get; init; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("gateway_handle")]

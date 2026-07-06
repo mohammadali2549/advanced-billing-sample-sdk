@@ -17,14 +17,14 @@ public record SubscriptionGroupSignupItem
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_id")]
-    public double? ProductId { get; init; }
+    public int? ProductId { get; init; }
 
     /// <summary>
     /// The ID of the particular price point on the product.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("product_price_point_id")]
-    public double? ProductPricePointId { get; init; }
+    public int? ProductPricePointId { get; init; }
 
     /// <summary>
     /// The user-friendly API handle of a product's particular price point.
@@ -38,7 +38,7 @@ public record SubscriptionGroupSignupItem
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("offer_id")]
-    public double? OfferId { get; init; }
+    public int? OfferId { get; init; }
 
     /// <summary>
     /// The reference value (provided by your app) for the subscription itelf.

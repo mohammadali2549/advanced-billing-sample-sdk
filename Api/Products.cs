@@ -42,7 +42,7 @@ public sealed class Products
     /// This will restrict the option to chose the product for purchase via the Billing Portal, as well as disable Public Signup Pages for the product.
     /// </para>
     /// </remarks>
-    public Task<ProductResponse> ArchiveProduct(double productId, CancellationToken ct = default) =>
+    public Task<ProductResponse> ArchiveProduct(int productId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products/{product_id}.json"),
             [new TemplateParam("product_id", productId)],
             [],
@@ -113,8 +113,8 @@ public sealed class Products
         DateTimeOffset? startDatetime,
         bool? includeArchived,
         ListProductsInclude? include,
-        double? page = 1d,
-        double? perPage = 20d,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products.json"),
             [],
@@ -146,7 +146,7 @@ public sealed class Products
     /// <remarks>
     /// Reads the current details of a product.
     /// </remarks>
-    public Task<ProductResponse> ReadProduct(double productId, CancellationToken ct = default) =>
+    public Task<ProductResponse> ReadProduct(int productId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products/{product_id}.json"),
             [new TemplateParam("product_id", productId)],
             [],
@@ -203,7 +203,7 @@ public sealed class Products
     /// Updating a product using this endpoint will create a new price point and set it as the default price point for this product. If you should like to update an existing product price point, that must be done separately.
     /// </para>
     /// </remarks>
-    public Task<ProductResponse> UpdateProduct(double productId,
+    public Task<ProductResponse> UpdateProduct(int productId,
         CreateOrUpdateProductRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/products/{product_id}.json"),

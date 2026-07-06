@@ -14,25 +14,25 @@ public record Amount
 {
     private readonly Optional<string> _stringValue;
 
-    private readonly Optional<decimal> _decimalValue;
+    private readonly Optional<double> _doubleValue;
 
-    private Amount(Optional<string> stringValue, Optional<decimal> decimalValue)
+    private Amount(Optional<string> stringValue, Optional<double> doubleValue)
     {
         _stringValue = stringValue;
-        _decimalValue = decimalValue;
+        _doubleValue = doubleValue;
     }
 
     public static Amount String(string value) => new(Optional<string>.Some(value), default);
 
-    public static Amount Decimal(decimal value) => new(default, Optional<decimal>.Some(value));
+    public static Amount Double(double value) => new(default, Optional<double>.Some(value));
 
     public bool TryGetString(out string value) => _stringValue.TryGetValue(out value);
 
-    public bool TryGetDecimal(out decimal value) => _decimalValue.TryGetValue(out value);
+    public bool TryGetDouble(out double value) => _doubleValue.TryGetValue(out value);
 
     public static implicit operator Amount(string value) => String(value);
 
-    public static implicit operator Amount(decimal value) => Decimal(value);
+    public static implicit operator Amount(double value) => Double(value);
 }
 
 file sealed class AmountConverter : JsonConverter<Amount>
@@ -45,11 +45,11 @@ file sealed class AmountConverter : JsonConverter<Amount>
         {
             return Amount.String(stringValue);
         }
-        if (JsonSerializer.TryDeserialize<decimal>(root, options, out var decimalValue))
+        if (JsonSerializer.TryDeserialize<double>(root, options, out var doubleValue))
         {
-            return Amount.Decimal(decimalValue);
+            return Amount.Double(doubleValue);
         }
-        throw new JsonException($"JSON does not match string or decimal schemas: {root.ToString()}");
+        throw new JsonException($"JSON does not match string or double schemas: {root.ToString()}");
     }
 
     public override void Write(Utf8JsonWriter writer, Amount value, JsonSerializerOptions options)
@@ -58,9 +58,9 @@ file sealed class AmountConverter : JsonConverter<Amount>
         {
             JsonSerializer.Serialize(writer, stringValue, options);
         }
-        else if (value.TryGetDecimal(out var decimalValue))
+        else if (value.TryGetDouble(out var doubleValue))
         {
-            JsonSerializer.Serialize(writer, decimalValue, options);
+            JsonSerializer.Serialize(writer, doubleValue, options);
         }
         else
         {

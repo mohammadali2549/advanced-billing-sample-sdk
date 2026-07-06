@@ -49,7 +49,7 @@ public sealed class SubscriptionNotes
     /// Full documentation on how to use Notes in the Advanced Billing UI can be located <see href="https://maxio.zendesk.com/hc/en-us/articles/24251712214413-Subscription-Summary-Overview">here</see>.
     /// </para>
     /// </remarks>
-    public Task<SubscriptionNoteResponse> CreateSubscriptionNote(double subscriptionId,
+    public Task<SubscriptionNoteResponse> CreateSubscriptionNote(int subscriptionId,
         UpdateSubscriptionNoteRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/notes.json"),
@@ -74,7 +74,7 @@ public sealed class SubscriptionNotes
     /// <remarks>
     /// Deletes a note for a Subscription.
     /// </remarks>
-    public Task DeleteSubscriptionNote(double subscriptionId, double noteId, CancellationToken ct = default) =>
+    public Task DeleteSubscriptionNote(int subscriptionId, int noteId, CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/notes/{note_id}.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("note_id", noteId)],
             [],
@@ -98,9 +98,9 @@ public sealed class SubscriptionNotes
     /// <remarks>
     /// Retrieves a list of notes associated with a subscription. The response will be an array of Notes.
     /// </remarks>
-    public Task<IReadOnlyList<SubscriptionNoteResponse>> ListSubscriptionNotes(double subscriptionId,
-        double? page = 1d,
-        double? perPage = 20d,
+    public Task<IReadOnlyList<SubscriptionNoteResponse>> ListSubscriptionNotes(int subscriptionId,
+        int? page = 1,
+        int? perPage = 20,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/notes.json"),
             [new TemplateParam("subscription_id", subscriptionId)],
@@ -124,8 +124,8 @@ public sealed class SubscriptionNotes
     /// <remarks>
     /// Retrieves a specific note attached to a subscription.
     /// </remarks>
-    public Task<SubscriptionNoteResponse> ReadSubscriptionNote(double subscriptionId,
-        double noteId,
+    public Task<SubscriptionNoteResponse> ReadSubscriptionNote(int subscriptionId,
+        int noteId,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/notes/{note_id}.json"),
             [new TemplateParam("subscription_id", subscriptionId), new TemplateParam("note_id", noteId)],
@@ -150,8 +150,8 @@ public sealed class SubscriptionNotes
     /// <remarks>
     /// Updates a note for a subscription.
     /// </remarks>
-    public Task<SubscriptionNoteResponse> UpdateSubscriptionNote(double subscriptionId,
-        double noteId,
+    public Task<SubscriptionNoteResponse> UpdateSubscriptionNote(int subscriptionId,
+        int noteId,
         UpdateSubscriptionNoteRequest? body,
         CancellationToken ct = default) =>
         _rawClient.Execute(_server.Production("/subscriptions/{subscription_id}/notes/{note_id}.json"),
