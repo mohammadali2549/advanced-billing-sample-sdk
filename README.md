@@ -9,6 +9,12 @@ Maxio Advanced Billing (formerly Chargify) provides an HTTP-based API that confo
 One of the many reasons to use Advanced Billing is the immense feature set and [client libraries](page:development-tools/client-libraries).
 The Maxio API returns JSON responses as the primary and recommended format, but XML is also provided as a backwards compatible option for merchants who require it.
 
+> [!TIP]
+> **Looking for a specific signature, model, enum, or error type?** This repo ships a generated,
+> machine-readable **[SDK map](sdk-map.md)** — a lookup index of the SDK's entire C# surface. Consult it
+> **before** grepping or scanning the source tree; it answers most contract questions directly and, when a
+> source file is genuinely needed, names the exact one to open. Details under [SDK map](#sdk-map).
+
 ## Steps to make your first Maxio Advanced Billing API call
 
 1. [Sign-up](https://app.chargify.com/signup/maxio-billing-sandbox) or [log-in](https://app.chargify.com/login.html) to your [test site](https://maxio.zendesk.com/hc/en-us/articles/24250712113165-Testing-Overview) account.
@@ -83,6 +89,32 @@ var client = new MaxioAdvancedBillingClient(httpClient, options);
 ## Usage
 
 For code examples and error responses, see [API Reference](api-reference.md).
+
+## SDK map
+
+This repository ships a generated **SDK map** — [`sdk-map.md`](sdk-map.md) plus the [`map/`](map/) pages —
+a deterministic, lookup-oriented table of contents of the SDK's C# surface, generated from this source by
+[apimatic/sdk-map-generator](https://github.com/apimatic/sdk-map-generator).
+
+**Read it before scanning the source.** Whether you are an AI coding assistant or searching by hand, the
+map resolves most "what is the exact …" questions by lookup, so you rarely open a source file — and never
+need to grep the 600+-file tree:
+
+- **[`sdk-map.md`](sdk-map.md)** — the index: client construction, servers/auth, the options/retry
+  reference, and link tables into `map/`.
+- **[`map/operations/`](map/operations/)** — one page per controller: HTTP route, the exact C# signature,
+  return type, error type with its typed `TryGet…` accessors, and pagination — plus the source file each
+  row came from.
+- **[`map/models/`](map/models/)** — record fields with their JSON wire names, enums (full value lists),
+  and `OneOf`/`AnyOf` unions.
+
+**Workflow:** look the fact up in the map → only if you need a full method or model body, open the **one**
+source file the map's row names (e.g. `Api/Customers.cs`) → the compiler is the backstop (a name that isn't
+in the map won't build). Don't scan or grep the tree to find things — the map is the locator.
+
+The map is a **contract index**; for prose descriptions, per-parameter documentation, and runnable code
+examples, use the [API Reference](api-reference.md) instead. The map is generated from this repo's source,
+so it stays in lockstep with the code it describes.
 
 ## Best Practices
 
