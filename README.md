@@ -101,20 +101,35 @@ map resolves most "what is the exact …" questions by lookup, so you rarely ope
 need to grep the 600+-file tree:
 
 - **[`sdk-map.md`](sdk-map.md)** — the index: client construction, servers/auth, the options/retry
-  reference, and link tables into `map/`.
-- **[`map/operations/`](map/operations/)** — one page per controller: HTTP route, the exact C# signature,
-  return type, error type with its typed `TryGet…` accessors, and pagination — plus the source file each
-  row came from.
+  reference, the SDK-wide defaults the operation rows rely on, and link tables into `map/`.
+- **[`map/operations/`](map/operations/)** — one page per controller: the exact C# signature, the return
+  type, the error type with its typed `TryGet…` accessors, and pagination — plus the source file each row
+  came from.
 - **[`map/models/`](map/models/)** — record fields with their JSON wire names, enums (full value lists),
   and `OneOf`/`AnyOf` unions.
 
-**Workflow:** look the fact up in the map → only if you need a full method or model body, open the **one**
-source file the map's row names (e.g. `Api/Customers.cs`) → the compiler is the backstop (a name that isn't
-in the map won't build). Don't scan or grep the tree to find things — the map is the locator.
+**Each operation row states what is specific to that operation.** The SDK-wide defaults are stated once in
+[`sdk-map.md`](sdk-map.md) — throw-only (no `Result`-style no-throw variants), no pagination, the four fixed
+`RawError` accessors, the `Production` server group — and a row appears only where its operation departs
+from one. A row silent on pagination is telling you that operation has none.
 
-The map is a **contract index**; for prose descriptions, per-parameter documentation, and runnable code
-examples, use the [API Reference](api-reference.md) instead. The map is generated from this repo's source,
-so it stays in lockstep with the code it describes.
+The **HTTP verb and route**, and the endpoint's **behavioural prose**, live on the operation itself in
+`Api/{Controller}.cs`, which every row names. Read them there when something needs them — wiring a mock,
+reading a provider log, or settling a rule about what you must pass.
+
+**Workflow:** look the fact up in the map → where the map leaves something ambiguous, open the **one**
+source file the row names (e.g. `Api/Customers.cs`) → the compiler is the backstop (a name that isn't in the
+map won't build). Don't scan or grep the tree to find things — the map is the locator.
+
+### Which one to reach for
+
+The map and the [API Reference](api-reference.md) answer different questions, and the map is generated from
+this repo's source so it stays in lockstep with the code it describes.
+
+| Use | For |
+| --- | --- |
+| **[`sdk-map.md`](sdk-map.md) + [`map/`](map/)** | Traversing the SDK and working out its surface — locating the operation you need among 247, its exact signature and parameter order, the shape and JSON wire names of the models it takes and returns, which error type it throws and how to read it, and the source file behind any of it. This is the index to consume the SDK from, and the one to reach for first. |
+| **[`api-reference.md`](api-reference.md)** | Usage guidance for a single operation once you know which one you want — a runnable code sample, per-parameter descriptions, and the error responses it can return. |
 
 ## Best Practices
 

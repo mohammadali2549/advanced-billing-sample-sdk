@@ -122,8 +122,30 @@ Of **247 operations**, **163 are Case A (typed)** and **84 are Case B (raw)**.
 
 ## Operations — by controller (33 groups, 247 operations)
 
-Each links to a sub-page with one row per operation (HTTP, signature with must-pass-explicitly params, return
-type, error Case A/B + accessors, pagination).
+Each links to a sub-page with one row per operation: signature with must-pass-explicitly params and defaults,
+query-param wire names, return type, error Case A/B, and Case A's typed accessors with their statuses.
+
+**Each row states what is specific to its operation. Everything below holds for EVERY operation unless that
+operation's row says otherwise, so a row silent on one of these points is telling you the default here
+applies — take it and move on rather than opening the source to confirm it.**
+
+| Applies to every operation | Stated where | A row appears only when |
+|---|---|---|
+| **Throw-only — no `…Result`/no-throw variant exists anywhere in this SDK** | this page, Error-handling model | a no-throw sibling exists (none do at this SDK version) |
+| **No pagination** — the operation takes neither `page` nor `perPage` | here | pagination is offered: `manual page+perPage`, or the `page`-without-`perPage` case |
+| **Case B error accessors are always these four** — `StatusCode: HttpStatusCode` · `ReadAsBytes(): ReadOnlyMemory<byte>` · `ReadAsString(): string` · `ReadAsJson<T>(): T?` | the `RawError` row above | never — a `Case B` label always implies exactly these four; Case A rows list their own typed accessors |
+| **Server group `Production`** — base URL per Servers & auth below | here | the operation is on another group, e.g. `- **Server group**: Ebb (events)` (2 event-ingest operations) |
+| **Parameter names are literal** — signatures are generated code verbatim; in named arguments use the exact parameter names shown (the cancellation-token parameter is named `ct`) | here | never — it always holds |
+
+**The HTTP verb and route live on the operation in `Api/<Controller>.cs`.** This map is method-first: the C#
+method is the interface you call. When something wire-level needs the route — reproducing a raw request,
+pointing the client at a mock, reading a provider-side log — read it from that file; do not reconstruct it
+from memory or infer it from the method name.
+
+**The endpoint's behavioural prose lives there too**, as the XML `<remarks>` on the method. Rows here give
+you the contract — names, types, shapes, errors. Where an operation's *semantics* decide what you must pass
+— a parameter whose value changes server-side behaviour, an ordering or exclusivity rule between fields —
+that is what `<remarks>` settles; read it there rather than filling it in from memory.
 
 | Controller (`client.X`) | Ops | Page |
 |---|---:|---|
