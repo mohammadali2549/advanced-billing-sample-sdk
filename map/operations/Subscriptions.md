@@ -2,6 +2,8 @@
 
 Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### ActivateSubscription
 - **Signature**: `ActivateSubscription(int subscriptionId, ActivateSubscriptionRequest? body, CancellationToken ct = default)`
@@ -9,6 +11,13 @@ Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operati
 - **Returns**: `SubscriptionResponse`
 - **Error**: `SdkException<ActivateSubscriptionError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorArrayMapResponse1(out ErrorArrayMapResponse1)` [400] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `ActivateSubscriptionRequest` | `Models/ActivateSubscriptionRequest.cs` |
+| `SubscriptionResponse` | `Models/SubscriptionResponse.cs` |
+| `ActivateSubscriptionError` | `Errors/ActivateSubscriptionError.cs` |
+| `ErrorArrayMapResponse1` | `Models/ErrorArrayMapResponse1.cs` |
 
 ### ApplyCouponsToSubscription
 - **Signature**: `ApplyCouponsToSubscription(int subscriptionId, string? code, AddCouponsRequest? body, CancellationToken ct = default)`
@@ -19,12 +28,26 @@ Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operati
 - **Error**: `SdkException<ApplyCouponsToSubscriptionError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSubscriptionAddCouponError1(out SubscriptionAddCouponError1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `AddCouponsRequest` | `Models/AddCouponsRequest.cs` |
+| `SubscriptionResponse` | `Models/SubscriptionResponse.cs` |
+| `ApplyCouponsToSubscriptionError` | `Errors/ApplyCouponsToSubscriptionError.cs` |
+| `SubscriptionAddCouponError1` | `Models/SubscriptionAddCouponError1.cs` |
+
 ### CreateSubscription
 - **Signature**: `CreateSubscription(CreateSubscriptionRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `SubscriptionResponse`
 - **Error**: `SdkException<CreateSubscriptionError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `CreateSubscriptionRequest` | `Models/CreateSubscriptionRequest.cs` |
+| `SubscriptionResponse` | `Models/SubscriptionResponse.cs` |
+| `CreateSubscriptionError` | `Errors/CreateSubscriptionError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
 
 ### FindSubscription
 - **Signature**: `FindSubscription(string? reference, CancellationToken ct = default)`
@@ -33,6 +56,11 @@ Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operati
 - **Returns**: `SubscriptionResponse`
 - **Error**: `SdkException<FindSubscriptionError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `SubscriptionResponse` | `Models/SubscriptionResponse.cs` |
+| `FindSubscriptionError` | `Errors/FindSubscriptionError.cs` |
 
 ### ListSubscriptions
 - **Signature**: `ListSubscriptions(SubscriptionStateFilter? state, int? product, int? productPricePointId, int? coupon, string? couponCode, SubscriptionDateField? dateField, DateTimeOffset? startDate, DateTimeOffset? endDate, DateTimeOffset? startDatetime, DateTimeOffset? endDatetime, IReadOnlyDictionary<string, string>? metadata, SortingDirection? direction, SubscriptionSort? sort, IReadOnlyList<SubscriptionListInclude>? include, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -43,6 +71,16 @@ Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operati
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `SubscriptionStateFilter` | `Models/Enums/SubscriptionStateFilter.cs` |
+| `PricePointId` | `Models/AnyOf/PricePointId.cs` |
+| `SubscriptionDateField` | `Models/Enums/SubscriptionDateField.cs` |
+| `SortingDirection` | `Models/Enums/SortingDirection.cs` |
+| `SubscriptionSort` | `Models/Enums/SubscriptionSort.cs` |
+| `SubscriptionListInclude` | `Models/Enums/SubscriptionListInclude.cs` |
+| `SubscriptionResponse` | `Models/SubscriptionResponse.cs` |
+
 ### OverrideSubscription
 - **Signature**: `OverrideSubscription(int subscriptionId, OverrideSubscriptionRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
@@ -50,11 +88,22 @@ Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operati
 - **Error**: `SdkException<OverrideSubscriptionError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSingleErrorResponse1(out SingleErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `OverrideSubscriptionRequest` | `Models/OverrideSubscriptionRequest.cs` |
+| `OverrideSubscriptionError` | `Errors/OverrideSubscriptionError.cs` |
+| `SingleErrorResponse1` | `Models/SingleErrorResponse1.cs` |
+
 ### PreviewSubscription
 - **Signature**: `PreviewSubscription(CreateSubscriptionRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `SubscriptionPreviewResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `CreateSubscriptionRequest` | `Models/CreateSubscriptionRequest.cs` |
+| `SubscriptionPreviewResponse` | `Models/SubscriptionPreviewResponse.cs` |
 
 ### PurgeSubscription
 - **Signature**: `PurgeSubscription(int subscriptionId, int ack, IReadOnlyList<SubscriptionPurgeType>? cascade, CancellationToken ct = default)`
@@ -64,12 +113,23 @@ Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operati
 - **Error**: `SdkException<PurgeSubscriptionError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSubscriptionResponse(out SubscriptionResponse)` [400] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `SubscriptionPurgeType` | `Models/Enums/SubscriptionPurgeType.cs` |
+| `SubscriptionResponse` | `Models/SubscriptionResponse.cs` |
+| `PurgeSubscriptionError` | `Errors/PurgeSubscriptionError.cs` |
+
 ### ReadSubscription
 - **Signature**: `ReadSubscription(int subscriptionId, IReadOnlyList<SubscriptionInclude>? include, CancellationToken ct = default)`
   - `include` — nullable, no default → **must pass explicitly**
 - **Query params (wire ← C#)**: `include` ← `include`
 - **Returns**: `SubscriptionResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `SubscriptionInclude` | `Models/Enums/SubscriptionInclude.cs` |
+| `SubscriptionResponse` | `Models/SubscriptionResponse.cs` |
 
 ### RemoveCouponFromSubscription
 - **Signature**: `RemoveCouponFromSubscription(int subscriptionId, string? couponCode, CancellationToken ct = default)`
@@ -79,6 +139,11 @@ Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operati
 - **Error**: `SdkException<RemoveCouponFromSubscriptionError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSubscriptionRemoveCouponErrors1(out SubscriptionRemoveCouponErrors1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `RemoveCouponFromSubscriptionError` | `Errors/RemoveCouponFromSubscriptionError.cs` |
+| `SubscriptionRemoveCouponErrors1` | `Models/SubscriptionRemoveCouponErrors1.cs` |
+
 ### UpdatePrepaidSubscriptionConfiguration
 - **Signature**: `UpdatePrepaidSubscriptionConfiguration(int subscriptionId, UpsertPrepaidConfigurationRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
@@ -86,9 +151,23 @@ Accessor: `client.Subscriptions` · Source: `Api/Subscriptions.cs` · 12 operati
 - **Error**: `SdkException<UpdatePrepaidSubscriptionConfigurationError>` — **Case A (typed)**
 - **Error accessors**: `TryGetPrepaidConfigurationErrorResponse(out PrepaidConfigurationErrorResponse)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `UpsertPrepaidConfigurationRequest` | `Models/UpsertPrepaidConfigurationRequest.cs` |
+| `PrepaidConfigurationResponse` | `Models/PrepaidConfigurationResponse.cs` |
+| `UpdatePrepaidSubscriptionConfigurationError` | `Errors/UpdatePrepaidSubscriptionConfigurationError.cs` |
+| `PrepaidConfigurationErrorResponse` | `Models/AnyOf/PrepaidConfigurationErrorResponse.cs` |
+
 ### UpdateSubscription
 - **Signature**: `UpdateSubscription(int subscriptionId, UpdateSubscriptionRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `SubscriptionResponse`
 - **Error**: `SdkException<UpdateSubscriptionError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `UpdateSubscriptionRequest` | `Models/UpdateSubscriptionRequest.cs` |
+| `SubscriptionResponse` | `Models/SubscriptionResponse.cs` |
+| `UpdateSubscriptionError` | `Errors/UpdateSubscriptionError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |

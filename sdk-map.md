@@ -1,8 +1,8 @@
 # SDK map — Maxio Advanced Billing (.NET)
 
 > A generated table-of-contents for this SDK. Consult this map and its sub-pages to learn signatures, error
-> types, enum values, and server/auth wiring **by lookup** — open a source file only for a full method/model
-> body the map doesn't carry. The compiler is the backstop: a wrong name fails to build.
+> types, and server/auth wiring **by lookup**. Model shapes and enum values are *not* duplicated here — the map
+> names the file declaring each type; read the shape there. The compiler is the backstop: a wrong name fails to build.
 
 | | |
 |---|---|
@@ -18,6 +18,9 @@
 
 Staleness check: if the SDK is regenerated, the source commit/tag stamp above changes. If a lookup here fails to
 compile, trust the compiler and re-read the source file linked in the row.
+
+All `Source` paths on this map and its sub-pages are **repo-root-relative**, not relative to the page that
+carries them — open `Models/Invoice.cs` as-is from the repo root, from any page.
 
 ---
 
@@ -98,7 +101,7 @@ Core error types (`Core/ErrorResponse/`) — public members with their **declare
 | `ApiError` — abstract base of all 163 typed error classes in `Errors/` | `TryGetRawError(out RawError error): bool` | `Core/ErrorResponse/ApiError.cs` |
 | `RawError` | `StatusCode: HttpStatusCode` · `ReadAsBytes(): ReadOnlyMemory<byte>` · `ReadAsString(): string` · `ReadAsJson<T>(): T?` | `Core/ErrorResponse/RawError.cs` |
 
-Typed-error payload shapes (the `out` types in each operation page's error-accessor cells) are ordinary records/unions: field names, declared types, and JSON wire names live on the records pages / `unions.md` like any other model.
+Typed-error payload shapes (the `out` types in each operation page's error-accessor cells) are ordinary records/unions — no special handling. The operation's **Type sources** table gives the file that declares each one; read field names, declared types, and JSON wire names there, as for any other model.
 <!-- /gen:error-core -->
 
 ```csharp
@@ -123,7 +126,10 @@ Of **247 operations**, **163 are Case A (typed)** and **84 are Case B (raw)**.
 ## Operations — by controller (33 groups, 247 operations)
 
 Each links to a sub-page with one row per operation: signature with must-pass-explicitly params and defaults,
-query-param wire names, return type, error Case A/B, and Case A's typed accessors with their statuses.
+query-param wire names, return type, error Case A/B, and Case A's typed accessors with their statuses. Each
+operation also carries a **Type sources** table — every type it names, with the file that declares it — so
+resolving a body, return, or error payload to its source is a lookup, never a search. `RawError` is excluded
+there (its members and path are above); an operation with no table names nothing but primitives and `RawError`.
 
 **Each row states what is specific to its operation. Everything below holds for EVERY operation unless that
 operation's row says otherwise, so a row silent on one of these points is telling you the default here
@@ -185,23 +191,27 @@ that is what `<remarks>` settles; read it there rather than filling it in from m
 
 ---
 
-## Models
+## Models — where they live, how to build them
+
+**Shapes live only in the source.** Every file under `Models/` and `Errors/` declares exactly one public type,
+named after the file, and no two share a name — so a type name *is* its path. Take it from the operation's
+**Type sources** table, or build it from the kind's directory below. Never grep for a type.
 
 <!-- gen:models-table -->
-| Group | Count | Page |
+| Group | Count | Directory (file = `<TypeName>.cs`) |
 |---|---:|---|
-| Records (plain `record` data models) | 555 | [`AccountBalance` … `CreateSegmentRequest`](map/models/records-1-Ac-Cr.md) · [`CreateSubscription` … `NetTerms`](map/models/records-2-Cr-Ne.md) · [`Offer` … `SubscriptionComponentSubscription`](map/models/records-3-Of-Su.md) · [`SubscriptionCustomPrice` … `WebhookResponse`](map/models/records-4-Su-We.md) |
-| Unions (`OneOf` / `AnyOf`) — variant factories + `TryGet…` | 7 + 83 | [map/models/unions.md](map/models/unions.md) |
-| Enums (`StringEnum<T>` / `IntEnum<T>`) — literal C# member names + wire values | 98 | [map/models/enums.md](map/models/enums.md) |
+| Records (plain `record` data models) | 555 | `Models/` |
+| Unions (`OneOf` / `AnyOf`) — variant factories + `TryGet…` | 7 + 83 | `Models/OneOf/` · `Models/AnyOf/` |
+| Enums (`StringEnum<T>` / `IntEnum<T>`) — C# member names + wire values | 98 | `Models/Enums/` |
+| Typed error classes (`: ApiError`, one per Case A operation) | 163 | `Errors/` |
 <!-- /gen:models-table -->
 
-Model conventions: records are immutable with `init`-only setters; `required` properties must be set in the
-object initializer; nullable (`T?`) properties are optional. Each record field is listed as
-`CSharpName (wire_name): Type` — the parenthesized name is the JSON wire name (`[JsonPropertyName]`).
-Unions wrap `Optional<T>` variants — construct via a static factory or implicit
-conversion, read back via `TryGet…(out …)`. Enums are **not** C# enums — build with `Type.FromValue("wire")`
-or the static members (enums.md lists the literal member names: `CollectionMethod.Invoice`, not
-`CollectionMethod.invoice`).
+Conventions: records are immutable, `init`-only; `required` properties must be set in the object initializer;
+`T?` is optional. A field's wire name is its `[JsonPropertyName]` and often differs from the C# name
+(`AmountInCents` ↔ `amount_in_cents`) — read it off the property, don't derive it. Unions wrap `Optional<T>`
+variants — build via static factory or implicit conversion, read via `TryGet…(out …)`. Enums are **not** C#
+enums — build with `Type.FromValue("wire")` or the static members, whose names are PascalCase even when the
+wire value isn't (`CollectionMethod.Invoice`, not `.invoice`).
 
 <!-- gen:namespaces -->
 Namespaces by content type (add `using` accordingly):

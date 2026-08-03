@@ -2,6 +2,8 @@
 
 Accessor: `client.CustomFields` · Source: `Api/CustomFields.cs` · 9 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### CreateMetadata
 - **Signature**: `CreateMetadata(ResourceType resourceType, int resourceId, CreateMetadataRequest? body, CancellationToken ct = default)`
@@ -10,12 +12,28 @@ Accessor: `client.CustomFields` · Source: `Api/CustomFields.cs` · 9 operations
 - **Error**: `SdkException<CreateMetadataError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSingleErrorResponse1(out SingleErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `CreateMetadataRequest` | `Models/CreateMetadataRequest.cs` |
+| `Metadata` | `Models/Metadata.cs` |
+| `CreateMetadataError` | `Errors/CreateMetadataError.cs` |
+| `SingleErrorResponse1` | `Models/SingleErrorResponse1.cs` |
+
 ### CreateMetafields
 - **Signature**: `CreateMetafields(ResourceType resourceType, CreateMetafieldsRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `IReadOnlyList<Metafield>`
 - **Error**: `SdkException<CreateMetafieldsError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSingleErrorResponse1(out SingleErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `CreateMetafieldsRequest` | `Models/CreateMetafieldsRequest.cs` |
+| `Metafield` | `Models/Metafield.cs` |
+| `CreateMetafieldsError` | `Errors/CreateMetafieldsError.cs` |
+| `SingleErrorResponse1` | `Models/SingleErrorResponse1.cs` |
 
 ### DeleteMetadata
 - **Signature**: `DeleteMetadata(ResourceType resourceType, int resourceId, string? name, IReadOnlyList<string>? names, CancellationToken ct = default)`
@@ -26,6 +44,11 @@ Accessor: `client.CustomFields` · Source: `Api/CustomFields.cs` · 9 operations
 - **Error**: `SdkException<DeleteMetadataError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `DeleteMetadataError` | `Errors/DeleteMetadataError.cs` |
+
 ### DeleteMetafield
 - **Signature**: `DeleteMetafield(ResourceType resourceType, string? name, CancellationToken ct = default)`
   - `name` — nullable, no default → **must pass explicitly**
@@ -33,6 +56,11 @@ Accessor: `client.CustomFields` · Source: `Api/CustomFields.cs` · 9 operations
 - **Returns**: `void` (Task)
 - **Error**: `SdkException<DeleteMetafieldError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `DeleteMetafieldError` | `Errors/DeleteMetafieldError.cs` |
 
 ### ListMetadata
 - **Signature**: `ListMetadata(ResourceType resourceType, int resourceId, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -42,6 +70,11 @@ Accessor: `client.CustomFields` · Source: `Api/CustomFields.cs` · 9 operations
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `PaginatedMetadata` | `Models/PaginatedMetadata.cs` |
+
 ### ListMetadataForResourceType
 - **Signature**: `ListMetadataForResourceType(ResourceType resourceType, BasicDateField? dateField, DateTimeOffset? startDate, DateTimeOffset? endDate, DateTimeOffset? startDatetime, DateTimeOffset? endDatetime, bool? withDeleted, IReadOnlyList<int>? resourceIds, SortingDirection? direction, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
   - 8 params (`dateField` … `direction`) — nullable, no default → **must pass explicitly** (pass `null` to skip)
@@ -50,6 +83,13 @@ Accessor: `client.CustomFields` · Source: `Api/CustomFields.cs` · 9 operations
 - **Returns**: `PaginatedMetadata`
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
+
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `BasicDateField` | `Models/Enums/BasicDateField.cs` |
+| `SortingDirection` | `Models/Enums/SortingDirection.cs` |
+| `PaginatedMetadata` | `Models/PaginatedMetadata.cs` |
 
 ### ListMetafields
 - **Signature**: `ListMetafields(ResourceType resourceType, string? name, SortingDirection? direction, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -61,6 +101,12 @@ Accessor: `client.CustomFields` · Source: `Api/CustomFields.cs` · 9 operations
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `SortingDirection` | `Models/Enums/SortingDirection.cs` |
+| `ListMetafieldsResponse` | `Models/ListMetafieldsResponse.cs` |
+
 ### UpdateMetadata
 - **Signature**: `UpdateMetadata(ResourceType resourceType, int resourceId, UpdateMetadataRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
@@ -68,9 +114,25 @@ Accessor: `client.CustomFields` · Source: `Api/CustomFields.cs` · 9 operations
 - **Error**: `SdkException<UpdateMetadataError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSingleErrorResponse1(out SingleErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `UpdateMetadataRequest` | `Models/UpdateMetadataRequest.cs` |
+| `Metadata` | `Models/Metadata.cs` |
+| `UpdateMetadataError` | `Errors/UpdateMetadataError.cs` |
+| `SingleErrorResponse1` | `Models/SingleErrorResponse1.cs` |
+
 ### UpdateMetafield
 - **Signature**: `UpdateMetafield(ResourceType resourceType, UpdateMetafieldsRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `IReadOnlyList<Metafield>`
 - **Error**: `SdkException<UpdateMetafieldError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSingleErrorResponse1(out SingleErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `ResourceType` | `Models/Enums/ResourceType.cs` |
+| `UpdateMetafieldsRequest` | `Models/UpdateMetafieldsRequest.cs` |
+| `Metafield` | `Models/Metafield.cs` |
+| `UpdateMetafieldError` | `Errors/UpdateMetafieldError.cs` |
+| `SingleErrorResponse1` | `Models/SingleErrorResponse1.cs` |

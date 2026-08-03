@@ -2,12 +2,20 @@
 
 Accessor: `client.Components` · Source: `Api/Components.cs` · 12 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### ArchiveComponent
 - **Signature**: `ArchiveComponent(int productFamilyId, string componentId, CancellationToken ct = default)`
 - **Returns**: `Component`
 - **Error**: `SdkException<ArchiveComponentError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `Component` | `Models/Component.cs` |
+| `ArchiveComponentError` | `Errors/ArchiveComponentError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
 
 ### CreateEventBasedComponent
 - **Signature**: `CreateEventBasedComponent(string productFamilyId, CreateEbbComponent? body, CancellationToken ct = default)`
@@ -16,12 +24,26 @@ Accessor: `client.Components` · Source: `Api/Components.cs` · 12 operations
 - **Error**: `SdkException<CreateEventBasedComponentError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `CreateEbbComponent` | `Models/CreateEbbComponent.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+| `CreateEventBasedComponentError` | `Errors/CreateEventBasedComponentError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
+
 ### CreateMeteredComponent
 - **Signature**: `CreateMeteredComponent(string productFamilyId, CreateMeteredComponent? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `ComponentResponse`
 - **Error**: `SdkException<CreateMeteredComponentError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `CreateMeteredComponent` | `Models/CreateMeteredComponent.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+| `CreateMeteredComponentError` | `Errors/CreateMeteredComponentError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
 
 ### CreateOnOffComponent
 - **Signature**: `CreateOnOffComponent(string productFamilyId, CreateOnOffComponent? body, CancellationToken ct = default)`
@@ -30,12 +52,26 @@ Accessor: `client.Components` · Source: `Api/Components.cs` · 12 operations
 - **Error**: `SdkException<CreateOnOffComponentError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `CreateOnOffComponent` | `Models/CreateOnOffComponent.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+| `CreateOnOffComponentError` | `Errors/CreateOnOffComponentError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
+
 ### CreatePrepaidUsageComponent
 - **Signature**: `CreatePrepaidUsageComponent(string productFamilyId, CreatePrepaidComponent? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `ComponentResponse`
 - **Error**: `SdkException<CreatePrepaidUsageComponentError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `CreatePrepaidComponent` | `Models/CreatePrepaidComponent.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+| `CreatePrepaidUsageComponentError` | `Errors/CreatePrepaidUsageComponentError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
 
 ### CreateQuantityBasedComponent
 - **Signature**: `CreateQuantityBasedComponent(string productFamilyId, CreateQuantityBasedComponent? body, CancellationToken ct = default)`
@@ -44,11 +80,22 @@ Accessor: `client.Components` · Source: `Api/Components.cs` · 12 operations
 - **Error**: `SdkException<CreateQuantityBasedComponentError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `CreateQuantityBasedComponent` | `Models/CreateQuantityBasedComponent.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+| `CreateQuantityBasedComponentError` | `Errors/CreateQuantityBasedComponentError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
+
 ### FindComponent
 - **Signature**: `FindComponent(string handle, CancellationToken ct = default)`
 - **Query params (wire ← C#)**: `handle` ← `handle`
 - **Returns**: `ComponentResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
 
 ### ListComponents
 - **Signature**: `ListComponents(BasicDateField? dateField, string? startDate, string? endDate, string? startDatetime, string? endDatetime, bool? includeArchived, ListComponentsFilter? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -59,6 +106,12 @@ Accessor: `client.Components` · Source: `Api/Components.cs` · 12 operations
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `BasicDateField` | `Models/Enums/BasicDateField.cs` |
+| `ListComponentsFilter` | `Models/ListComponentsFilter.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+
 ### ListComponentsForProductFamily
 - **Signature**: `ListComponentsForProductFamily(int productFamilyId, bool? includeArchived, ListComponentsFilter? filter, BasicDateField? dateField, string? endDate, string? endDatetime, string? startDate, string? startDatetime, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
   - 7 params (`includeArchived` … `startDatetime`) — nullable, no default → **must pass explicitly** (pass `null` to skip)
@@ -68,10 +121,20 @@ Accessor: `client.Components` · Source: `Api/Components.cs` · 12 operations
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `ListComponentsFilter` | `Models/ListComponentsFilter.cs` |
+| `BasicDateField` | `Models/Enums/BasicDateField.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+
 ### ReadComponent
 - **Signature**: `ReadComponent(int productFamilyId, string componentId, CancellationToken ct = default)`
 - **Returns**: `ComponentResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
 
 ### UpdateComponent
 - **Signature**: `UpdateComponent(string componentId, UpdateComponentRequest? body, CancellationToken ct = default)`
@@ -80,9 +143,23 @@ Accessor: `client.Components` · Source: `Api/Components.cs` · 12 operations
 - **Error**: `SdkException<UpdateComponentError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `UpdateComponentRequest` | `Models/UpdateComponentRequest.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+| `UpdateComponentError` | `Errors/UpdateComponentError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
+
 ### UpdateProductFamilyComponent
 - **Signature**: `UpdateProductFamilyComponent(int productFamilyId, string componentId, UpdateComponentRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `ComponentResponse`
 - **Error**: `SdkException<UpdateProductFamilyComponentError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `UpdateComponentRequest` | `Models/UpdateComponentRequest.cs` |
+| `ComponentResponse` | `Models/ComponentResponse.cs` |
+| `UpdateProductFamilyComponentError` | `Errors/UpdateProductFamilyComponentError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |

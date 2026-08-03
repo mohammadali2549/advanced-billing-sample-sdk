@@ -2,6 +2,8 @@
 
 Accessor: `client.Events` · Source: `Api/Events.cs` · 3 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### ListEvents
 - **Signature**: `ListEvents(long? sinceId, long? maxId, Direction? direction, IReadOnlyList<EventKey>? filter, ListEventsDateField? dateField, string? startDate, string? endDate, string? startDatetime, string? endDatetime, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -12,6 +14,13 @@ Accessor: `client.Events` · Source: `Api/Events.cs` · 3 operations
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `Direction` | `Models/Enums/Direction.cs` |
+| `EventKey` | `Models/Enums/EventKey.cs` |
+| `ListEventsDateField` | `Models/Enums/ListEventsDateField.cs` |
+| `EventResponse` | `Models/EventResponse.cs` |
+
 ### ListSubscriptionEvents
 - **Signature**: `ListSubscriptionEvents(int subscriptionId, long? sinceId, long? maxId, Direction? direction, IReadOnlyList<EventKey>? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
   - 4 params (`sinceId` … `filter`) — nullable, no default → **must pass explicitly** (pass `null` to skip)
@@ -21,6 +30,12 @@ Accessor: `client.Events` · Source: `Api/Events.cs` · 3 operations
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `Direction` | `Models/Enums/Direction.cs` |
+| `EventKey` | `Models/Enums/EventKey.cs` |
+| `EventResponse` | `Models/EventResponse.cs` |
+
 ### ReadEventsCount
 - **Signature**: `ReadEventsCount(long? sinceId, long? maxId, Direction? direction, IReadOnlyList<EventKey>? filter, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
   - 4 params (`sinceId` … `filter`) — nullable, no default → **must pass explicitly** (pass `null` to skip)
@@ -29,3 +44,9 @@ Accessor: `client.Events` · Source: `Api/Events.cs` · 3 operations
 - **Returns**: `CountResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
+
+| Type | Source |
+|---|---|
+| `Direction` | `Models/Enums/Direction.cs` |
+| `EventKey` | `Models/Enums/EventKey.cs` |
+| `CountResponse` | `Models/CountResponse.cs` |

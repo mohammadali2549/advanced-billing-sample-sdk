@@ -2,12 +2,22 @@
 
 Accessor: `client.ProductPricePoints` · Source: `Api/ProductPricePoints.cs` · 11 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### ArchiveProductPricePoint
 - **Signature**: `ArchiveProductPricePoint(ProductIdModel productId, PricePointIdModel pricePointId, CancellationToken ct = default)`
 - **Returns**: `ProductPricePointResponse`
 - **Error**: `SdkException<ArchiveProductPricePointError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `ProductIdModel` | `Models/AnyOf/ProductIdModel.cs` |
+| `PricePointIdModel` | `Models/AnyOf/PricePointIdModel.cs` |
+| `ProductPricePointResponse` | `Models/ProductPricePointResponse.cs` |
+| `ArchiveProductPricePointError` | `Errors/ArchiveProductPricePointError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
 
 ### BulkCreateProductPricePoints
 - **Signature**: `BulkCreateProductPricePoints(int productId, BulkCreateProductPricePointsRequest? body, CancellationToken ct = default)`
@@ -16,6 +26,12 @@ Accessor: `client.ProductPricePoints` · Source: `Api/ProductPricePoints.cs` · 
 - **Error**: `SdkException<BulkCreateProductPricePointsError>` — **Case A (typed)**
 - **Error accessors**: `TryGetMapOfJsonElement(out IReadOnlyDictionary<string, JsonElement>)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `BulkCreateProductPricePointsRequest` | `Models/BulkCreateProductPricePointsRequest.cs` |
+| `BulkCreateProductPricePointsResponse` | `Models/BulkCreateProductPricePointsResponse.cs` |
+| `BulkCreateProductPricePointsError` | `Errors/BulkCreateProductPricePointsError.cs` |
+
 ### CreateProductCurrencyPrices
 - **Signature**: `CreateProductCurrencyPrices(int productPricePointId, CreateProductCurrencyPricesRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
@@ -23,12 +39,28 @@ Accessor: `client.ProductPricePoints` · Source: `Api/ProductPricePoints.cs` · 
 - **Error**: `SdkException<CreateProductCurrencyPricesError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorArrayMapResponse1(out ErrorArrayMapResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `PricePointId` | `Models/AnyOf/PricePointId.cs` |
+| `CreateProductCurrencyPricesRequest` | `Models/CreateProductCurrencyPricesRequest.cs` |
+| `CurrencyPricesResponse` | `Models/CurrencyPricesResponse.cs` |
+| `CreateProductCurrencyPricesError` | `Errors/CreateProductCurrencyPricesError.cs` |
+| `ErrorArrayMapResponse1` | `Models/ErrorArrayMapResponse1.cs` |
+
 ### CreateProductPricePoint
 - **Signature**: `CreateProductPricePoint(ProductIdModel productId, CreateProductPricePointRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `ProductPricePointResponse`
 - **Error**: `SdkException<CreateProductPricePointError>` — **Case A (typed)**
 - **Error accessors**: `TryGetProductPricePointErrorResponse1(out ProductPricePointErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `ProductIdModel` | `Models/AnyOf/ProductIdModel.cs` |
+| `CreateProductPricePointRequest` | `Models/CreateProductPricePointRequest.cs` |
+| `ProductPricePointResponse` | `Models/ProductPricePointResponse.cs` |
+| `CreateProductPricePointError` | `Errors/CreateProductPricePointError.cs` |
+| `ProductPricePointErrorResponse1` | `Models/ProductPricePointErrorResponse1.cs` |
 
 ### ListAllProductPricePoints
 - **Signature**: `ListAllProductPricePoints(SortingDirection? direction, ListPricePointsFilter? filter, ListProductsPricePointsInclude? include, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -42,6 +74,15 @@ Accessor: `client.ProductPricePoints` · Source: `Api/ProductPricePoints.cs` · 
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `SortingDirection` | `Models/Enums/SortingDirection.cs` |
+| `ListPricePointsFilter` | `Models/ListPricePointsFilter.cs` |
+| `ListProductsPricePointsInclude` | `Models/Enums/ListProductsPricePointsInclude.cs` |
+| `ListProductPricePointsResponse` | `Models/ListProductPricePointsResponse.cs` |
+| `ListAllProductPricePointsError` | `Errors/ListAllProductPricePointsError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
+
 ### ListProductPricePoints
 - **Signature**: `ListProductPricePoints(ProductIdModel productId, bool? currencyPrices, IReadOnlyList<PricePointType>? filterType, bool? archived, int? page = 1, int? perPage = 10, CancellationToken ct = default)`
   - `currencyPrices` — nullable, no default → **must pass explicitly**
@@ -53,10 +94,20 @@ Accessor: `client.ProductPricePoints` · Source: `Api/ProductPricePoints.cs` · 
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `ProductIdModel` | `Models/AnyOf/ProductIdModel.cs` |
+| `PricePointType` | `Models/Enums/PricePointType.cs` |
+| `ListProductPricePointsResponse` | `Models/ListProductPricePointsResponse.cs` |
+
 ### PromoteProductPricePointToDefault
 - **Signature**: `PromoteProductPricePointToDefault(int productId, int pricePointId, CancellationToken ct = default)`
 - **Returns**: `ProductResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `ProductResponse` | `Models/ProductResponse.cs` |
 
 ### ReadProductPricePoint
 - **Signature**: `ReadProductPricePoint(ProductIdModel productId, PricePointIdModel pricePointId, bool? currencyPrices, CancellationToken ct = default)`
@@ -65,10 +116,20 @@ Accessor: `client.ProductPricePoints` · Source: `Api/ProductPricePoints.cs` · 
 - **Returns**: `ProductPricePointResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
 
+| Type | Source |
+|---|---|
+| `ProductIdModel` | `Models/AnyOf/ProductIdModel.cs` |
+| `PricePointIdModel` | `Models/AnyOf/PricePointIdModel.cs` |
+| `ProductPricePointResponse` | `Models/ProductPricePointResponse.cs` |
+
 ### UnarchiveProductPricePoint
 - **Signature**: `UnarchiveProductPricePoint(int productId, int pricePointId, CancellationToken ct = default)`
 - **Returns**: `ProductPricePointResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `ProductPricePointResponse` | `Models/ProductPricePointResponse.cs` |
 
 ### UpdateProductCurrencyPrices
 - **Signature**: `UpdateProductCurrencyPrices(int productPricePointId, UpdateCurrencyPricesRequest? body, CancellationToken ct = default)`
@@ -77,8 +138,23 @@ Accessor: `client.ProductPricePoints` · Source: `Api/ProductPricePoints.cs` · 
 - **Error**: `SdkException<UpdateProductCurrencyPricesError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorArrayMapResponse1(out ErrorArrayMapResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `PricePointId` | `Models/AnyOf/PricePointId.cs` |
+| `UpdateCurrencyPricesRequest` | `Models/UpdateCurrencyPricesRequest.cs` |
+| `CurrencyPricesResponse` | `Models/CurrencyPricesResponse.cs` |
+| `UpdateProductCurrencyPricesError` | `Errors/UpdateProductCurrencyPricesError.cs` |
+| `ErrorArrayMapResponse1` | `Models/ErrorArrayMapResponse1.cs` |
+
 ### UpdateProductPricePoint
 - **Signature**: `UpdateProductPricePoint(ProductIdModel productId, PricePointIdModel pricePointId, UpdateProductPricePointRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `ProductPricePointResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `ProductIdModel` | `Models/AnyOf/ProductIdModel.cs` |
+| `PricePointIdModel` | `Models/AnyOf/PricePointIdModel.cs` |
+| `UpdateProductPricePointRequest` | `Models/UpdateProductPricePointRequest.cs` |
+| `ProductPricePointResponse` | `Models/ProductPricePointResponse.cs` |

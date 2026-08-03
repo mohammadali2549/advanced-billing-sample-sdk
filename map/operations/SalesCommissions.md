@@ -2,6 +2,8 @@
 
 Accessor: `client.SalesCommissions` · Source: `Api/SalesCommissions.cs` · 3 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### ListSalesCommissionSettings
 - **Signature**: `ListSalesCommissionSettings(string sellerId, bool? liveMode, int? page = 1, int? perPage = 100, string? authorization = "Bearer <<apiKey>>", CancellationToken ct = default)`
@@ -12,6 +14,10 @@ Accessor: `client.SalesCommissions` · Source: `Api/SalesCommissions.cs` · 3 op
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `SaleRepSettings` | `Models/SaleRepSettings.cs` |
+
 ### ListSalesReps
 - **Signature**: `ListSalesReps(string sellerId, bool? liveMode, int? page = 1, int? perPage = 100, string? authorization = "Bearer <<apiKey>>", CancellationToken ct = default)`
   - `liveMode` — nullable, no default → **must pass explicitly**
@@ -21,6 +27,10 @@ Accessor: `client.SalesCommissions` · Source: `Api/SalesCommissions.cs` · 3 op
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `ListSaleRepItem` | `Models/ListSaleRepItem.cs` |
+
 ### ReadSalesRep
 - **Signature**: `ReadSalesRep(string sellerId, string salesRepId, bool? liveMode, int? page = 1, int? perPage = 100, string? authorization = "Bearer <<apiKey>>", CancellationToken ct = default)`
   - `liveMode` — nullable, no default → **must pass explicitly**
@@ -29,3 +39,7 @@ Accessor: `client.SalesCommissions` · Source: `Api/SalesCommissions.cs` · 3 op
 - **Returns**: `SaleRep`
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
+
+| Type | Source |
+|---|---|
+| `SaleRep` | `Models/SaleRep.cs` |

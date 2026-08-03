@@ -2,6 +2,8 @@
 
 Accessor: `client.Insights` · Source: `Api/Insights.cs` · 4 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### ListMrrMovements
 - **Signature**: `ListMrrMovements(int? subscriptionId, SortingDirection? direction, int? page = 1, int? perPage = 10, CancellationToken ct = default)`
@@ -12,6 +14,11 @@ Accessor: `client.Insights` · Source: `Api/Insights.cs` · 4 operations
 - **Returns**: `ListMrrResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
+
+| Type | Source |
+|---|---|
+| `SortingDirection` | `Models/Enums/SortingDirection.cs` |
+| `ListMrrResponse` | `Models/ListMrrResponse.cs` |
 
 ### ListMrrPerSubscription
 - **Signature**: `ListMrrPerSubscription(ListMrrFilter? filter, string? atTime, Direction? direction, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -25,6 +32,14 @@ Accessor: `client.Insights` · Source: `Api/Insights.cs` · 4 operations
 - **Error accessors**: `TryGetSubscriptionsMrrErrorResponse1(out SubscriptionsMrrErrorResponse1)` [400] · `TryGetRawError(out RawError)` [fallback]
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `ListMrrFilter` | `Models/ListMrrFilter.cs` |
+| `Direction` | `Models/Enums/Direction.cs` |
+| `SubscriptionMrrResponse` | `Models/SubscriptionMrrResponse.cs` |
+| `ListMrrPerSubscriptionError` | `Errors/ListMrrPerSubscriptionError.cs` |
+| `SubscriptionsMrrErrorResponse1` | `Models/SubscriptionsMrrErrorResponse1.cs` |
+
 ### ReadMrr
 - **Signature**: `ReadMrr(DateTimeOffset? atTime, int? subscriptionId, CancellationToken ct = default)`
   - `atTime` — nullable, no default → **must pass explicitly**
@@ -33,7 +48,15 @@ Accessor: `client.Insights` · Source: `Api/Insights.cs` · 4 operations
 - **Returns**: `MrrResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
 
+| Type | Source |
+|---|---|
+| `MrrResponse` | `Models/MrrResponse.cs` |
+
 ### ReadSiteStats
 - **Signature**: `ReadSiteStats(CancellationToken ct = default)`
 - **Returns**: `SiteSummary`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `SiteSummary` | `Models/SiteSummary.cs` |

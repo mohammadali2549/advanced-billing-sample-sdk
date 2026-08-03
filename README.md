@@ -97,16 +97,18 @@ a deterministic, lookup-oriented table of contents of the SDK's C# surface, gene
 [apimatic/sdk-map-generator](https://github.com/apimatic/sdk-map-generator).
 
 **Read it before scanning the source.** Whether you are an AI coding assistant or searching by hand, the
-map resolves most "what is the exact …" questions by lookup, so you rarely open a source file — and never
-need to grep the 600+-file tree:
+map answers "what is the exact …" by lookup for every call-level contract, and for anything it does not
+carry it names the one file that does — so you never grep the 600+-file tree:
 
 - **[`sdk-map.md`](sdk-map.md)** — the index: client construction, servers/auth, the options/retry
   reference, the SDK-wide defaults the operation rows rely on, and link tables into `map/`.
 - **[`map/operations/`](map/operations/)** — one page per controller: the exact C# signature, the return
-  type, the error type with its typed `TryGet…` accessors, and pagination — plus the source file each row
-  came from.
-- **[`map/models/`](map/models/)** — record fields with their JSON wire names, enums (full value lists),
-  and `OneOf`/`AnyOf` unions.
+  type, the error type with its typed `TryGet…` accessors, and pagination — plus, per operation, a **Type
+  sources** table naming the file that declares every type that operation mentions.
+
+Model shapes — record fields with their JSON wire names, enum member names and wire values, `OneOf`/`AnyOf`
+union variants — are **not** duplicated in the map. Take the path from the operation's Type sources table and
+read the declaring file; it is the single source of truth and cannot go stale against the code.
 
 **Each operation row states what is specific to that operation.** The SDK-wide defaults are stated once in
 [`sdk-map.md`](sdk-map.md) — throw-only (no `Result`-style no-throw variants), no pagination, the four fixed

@@ -2,6 +2,8 @@
 
 Accessor: `client.SubscriptionNotes` · Source: `Api/SubscriptionNotes.cs` · 5 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### CreateSubscriptionNote
 - **Signature**: `CreateSubscriptionNote(int subscriptionId, UpdateSubscriptionNoteRequest? body, CancellationToken ct = default)`
@@ -9,6 +11,13 @@ Accessor: `client.SubscriptionNotes` · Source: `Api/SubscriptionNotes.cs` · 5 
 - **Returns**: `SubscriptionNoteResponse`
 - **Error**: `SdkException<CreateSubscriptionNoteError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `UpdateSubscriptionNoteRequest` | `Models/UpdateSubscriptionNoteRequest.cs` |
+| `SubscriptionNoteResponse` | `Models/SubscriptionNoteResponse.cs` |
+| `CreateSubscriptionNoteError` | `Errors/CreateSubscriptionNoteError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
 
 ### DeleteSubscriptionNote
 - **Signature**: `DeleteSubscriptionNote(int subscriptionId, int noteId, CancellationToken ct = default)`
@@ -24,10 +33,20 @@ Accessor: `client.SubscriptionNotes` · Source: `Api/SubscriptionNotes.cs` · 5 
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `SubscriptionNoteResponse` | `Models/SubscriptionNoteResponse.cs` |
+| `ListSubscriptionNotesError` | `Errors/ListSubscriptionNotesError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
+
 ### ReadSubscriptionNote
 - **Signature**: `ReadSubscriptionNote(int subscriptionId, int noteId, CancellationToken ct = default)`
 - **Returns**: `SubscriptionNoteResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `SubscriptionNoteResponse` | `Models/SubscriptionNoteResponse.cs` |
 
 ### UpdateSubscriptionNote
 - **Signature**: `UpdateSubscriptionNote(int subscriptionId, int noteId, UpdateSubscriptionNoteRequest? body, CancellationToken ct = default)`
@@ -35,3 +54,10 @@ Accessor: `client.SubscriptionNotes` · Source: `Api/SubscriptionNotes.cs` · 5 
 - **Returns**: `SubscriptionNoteResponse`
 - **Error**: `SdkException<UpdateSubscriptionNoteError>` — **Case A (typed)**
 - **Error accessors**: `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `UpdateSubscriptionNoteRequest` | `Models/UpdateSubscriptionNoteRequest.cs` |
+| `SubscriptionNoteResponse` | `Models/SubscriptionNoteResponse.cs` |
+| `UpdateSubscriptionNoteError` | `Errors/UpdateSubscriptionNoteError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |

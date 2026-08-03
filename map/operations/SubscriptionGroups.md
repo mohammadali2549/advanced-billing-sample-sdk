@@ -2,12 +2,19 @@
 
 Accessor: `client.SubscriptionGroups` · Source: `Api/SubscriptionGroups.cs` · 9 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### AddSubscriptionToGroup
 - **Signature**: `AddSubscriptionToGroup(int subscriptionId, AddSubscriptionToAGroup? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `SubscriptionGroupResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `AddSubscriptionToAGroup` | `Models/AddSubscriptionToAGroup.cs` |
+| `SubscriptionGroupResponse` | `Models/SubscriptionGroupResponse.cs` |
 
 ### CreateSubscriptionGroup
 - **Signature**: `CreateSubscriptionGroup(CreateSubscriptionGroupRequest? body, CancellationToken ct = default)`
@@ -16,11 +23,23 @@ Accessor: `client.SubscriptionGroups` · Source: `Api/SubscriptionGroups.cs` · 
 - **Error**: `SdkException<CreateSubscriptionGroupError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSubscriptionGroupCreateErrorResponse1(out SubscriptionGroupCreateErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `CreateSubscriptionGroupRequest` | `Models/CreateSubscriptionGroupRequest.cs` |
+| `SubscriptionGroupResponse` | `Models/SubscriptionGroupResponse.cs` |
+| `CreateSubscriptionGroupError` | `Errors/CreateSubscriptionGroupError.cs` |
+| `SubscriptionGroupCreateErrorResponse1` | `Models/SubscriptionGroupCreateErrorResponse1.cs` |
+
 ### DeleteSubscriptionGroup
 - **Signature**: `DeleteSubscriptionGroup(string uid, CancellationToken ct = default)`
 - **Returns**: `DeleteSubscriptionGroupResponse`
 - **Error**: `SdkException<DeleteSubscriptionGroupError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `DeleteSubscriptionGroupResponse` | `Models/DeleteSubscriptionGroupResponse.cs` |
+| `DeleteSubscriptionGroupError` | `Errors/DeleteSubscriptionGroupError.cs` |
 
 ### FindSubscriptionGroup
 - **Signature**: `FindSubscriptionGroup(string subscriptionId, CancellationToken ct = default)`
@@ -28,6 +47,11 @@ Accessor: `client.SubscriptionGroups` · Source: `Api/SubscriptionGroups.cs` · 
 - **Returns**: `FullSubscriptionGroupResponse`
 - **Error**: `SdkException<FindSubscriptionGroupError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `FullSubscriptionGroupResponse` | `Models/FullSubscriptionGroupResponse.cs` |
+| `FindSubscriptionGroupError` | `Errors/FindSubscriptionGroupError.cs` |
 
 ### ListSubscriptionGroups
 - **Signature**: `ListSubscriptionGroups(IReadOnlyList<SubscriptionGroupsListInclude>? include, int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -38,6 +62,11 @@ Accessor: `client.SubscriptionGroups` · Source: `Api/SubscriptionGroups.cs` · 
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `SubscriptionGroupsListInclude` | `Models/Enums/SubscriptionGroupsListInclude.cs` |
+| `ListSubscriptionGroupsResponse` | `Models/ListSubscriptionGroupsResponse.cs` |
+
 ### ReadSubscriptionGroup
 - **Signature**: `ReadSubscriptionGroup(string uid, IReadOnlyList<SubscriptionGroupInclude>? include, CancellationToken ct = default)`
   - `include` — nullable, no default → **must pass explicitly**
@@ -45,11 +74,21 @@ Accessor: `client.SubscriptionGroups` · Source: `Api/SubscriptionGroups.cs` · 
 - **Returns**: `FullSubscriptionGroupResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
 
+| Type | Source |
+|---|---|
+| `SubscriptionGroupInclude` | `Models/Enums/SubscriptionGroupInclude.cs` |
+| `FullSubscriptionGroupResponse` | `Models/FullSubscriptionGroupResponse.cs` |
+
 ### RemoveSubscriptionFromGroup
 - **Signature**: `RemoveSubscriptionFromGroup(int subscriptionId, CancellationToken ct = default)`
 - **Returns**: `void` (Task)
 - **Error**: `SdkException<RemoveSubscriptionFromGroupError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetErrorListResponse1(out ErrorListResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `RemoveSubscriptionFromGroupError` | `Errors/RemoveSubscriptionFromGroupError.cs` |
+| `ErrorListResponse1` | `Models/ErrorListResponse1.cs` |
 
 ### SignupWithSubscriptionGroup
 - **Signature**: `SignupWithSubscriptionGroup(SubscriptionGroupSignupRequest? body, CancellationToken ct = default)`
@@ -58,9 +97,23 @@ Accessor: `client.SubscriptionGroups` · Source: `Api/SubscriptionGroups.cs` · 
 - **Error**: `SdkException<SignupWithSubscriptionGroupError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSubscriptionGroupSignupErrorResponse1(out SubscriptionGroupSignupErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `SubscriptionGroupSignupRequest` | `Models/SubscriptionGroupSignupRequest.cs` |
+| `SubscriptionGroupSignupResponse` | `Models/SubscriptionGroupSignupResponse.cs` |
+| `SignupWithSubscriptionGroupError` | `Errors/SignupWithSubscriptionGroupError.cs` |
+| `SubscriptionGroupSignupErrorResponse1` | `Models/SubscriptionGroupSignupErrorResponse1.cs` |
+
 ### UpdateSubscriptionGroupMembers
 - **Signature**: `UpdateSubscriptionGroupMembers(string uid, UpdateSubscriptionGroupRequest? body, CancellationToken ct = default)`
   - `body` — nullable, no default → **must pass explicitly**
 - **Returns**: `SubscriptionGroupResponse`
 - **Error**: `SdkException<UpdateSubscriptionGroupMembersError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSubscriptionGroupUpdateErrorResponse1(out SubscriptionGroupUpdateErrorResponse1)` [422] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `UpdateSubscriptionGroupRequest` | `Models/UpdateSubscriptionGroupRequest.cs` |
+| `SubscriptionGroupResponse` | `Models/SubscriptionGroupResponse.cs` |
+| `UpdateSubscriptionGroupMembersError` | `Errors/UpdateSubscriptionGroupMembersError.cs` |
+| `SubscriptionGroupUpdateErrorResponse1` | `Models/SubscriptionGroupUpdateErrorResponse1.cs` |

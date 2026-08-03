@@ -2,6 +2,8 @@
 
 Accessor: `client.ApiExports` · Source: `Api/ApiExports.cs` · 9 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### ExportInvoices
 - **Signature**: `ExportInvoices(CancellationToken ct = default)`
@@ -9,17 +11,35 @@ Accessor: `client.ApiExports` · Source: `Api/ApiExports.cs` · 9 operations
 - **Error**: `SdkException<ExportInvoicesError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetSingleErrorResponse1(out SingleErrorResponse1)` [409] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `BatchJobResponse` | `Models/BatchJobResponse.cs` |
+| `ExportInvoicesError` | `Errors/ExportInvoicesError.cs` |
+| `SingleErrorResponse1` | `Models/SingleErrorResponse1.cs` |
+
 ### ExportProformaInvoices
 - **Signature**: `ExportProformaInvoices(CancellationToken ct = default)`
 - **Returns**: `BatchJobResponse`
 - **Error**: `SdkException<ExportProformaInvoicesError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetSingleErrorResponse1(out SingleErrorResponse1)` [409] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `BatchJobResponse` | `Models/BatchJobResponse.cs` |
+| `ExportProformaInvoicesError` | `Errors/ExportProformaInvoicesError.cs` |
+| `SingleErrorResponse1` | `Models/SingleErrorResponse1.cs` |
+
 ### ExportSubscriptions
 - **Signature**: `ExportSubscriptions(CancellationToken ct = default)`
 - **Returns**: `BatchJobResponse`
 - **Error**: `SdkException<ExportSubscriptionsError>` — **Case A (typed)**
 - **Error accessors**: `TryGetSingleErrorResponse1(out SingleErrorResponse1)` [409] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `BatchJobResponse` | `Models/BatchJobResponse.cs` |
+| `ExportSubscriptionsError` | `Errors/ExportSubscriptionsError.cs` |
+| `SingleErrorResponse1` | `Models/SingleErrorResponse1.cs` |
 
 ### ListExportedInvoices
 - **Signature**: `ListExportedInvoices(string batchId, int? perPage = 100, int? page = 1, CancellationToken ct = default)`
@@ -30,6 +50,11 @@ Accessor: `client.ApiExports` · Source: `Api/ApiExports.cs` · 9 operations
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `Invoice` | `Models/Invoice.cs` |
+| `ListExportedInvoicesError` | `Errors/ListExportedInvoicesError.cs` |
+
 ### ListExportedProformaInvoices
 - **Signature**: `ListExportedProformaInvoices(string batchId, int? perPage = 100, int? page = 1, CancellationToken ct = default)`
   - defaults: `perPage` = 100, `page` = 1
@@ -38,6 +63,11 @@ Accessor: `client.ApiExports` · Source: `Api/ApiExports.cs` · 9 operations
 - **Error**: `SdkException<ListExportedProformaInvoicesError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
 - **Pagination**: manual `page`+`perPage`
+
+| Type | Source |
+|---|---|
+| `ProformaInvoice` | `Models/ProformaInvoice.cs` |
+| `ListExportedProformaInvoicesError` | `Errors/ListExportedProformaInvoicesError.cs` |
 
 ### ListExportedSubscriptions
 - **Signature**: `ListExportedSubscriptions(string batchId, int? perPage = 100, int? page = 1, CancellationToken ct = default)`
@@ -48,11 +78,21 @@ Accessor: `client.ApiExports` · Source: `Api/ApiExports.cs` · 9 operations
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `Subscription` | `Models/Subscription.cs` |
+| `ListExportedSubscriptionsError` | `Errors/ListExportedSubscriptionsError.cs` |
+
 ### ReadInvoicesExport
 - **Signature**: `ReadInvoicesExport(string batchId, CancellationToken ct = default)`
 - **Returns**: `BatchJobResponse`
 - **Error**: `SdkException<ReadInvoicesExportError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `BatchJobResponse` | `Models/BatchJobResponse.cs` |
+| `ReadInvoicesExportError` | `Errors/ReadInvoicesExportError.cs` |
 
 ### ReadProformaInvoicesExport
 - **Signature**: `ReadProformaInvoicesExport(string batchId, CancellationToken ct = default)`
@@ -60,8 +100,18 @@ Accessor: `client.ApiExports` · Source: `Api/ApiExports.cs` · 9 operations
 - **Error**: `SdkException<ReadProformaInvoicesExportError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
 
+| Type | Source |
+|---|---|
+| `BatchJobResponse` | `Models/BatchJobResponse.cs` |
+| `ReadProformaInvoicesExportError` | `Errors/ReadProformaInvoicesExportError.cs` |
+
 ### ReadSubscriptionsExport
 - **Signature**: `ReadSubscriptionsExport(string batchId, CancellationToken ct = default)`
 - **Returns**: `BatchJobResponse`
 - **Error**: `SdkException<ReadSubscriptionsExportError>` — **Case A (typed)**
 - **Error accessors**: `TryGetNoContent(out RawError)` [404] · `TryGetRawError(out RawError)` [fallback]
+
+| Type | Source |
+|---|---|
+| `BatchJobResponse` | `Models/BatchJobResponse.cs` |
+| `ReadSubscriptionsExportError` | `Errors/ReadSubscriptionsExportError.cs` |

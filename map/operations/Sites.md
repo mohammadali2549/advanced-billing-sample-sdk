@@ -2,6 +2,8 @@
 
 Accessor: `client.Sites` · Source: `Api/Sites.cs` · 3 operations
 
+**Type sources**: the file declaring each type an operation names (`RawError` excluded — see sdk-map.md).
+
 
 ### ClearSite
 - **Signature**: `ClearSite(CleanupScope? cleanupScope, CancellationToken ct = default)`
@@ -9,6 +11,10 @@ Accessor: `client.Sites` · Source: `Api/Sites.cs` · 3 operations
 - **Query params (wire ← C#)**: `cleanup_scope` ← `cleanupScope`
 - **Returns**: `void` (Task)
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `CleanupScope` | `Models/Enums/CleanupScope.cs` |
 
 ### ListChargifyJsPublicKeys
 - **Signature**: `ListChargifyJsPublicKeys(int? page = 1, int? perPage = 20, CancellationToken ct = default)`
@@ -18,7 +24,15 @@ Accessor: `client.Sites` · Source: `Api/Sites.cs` · 3 operations
 - **Error**: `SdkException<RawError>` — **Case B**
 - **Pagination**: manual `page`+`perPage`
 
+| Type | Source |
+|---|---|
+| `ListPublicKeysResponse` | `Models/ListPublicKeysResponse.cs` |
+
 ### ReadSite
 - **Signature**: `ReadSite(CancellationToken ct = default)`
 - **Returns**: `SiteResponse`
 - **Error**: `SdkException<RawError>` — **Case B**
+
+| Type | Source |
+|---|---|
+| `SiteResponse` | `Models/SiteResponse.cs` |
